@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494392}
+  - 114: {fileID: 11449088}
+  - 82: {fileID: 8274800}
+  - 114: {fileID: 11460440}
+  m_Layer: 0
+  m_Name: NGUIMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &494392
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!82 &8274800
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137016}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 39393851522068f4fb799988cda09367, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &11449088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404cde4d0db3bfb4dac1e3786454ec0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCamera: {fileID: 0}
+  preGameState: 0
+  backClip:
+  - {fileID: 8300000, guid: 2f9e445fbb032ed4aac4bc7985fc35f0, type: 3}
+  - {fileID: 8300000, guid: ea6b66f43831df14c9be27d67fff4c68, type: 3}
+  - {fileID: 8300000, guid: 27bf45f4565e6634091d9be9cfa75e28, type: 3}
+  - {fileID: 8300000, guid: 2ddbcbeff33641747a30ef5451baea49, type: 3}
+  - {fileID: 8300000, guid: f3b652806c89bbb4d91c82345636fee4, type: 3}
+  - {fileID: 8300000, guid: 0be2b790ea588d44db085baafce7cf9c, type: 3}
+  - {fileID: 8300000, guid: 47d98232f6f2cca4abd466756abbde27, type: 3}
+  UIParent: {fileID: 0}
+  infoPrefab: {fileID: 100002, guid: ae6b182f9f264450c8402d2b1fe366a0, type: 2}
+  GameLevelPrefab: {fileID: 100010, guid: 1837a2b4b025a4e338e2864d2e1b6e89, type: 2}
+  loadingPrefab: {fileID: 100000, guid: 98a43bff7369fcb4b9789e55455f9a8e, type: 2}
+  GameScenePrefab: {fileID: 100028, guid: 34c882229becabb47bafdd0c419af14d, type: 2}
+  pausePrefab: {fileID: 100006, guid: c2bbea5f278c94c809bddd06eb66fc0d, type: 2}
+  gameOverPrefab: {fileID: 100000, guid: f753d8e28d502be449142192244de49a, type: 2}
+  PopUpShopPrefab: {fileID: 100000, guid: 8c0151cbcc9e34d03bf5d6af6857926c, type: 2}
+  ReviveShopPrefab: {fileID: 100000, guid: b25224c2e9f7d40fab3616aadbabc2c2, type: 2}
+  HintShopPrefab: {fileID: 100000, guid: a09cb0af2e9304252bbb0b959373cba3, type: 2}
+  LevelShopPrefab: {fileID: 100006, guid: 934d8c746b9404368a8d2bd334ec3b9d, type: 2}
+  MoneyGoldShopPrefab: {fileID: 100000, guid: d504b7551ad314f3ab038dacab273a78, type: 2}
+  GoldShopPrefab: {fileID: 100008, guid: 6650f50cc38244e5988e9bb773ccd96c, type: 2}
+  MoneyShopPrefab: {fileID: 100008, guid: 115f56d0fc2a9489bbe9c64334b83ea6, type: 2}
+  GameHelpPrefab: {fileID: 100030, guid: d44f3822afd7c4b2bb53cbc4979116c6, type: 2}
+  GameInfoPrefab: {fileID: 100002, guid: ae6b182f9f264450c8402d2b1fe366a0, type: 2}
+  paySuccess: {fileID: 100000, guid: 974d2394f1b3444d18c041251a16b65a, type: 2}
+--- !u!114 &11460440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5401b9d9c546c6ab9e151698a0eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mCanvasTopTrans: {fileID: 0}
+  mCanvasMidTrans: {fileID: 0}
+  mCanvasBottomTrans: {fileID: 0}
+  mCanvasTrans: {fileID: 0}
+  mCanvasGuideTrans: {fileID: 0}
+  mUICamera: {fileID: 0}
+  mParentTrans: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 137016}
+  m_IsPrefabParent: 1
