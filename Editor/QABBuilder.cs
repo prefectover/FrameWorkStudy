@@ -145,78 +145,8 @@ namespace QFramework.PRIVATE
 			AssetDatabase.Refresh();
 		}
 
-		public static void BuildPlayer()
-		{
-			var outputPath = EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
-			if (outputPath.Length == 0)
-				return;
-
-			string[] levels = GetLevelsFromBuildSettings();
-			if (levels.Length == 0)
-			{
-				Debug.Log("Nothing to build.");
-				return;
-			}
-
-			string targetName = GetBuildTargetName(EditorUserBuildSettings.activeBuildTarget);
-			if (targetName == null)
-				return;
-
-			// Build and copy AssetBundles.
-			QABBuilder.BuildAssetBundles(EditorUserBuildSettings.activeBuildTarget);
-			WriteServerURL();
-
-			BuildOptions option = EditorUserBuildSettings.development ? BuildOptions.Development : BuildOptions.None;
-			BuildPipeline.BuildPlayer(levels, outputPath + targetName, EditorUserBuildSettings.activeBuildTarget, option);
-		}
-
-		public static void BuildStandalonePlayer()
-		{
-			var outputPath = EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
-			if (outputPath.Length == 0)
-				return;
-
-			string[] levels = GetLevelsFromBuildSettings();
-			if (levels.Length == 0)
-			{
-				Debug.Log("Nothing to build.");
-				return;
-			}
-
-			string targetName = GetBuildTargetName(EditorUserBuildSettings.activeBuildTarget);
-			if (targetName == null)
-				return;
-
-			// Build and copy AssetBundles.
-			QABBuilder.BuildAssetBundles(EditorUserBuildSettings.activeBuildTarget);
-			QABBuilder.CopyAssetBundlesTo(Path.Combine(Application.streamingAssetsPath, QPlatform.ABundlesOutputPath) );
-			AssetDatabase.Refresh();
-
-			BuildOptions option = EditorUserBuildSettings.development ? BuildOptions.Development : BuildOptions.None;
-			BuildPipeline.BuildPlayer(levels, outputPath + targetName, EditorUserBuildSettings.activeBuildTarget, option);
-		}
-
-		public static string GetBuildTargetName(BuildTarget target)
-		{
-			switch(target)
-			{
-				case BuildTarget.Android :
-					return "/test.apk";
-				case BuildTarget.StandaloneWindows:
-				case BuildTarget.StandaloneWindows64:
-					return "/test.exe";
-				case BuildTarget.StandaloneOSXIntel:
-				case BuildTarget.StandaloneOSXIntel64:
-				case BuildTarget.StandaloneOSXUniversal:
-					return "/test.app";
-				case BuildTarget.WebGL:
-					return "";
-					// Add more build targets for your own.
-				default:
-					Debug.Log("Target not implemented.");
-					return null;
-			}
-		}
+	
+			
 
 		static void CopyAssetBundlesTo(string outputPath)
 		{

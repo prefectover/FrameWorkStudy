@@ -18,7 +18,6 @@ namespace QFramework {
 			// TODO:要配置 以后支持NGUI
 			yield return QUGUIMgr.Init ();
 
-
 		}
 	}
 }
