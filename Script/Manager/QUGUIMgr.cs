@@ -228,13 +228,15 @@ namespace QFramework.UI {
 		/// <summary>
 		/// 删除掉层
 		/// </summary>
-		public void DeleteUI(string layerName)
+		public void DeleteUIBehaviour<T>()
 		{
-			if (mAllUIBehaviour.ContainsKey (layerName)) 
+			string behaviourName = typeof(T).ToString();
+
+			if (mAllUIBehaviour.ContainsKey (behaviourName)) 
 			{
-				mAllUIBehaviour [layerName].Exit ();
-				GameObject.Destroy (mAllUIBehaviour [layerName].gameObject);
-				mAllUIBehaviour.Remove (layerName);
+				mAllUIBehaviour [behaviourName].Close ();
+				GameObject.Destroy (mAllUIBehaviour [behaviourName].gameObject);
+				mAllUIBehaviour.Remove (behaviourName);
 			}
 		}
 
@@ -243,11 +245,13 @@ namespace QFramework.UI {
 		/// 显示UI层
 		/// </summary>
 		/// <param name="layerName">Layer name.</param>
-		public void ShowUIBehaviour(string layerName)
+		public void ShowUIBehaviour<T>()
 		{
-			if (mAllUIBehaviour.ContainsKey(layerName))
+			string behaviourName = typeof(T).ToString();
+
+			if (mAllUIBehaviour.ContainsKey(behaviourName))
 			{
-				mAllUIBehaviour[layerName].Show ();
+				mAllUIBehaviour[behaviourName].Show ();
 			}
 		}
 
@@ -256,11 +260,13 @@ namespace QFramework.UI {
 		/// 隐藏UI层
 		/// </summary>
 		/// <param name="layerName">Layer name.</param>
-		public void HideUIBehaviour(string layerName)
+		public void HideUIBehaviour<T>()
 		{
-			if (mAllUIBehaviour.ContainsKey (layerName)) 
+			string behaviourName = typeof(T).ToString();
+
+			if (mAllUIBehaviour.ContainsKey (behaviourName)) 
 			{
-				mAllUIBehaviour [layerName].Hide ();
+				mAllUIBehaviour [behaviourName].Hide ();
 			}
 		}
 
@@ -281,12 +287,14 @@ namespace QFramework.UI {
 
 
 		/// <summary>
-		/// 获取所有UI层
-		public T GetUIBehaviour<T>(string layerName)
+		/// 获取UIBehaviour
+		public T GetUIBehaviour<T>()
 		{
-			if (mAllUIBehaviour.ContainsKey (layerName)) 
+			string behaviourName = typeof(T).ToString();
+
+			if (mAllUIBehaviour.ContainsKey (behaviourName)) 
 			{
-				return mAllUIBehaviour [layerName].GetComponent<T> ();
+				return mAllUIBehaviour [behaviourName].GetComponent<T> ();
 			}
 			return default(T);
 		}

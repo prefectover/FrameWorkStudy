@@ -15,6 +15,11 @@ public class QMsgCenter : MonoBehaviour
 		QMonoSingletonComponent<QMsgCenter>.Dispose ();
 	}
 
+
+	void Awake()
+	{
+		transform.SetParent (QApp.Instance.transform);
+	}
 	public IEnumerator Init()
 	{
 		Debug.Log ("QMsgCenter Init");

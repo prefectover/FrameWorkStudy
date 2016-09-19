@@ -7,17 +7,12 @@ using System.Collections.Generic;
 using QFramework;
 using QFramework.Editor;
 
-
 namespace QFramework.PRIVATE {
-
-
 	public class QABEditor
 	{
-
 		[MenuItem("QFramework/AB/Build iOS")]
 		public static void BuildABiOS()
 		{
-
 			string outputPath = QPath.ABBuildOutPutDir (RuntimePlatform.IPhonePlayer);
 
 			QIO.CreateDirIfNotExists (outputPath);
@@ -39,8 +34,6 @@ namespace QFramework.PRIVATE {
 			AssetDatabase.Refresh ();
 
 		}
-
-
 
 		[MenuItem("QFramework/AB/Mark")]
 		public static void MarkAssetBundle()
@@ -91,9 +84,7 @@ namespace QFramework.PRIVATE {
 
 			QABConfigMgr.Instance.OverrideConfigFile ();
 		}
-
-
-
+			
 		/// <summary>
 		/// 截取相对路径
 		/// </summary>
@@ -182,7 +173,6 @@ namespace QFramework.PRIVATE {
 
 			AssetImporter importer = AssetImporter.GetAtPath (assetPath);
 
-//			Debug.LogError (markStr + ":" + assetPath);
 			importer.assetBundleName = markStr;
 
 			string modelName = "";

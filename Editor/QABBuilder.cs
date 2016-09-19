@@ -29,7 +29,6 @@ namespace QFramework.PRIVATE
 	{
 		public static string overloadedDevelopmentServerURL = "";
 
-
 		public static void BuildAssetBundles(BuildTarget buildTarget)
 		{
 			string outputPath = Path.Combine(QPlatform.ABundlesOutputPath,  QPlatform.GetPlatformName());

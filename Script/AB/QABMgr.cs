@@ -23,6 +23,12 @@ namespace QFramework.AB
 	// Class takes care of loading assetBundle and its dependencies automatically, loading variants automatically.
 	public class QABMgr : MonoBehaviour
 	{
+
+		void Awake()
+		{
+			transform.SetParent (QApp.Instance.transform);
+		}
+
 		public enum LogMode { All, JustErrors };
 		public enum LogType { Info, Warning, Error };
 	

@@ -6,8 +6,24 @@ using UnityEngine.UI;
 
 namespace QFramework.AB
 {
-	public class QResMgr : QMonoSingleton<QResMgr>
+	public class QResMgr : QMgrBehaviour
 	{
+		public static QResMgr Instance {
+			get {
+				return QMonoSingletonComponent<QResMgr>.Instance;
+			}
+		}
+
+		public static void Dispose()
+		{
+			QMonoSingletonComponent<QResMgr>.Dispose ();
+		}
+
+
+		void Awake()
+		{
+			transform.SetParent (QApp.Instance.transform);
+		}
 
 		public GameObject LoadUIPrefabSync(string uiName)
 		{

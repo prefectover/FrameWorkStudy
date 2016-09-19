@@ -221,7 +221,6 @@ namespace QFramework.UI {
 		{
 			gameObject.SetActive (true);
 			Debug.LogWarning ("On Show:" + name);
-
 		}
 
 

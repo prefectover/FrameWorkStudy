@@ -5,7 +5,7 @@ using QFramework.AB;
 
 namespace QFramework {
 
-	public class QSoundMgr : MonoBehaviour {
+	public class QSoundMgr : QMgrBehaviour {
 
 		public static QSoundMgr Instance {
 			get {
@@ -36,6 +36,9 @@ namespace QFramework {
 		{
 			//防止被销毁
 			DontDestroyOnLoad (gameObject);
+
+			transform.SetParent (QApp.Instance.transform);
+
 			listener = gameObject.AddComponent<AudioListener> ();
 			musicPlayer = gameObject.AddComponent<AudioSource> ();
 			for (int i = 0; i < playersForClipId.Length; i++) {

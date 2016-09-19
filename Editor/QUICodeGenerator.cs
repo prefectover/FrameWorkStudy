@@ -96,9 +96,11 @@ public class QUICodeGenerator
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}");
                 strBuilder.Append("\t").AppendLine("protected override void OnShow()");
+				strBuilder.Append("\t\t").AppendLine("base.OnShow()");
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
-                strBuilder.Append("\t").AppendLine("protected override void OnClose()");
+                strBuilder.Append("\t").AppendLine("protected override void OnHide()");
+				strBuilder.Append("\t\t").AppendLine("base.OnHide()");
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
                 strBuilder.Append("\t").AppendLine("private void ShowLog(string content)");

@@ -16,11 +16,10 @@ namespace QFramework {
 			}
 		}
 
-		public void Dispose()
+		public static void Dispose()
 		{
 			QSingletonComponent<QCoroutineMgr>.Dispose ();
 		}
-
 
 
 		protected QCoroutineMgr() {}
