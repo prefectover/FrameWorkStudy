@@ -17,6 +17,8 @@ namespace QFramework {
 		public delegate void WithEvent(BaseEventData data);
 
 		public delegate void WithObj(Object obj);
+
+		public delegate void WithBool(bool value);
 	}
 
 }

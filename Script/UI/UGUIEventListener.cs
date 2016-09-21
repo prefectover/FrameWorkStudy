@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 namespace QFramework.UI {
 
-
 	/// <summary>
 	/// 事件监听器
 	/// </summary>
@@ -22,6 +21,7 @@ namespace QFramework.UI {
 		public QVoidDelegate.WithEvent onEndDrag;
 		public QVoidDelegate.WithEvent onDrag;
 
+		public QVoidDelegate.WithBool onValueChanged;
 
 		public static UGUIEventListener CheckAndAddListener(GameObject go)
 		{
@@ -30,7 +30,7 @@ namespace QFramework.UI {
 
 			return listener;
 		}
-		static public UGUIEventListener Get(GameObject go)
+		public static  UGUIEventListener Get(GameObject go)
 		{
 			return CheckAndAddListener (go);
 		}
@@ -75,7 +75,5 @@ namespace QFramework.UI {
 		{
 			if (onDrag != null) onDrag(eventData);
 		}
-
 	}
-
 }

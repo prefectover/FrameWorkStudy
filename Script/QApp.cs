@@ -9,8 +9,7 @@ namespace QFramework {
 		QA,
 		Release
 	}
-
-
+		
 	/// <summary>
 	/// 全局唯一继承于MonoBehaviour的单例类，保证其他公共模块都以App的生命周期为准
 	/// </summary>
@@ -38,8 +37,6 @@ namespace QFramework {
 
 			// 进入欢迎界面
 			Application.targetFrameRate = 60;
-
-			// 初始化框架
 		}
 
 		IEnumerator  Start()
@@ -54,8 +51,6 @@ namespace QFramework {
 
 			var console = QConsole.Instance;
 
-			yield return GameManager.Instance.Init ();
-
 			// 进入测试逻辑
 			if (QApp.Instance.mode == QAppMode.Developing) {
 
@@ -68,10 +63,7 @@ namespace QFramework {
 			}
 
 			yield return null;
-
 		}
-
-
 
 		#region 全局生命周期回调
 		public delegate void LifeCircleCallback();

@@ -142,11 +142,6 @@ namespace QFramework {
 	/// </summary>
 	public class QAppConst {
 		public const bool DebugMode = false;                       //调试模式-用于内部测试
-		/// <summary>
-		/// 如果想删掉框架自带的例子，那这个例子模式必须要
-		/// 关闭，否则会出现一些错误。
-		/// </summary>
-		public const bool ExampleMode = false;                       //例子模式 
 
 		/// <summary>
 		/// 如果开启更新模式，前提必须启动框架自带服务器端。
@@ -160,9 +155,8 @@ namespace QFramework {
 		public const int TimerInterval = 1;
 		public const int GameFrameRate = 30;                        //游戏帧频
 
-		public const string ABPath = "QArt/QAB";               	//资源路径
 		public const string LuaTempDir = "Lua/";                    //临时目录
-		public const string AppPrefix = ABPath + "_";              //应用程序前缀
+		public const string AppPrefix = QPath.RelativeABPath + "_";              //应用程序前缀
 		public const string ExtName = ".unity3d";                   //素材扩展名
 		public const string AssetDir = "StreamingAssets";           //素材目录 
 		public const string WebUrl = "http://localhost:6688/";      //测试更新地址
@@ -173,7 +167,7 @@ namespace QFramework {
 
 		public static string FrameworkRoot {
 			get {
-				return Application.dataPath + "/" + ABPath;
+				return Application.dataPath + "/" + QPath.RelativeABPath;
 			}
 		}
 	}

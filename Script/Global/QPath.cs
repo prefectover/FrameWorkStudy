@@ -8,6 +8,8 @@ namespace QFramework {
 	/// </summary>
 	public class QPath 
 	{
+
+
 		/// <summary>
 		/// 资源输出的路径
 		/// </summary>
@@ -34,7 +36,12 @@ namespace QFramework {
 		}
 
 		/// <summary>
-		/// 打包之前的源资源文件
+		/// 相对资源路径.
+		/// </summary>
+		public const string RelativeABPath = "QArt/QAB";
+
+		/// <summary>
+		/// 绝对资源路径
 		/// </summary>
 		public static string SrcABDir  {
 			get {
@@ -63,7 +70,7 @@ namespace QFramework {
 		/// </summary>
 		public static string DataPath {
 			get {
-				string game = QAppConst.ABPath.ToLower();
+				string game = QPath.RelativeABPath.ToLower();
 				if (Application.isMobilePlatform) {
 					return Application.persistentDataPath + "/" + game + "/";
 				}

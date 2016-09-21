@@ -6,7 +6,6 @@ using System.Collections;
 /// </summary>
 namespace QFramework {
 	public interface ICommand {
-		void Execute();
-		//	void Execute(IMessage message);
+			void Execute(IMessage message);
 	}
 }
