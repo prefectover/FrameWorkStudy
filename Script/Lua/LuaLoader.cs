@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿//#define ToLua
+using UnityEngine;
 using System.Collections;
 using System.IO;
+#if ToLua
 using LuaInterface;
+#endif
+#if ToLua
 
 namespace QFramework {
+	
     /// <summary>
     /// 集成自LuaFileUtils，重写里面的ReadFile，
     /// </summary>
@@ -51,3 +56,4 @@ namespace QFramework {
         }
     }
 }
+#endif

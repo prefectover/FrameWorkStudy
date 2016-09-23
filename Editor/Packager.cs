@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using QFramework;
 
+#if ToLua
+
 public class Packager {
     public static string platform = string.Empty;
     static List<string> paths = new List<string>();
@@ -311,3 +313,4 @@ public class Packager {
         AssetDatabase.Refresh();
     }
 }
+#endif

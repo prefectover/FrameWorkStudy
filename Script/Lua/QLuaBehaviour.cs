@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+#if ToLua
 using LuaInterface;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -8,8 +10,10 @@ using UnityEngine.UI;
 namespace QFramework {
 	public class QLuaBehaviour : QFramework.QMonoBehaviour {
         private string data = null;
+		#if ToLua
         private Dictionary<string, LuaFunction> buttons = new Dictionary<string, LuaFunction>();
 		Dictionary<string,LuaFunction> toggles = new Dictionary<string, LuaFunction>();
+		#endif
         protected void Awake() {
             QUtil.CallMethod(name, "Awake", gameObject);
         }
@@ -30,6 +34,7 @@ namespace QFramework {
 			throw new NotImplementedException ();
 		}
 
+		#if ToLua
         /// <summary>
         /// 添加单击事件
         /// </summary>
@@ -122,5 +127,6 @@ namespace QFramework {
             QUtil.ClearMemory();
             Debug.Log("~" + name + " was destroy!");
         }
+		#endif
     }
 }

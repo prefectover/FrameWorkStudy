@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿//#if ToLua
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+#if ToLua
 using LuaInterface;
+#endif
 using UnityEngine.UI;
 //using ARBookFramework.Component;
 #if UNITY_EDITOR	
@@ -11,6 +14,8 @@ using UnityEditor;
 namespace  QFramework
 {
 	public class LuaMain {
+
+		#if ToLua
 
 //		public static bool assetBundleLoaded = false;
 		//lua环境，需要在使用前给其赋值
@@ -287,5 +292,8 @@ namespace  QFramework
 		}
 #endif
 		//----------------------外部接口----------------------
+		#endif
+	
 	}
+
 }

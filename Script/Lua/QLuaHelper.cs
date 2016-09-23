@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Reflection;
+#if ToLua
 using LuaInterface;
+#endif
 using System;
 using QFramework;
 using QFramework.AB;
 
 namespace QFramework {
     public static class QLuaHelper {
+
+		#if ToLua
 
         /// <summary>
         /// getType
@@ -43,6 +47,7 @@ namespace QFramework {
         /// pbc/pblua函数回调
         /// </summary>
         /// <param name="func"></param>
+		/// 
         public static void OnCallLuaFunc(LuaByteBuffer data, LuaFunction func) {
             if (func != null) func.Call(data);
             Debug.LogWarning("OnCallLuaFunc length:>>" + data.buffer.Length);
@@ -57,5 +62,7 @@ namespace QFramework {
             Debug.LogWarning("OnJsonCallback data:>>" + data + " lenght:>>" + data.Length);
             if (func != null) func.Call(data);
         }
+		#endif
+
     }
 }

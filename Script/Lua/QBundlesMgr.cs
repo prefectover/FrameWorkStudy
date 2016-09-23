@@ -6,6 +6,8 @@ namespace QFramework
 {
 	public class QBundlesMgr : MonoBehaviour {
 
+		#if ToLua
+
 		public Image image;
 		private float percent = 0;
 
@@ -110,10 +112,7 @@ namespace QFramework
 			www.Dispose ();  
 		}
 
-
-
-
-
+		#endif 
 
 	}
 }
