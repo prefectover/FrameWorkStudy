@@ -276,7 +276,7 @@ namespace QFramework {
 					if (!canPlay) {
 						audio.Stop();
 						audio.clip = null;
-						LuaFramework.Util.ClearMemory();
+						QUtil.ClearMemory();
 					}
 					return;
 				}
@@ -288,7 +288,7 @@ namespace QFramework {
 			} else {
 				audio.Stop();
 				audio.clip = null;
-				LuaFramework.Util.ClearMemory();
+				QUtil.ClearMemory();
 			}
 		}
 

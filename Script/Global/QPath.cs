@@ -8,8 +8,6 @@ namespace QFramework {
 	/// </summary>
 	public class QPath 
 	{
-
-
 		/// <summary>
 		/// 资源输出的路径
 		/// </summary>
@@ -48,23 +46,19 @@ namespace QFramework {
 				return Application.dataPath + "/QArt/QAB";
 			}
 		}
-
-
+			
 		public static string LuaSrcPath {
 			get {
 				return SrcABDir + "/Lua/";
 			}
 		}
-
-
+			
 		public static string ToLuaFilePath {
 			get {
 				return Application.dataPath + "/ToLua/Lua/";
 			}
 		}
-
-
-
+			
 		/// <summary>
 		/// 取得数据存放目录
 		/// </summary>
@@ -75,13 +69,19 @@ namespace QFramework {
 					return Application.persistentDataPath + "/" + game + "/";
 				}
 				if (QAppConst.DebugMode) {
-					return Application.dataPath + "/" + QAppConst.AssetDir + "/";
+					return Application.streamingAssetsPath;
 				}
 				if (Application.platform == RuntimePlatform.OSXEditor) {
 					int i = Application.dataPath.LastIndexOf('/');
 					return Application.dataPath.Substring(0, i + 1) + game + "/";
 				}
 				return "c:/" + game + "/";
+			}
+		}
+			
+		public static string FrameworkPath {
+			get {
+				return Application.dataPath + "/" + QPath.RelativeABPath;
 			}
 		}
 	}

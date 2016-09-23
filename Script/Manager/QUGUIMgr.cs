@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using QFramework.AB;
-
-namespace QFramework.UI {
+using QFramework.UI;
+namespace QFramework {
 
 	public enum CanvasLevel
 	{

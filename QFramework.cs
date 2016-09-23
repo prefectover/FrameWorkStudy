@@ -5,11 +5,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-using QFramework.UI;
-using QFramework.AB;
-using QFramework.PRIVATE;
-using QFramework.Lua;
-
 namespace QFramework {
 
 	public class Instance : QMgrBehaviour {
@@ -25,16 +20,15 @@ namespace QFramework {
 			// TODO:要配置 以后支持NGUI
 			yield return QUGUIMgr.Init ();
 
-			if (!LuaFramework.Util.CheckEnvironment()) yield return null;
+			if (!QUtil.CheckLuaEnvironment()) yield return null;
 
 			//-----------------初始化管理器-----------------------
 			AddMgr<QLuaMgr>();
-			AddMgr<LuaFramework.QTimerMgr>();
+			AddMgr<QTimerMgr>();
 			AddMgr<QSoundMgr> ();
-			AddMgr<LuaFramework.NetworkManager>();
 			AddMgr<QResMgr>();
-			AddMgr<LuaFramework.ThreadManager>();
-			AddMgr<LuaFramework.ObjectPoolManager>();
+			AddMgr<QThreadMgr>();
+			AddMgr<QPoolManager>();
 			AddMgr<GameManager>();
 		}
 			

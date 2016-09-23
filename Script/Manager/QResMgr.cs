@@ -14,7 +14,7 @@ using LuaInterface;
 using LuaFramework;
 #endif
 
-namespace QFramework.AB
+namespace QFramework
 {
 	public class QResMgr : QMgrBehaviour
 	{
@@ -228,7 +228,7 @@ namespace QFramework.AB
 			byte[] stream = null;
 			string uri = string.Empty;
 			bundles = new Dictionary<string, AssetBundle>();
-			uri = Util.DataPath + QAppConst.AssetDir;
+			uri = QUtil.DataPath + "StreamingAssets";
 			if (!File.Exists(uri)) return;
 			stream = File.ReadAllBytes(uri);
 			assetbundle = AssetBundle.LoadFromMemory(stream);
@@ -268,7 +268,7 @@ namespace QFramework.AB
 			AssetBundle bundle = null;
 			if (!bundles.ContainsKey(abname)) {
 				byte[] stream = null;
-				string uri = Util.DataPath + abname;
+				string uri = QUtil.DataPath + abname;
 				Debug.LogWarning("LoadFile::>> " + uri);
 				LoadDependencies(abname);
 

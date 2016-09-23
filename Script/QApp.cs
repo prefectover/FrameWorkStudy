@@ -48,23 +48,14 @@ namespace QFramework {
 			// 配置文件加载 类似PlayerPrefs
 			QSetting.Load();
 
-
-
 			switch (QApp.Instance.mode) {
 			case QAppMode.Developing:
 				{
-					// 日志输出 
-//					var log =  QLog.Instance;
-//					var console = QConsole.Instance;
-					// 进入测试逻辑
 					yield return GetComponent<ITestEntry> ().Launch ();
 				}
 				break;
 			case QAppMode.QA:
 				{
-					// 日志输出 
-//					var log = QLog.Instance;
-//					var console = QConsole.Instance;
 				}
 				break;
 
