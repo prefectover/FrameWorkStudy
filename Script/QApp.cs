@@ -41,28 +41,40 @@ namespace QFramework {
 
 		IEnumerator  Start()
 		{
+			var log = QLog.Instance;
+			var console = QConsole.Instance;
 			yield return QFramework.Instance.Init ();
 
 			// 配置文件加载 类似PlayerPrefs
 			QSetting.Load();
 
-			// 日志输出 
-			var log =  QLog.Instance;
 
-			var console = QConsole.Instance;
 
-			// 进入测试逻辑
-			if (QApp.Instance.mode == QAppMode.Developing) {
+			switch (QApp.Instance.mode) {
+			case QAppMode.Developing:
+				{
+					// 日志输出 
+//					var log =  QLog.Instance;
+//					var console = QConsole.Instance;
+					// 进入测试逻辑
+					yield return GetComponent<ITestEntry> ().Launch ();
+				}
+				break;
+			case QAppMode.QA:
+				{
+					// 日志输出 
+//					var log = QLog.Instance;
+//					var console = QConsole.Instance;
+				}
+				break;
 
-				yield return GetComponent<ITestEntry> ().Launch ();
-
-				// 进入正常游戏逻辑
-			} else {
+			case QAppMode.Release:
 				yield return GameManager.Instance.Launch ();
 
+				break;
 			}
 
-			yield return null;
+
 		}
 
 		#region 全局生命周期回调

@@ -5,7 +5,7 @@ using System.Collections;
 /// 命令模式
 /// </summary>
 namespace QFramework {
-	public interface ICommand {
-			void Execute(IMessage message);
+	public interface ICmd {
+		void Execute();
 	}
 }
