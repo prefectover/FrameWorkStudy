@@ -1,4 +1,4 @@
-﻿#define ToLua
+﻿//#define ToLua
 //using UnityEngine;
 //using System.Collections;
 //using System.Collections.Generic;
