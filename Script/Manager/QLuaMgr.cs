@@ -1,5 +1,4 @@
-﻿//#define ToLua
-//using UnityEngine;
+﻿//using UnityEngine;
 //using System.Collections;
 //using System.Collections.Generic;
 //using System.IO;
@@ -168,13 +167,11 @@
 
 using UnityEngine;
 using QFramework;
-#if ToLua
-using LuaFramework;
 using LuaInterface;
-#endif
+
 namespace QFramework {
 	public class QLuaMgr : QMgrBehaviour {
-		#if ToLua
+
 		private LuaState lua;
 		private LuaLoader loader;
 		private LuaLooper loop = null;
@@ -189,45 +186,36 @@ namespace QFramework {
 			LuaBinder.Bind(lua);
 			LuaCoroutine.Register(lua, this);
 		}
-		#endif 
 
 		public void InitStart() {
-			#if ToLua
 			InitLuaPath();
 			InitLuaBundle();
 			this.lua.Start();    //启动LUAVM
 			this.StartMain();    //执行mai函数
 			this.StartLooper();
-			#endif 
 		}
 
 		void StartLooper() {
-			#if ToLua
 			loop = gameObject.AddComponent<LuaLooper>();
 			loop.luaState = lua;
-			#endif 
 		}
 
 		//cjson 比较特殊，只new了一个table，没有注册库，这里注册一下
 		protected void OpenCJson() {
-			#if ToLua
 			lua.LuaGetField(LuaIndexes.LUA_REGISTRYINDEX, "_LOADED");
 			lua.OpenLibs(LuaDLL.luaopen_cjson);
 			lua.LuaSetField(-2, "cjson");
 
 			lua.OpenLibs(LuaDLL.luaopen_cjson_safe);
 			lua.LuaSetField(-2, "cjson.safe");
-			#endif 
 		}
 
 		void StartMain() {
-			#if ToLua
 			lua.DoFile("Main.lua");
 			LuaFunction main = lua.GetFunction("Main");
 			main.Call();
 			main.Dispose();
 			main = null;   
-			#endif 
 
 		}
 
@@ -235,7 +223,6 @@ namespace QFramework {
 		/// 初始化加载第三方库
 		/// </summary>
 		void OpenLibs() {
-			#if ToLua
 
 			lua.OpenLibs(LuaDLL.luaopen_pb);      
 			lua.OpenLibs(LuaDLL.luaopen_sproto_core);
@@ -245,7 +232,6 @@ namespace QFramework {
 			lua.OpenLibs(LuaDLL.luaopen_socket_core);
 
 			this.OpenCJson();
-			#endif 
 
 		}
 
@@ -253,7 +239,6 @@ namespace QFramework {
 		/// 初始化Lua代码加载路径
 		/// </summary>
 		void InitLuaPath() {
-			#if ToLua
 
 			if (QAppConst.DebugMode) {
 				string rootPath = QPath.RelativeABPath;
@@ -262,7 +247,6 @@ namespace QFramework {
 			} else {
 				lua.AddSearchPath(QUtil.DataPath + "lua");
 			}
-			#endif 
 
 		}
 
@@ -270,7 +254,6 @@ namespace QFramework {
 		/// 初始化LuaBundle
 		/// </summary>
 		void InitLuaBundle() {
-			#if ToLua
 
 			if (loader.beZip) {
 				loader.AddBundle("lua/lua.unity3d");
@@ -291,47 +274,34 @@ namespace QFramework {
 				loader.AddBundle("lua/lua_3rd_pblua.unity3d");
 				loader.AddBundle("lua/lua_3rd_sproto.unity3d");
 			}
-			#endif
 
 		}
 
 		public object[] DoFile(string filename) {
-			#if ToLua
 			return lua.DoFile(filename);
-			#else 
-			return null;
-			#endif
 		}
 
 		// Update is called once per frame
 		public object[] CallFunction(string funcName, params object[] args) {
-			#if ToLua
-
 			LuaFunction func = lua.GetFunction(funcName);
 			if (func != null) {
 				return func.Call(args);
 			}
-			#endif
 			return null;
 		}
 
 		public void LuaGC() {
-			#if ToLua
 
 			lua.LuaGC(LuaGCOptions.LUA_GCCOLLECT);
-			#endif
 		}
 
 		public void Close() {
-			#if ToLua
 			loop.Destroy();
 			loop = null;
 
 			lua.Dispose();
 			lua = null;
 			loader = null;
-			#endif
-
 		}
 	}
 }

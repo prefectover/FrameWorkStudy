@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Reflection;
-#if ToLua
 using LuaInterface;
-#endif
+
 using System;
 using QFramework;
 using QFramework.AB;
@@ -11,7 +10,6 @@ using QFramework.AB;
 namespace QFramework {
     public static class QLuaHelper {
 
-		#if ToLua
 
         /// <summary>
         /// getType
@@ -62,7 +60,6 @@ namespace QFramework {
             Debug.LogWarning("OnJsonCallback data:>>" + data + " lenght:>>" + data.Length);
             if (func != null) func.Call(data);
         }
-		#endif
 
     }
 }

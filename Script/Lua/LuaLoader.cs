@@ -1,11 +1,8 @@
-﻿//#define ToLua
+﻿
 using UnityEngine;
 using System.Collections;
 using System.IO;
-#if ToLua
 using LuaInterface;
-#endif
-#if ToLua
 
 namespace QFramework {
 	
@@ -56,4 +53,3 @@ namespace QFramework {
         }
     }
 }
-#endif

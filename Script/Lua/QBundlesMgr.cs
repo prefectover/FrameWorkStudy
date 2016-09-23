@@ -6,8 +6,6 @@ namespace QFramework
 {
 	public class QBundlesMgr : MonoBehaviour {
 
-		#if ToLua
-
 		public Image image;
 		private float percent = 0;
 
@@ -111,8 +109,6 @@ namespace QFramework
 			// 中断正在加载过程中的WWW  
 			www.Dispose ();  
 		}
-
-		#endif 
-
+			
 	}
 }

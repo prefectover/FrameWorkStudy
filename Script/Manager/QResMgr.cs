@@ -1,5 +1,4 @@
-﻿//#define ToLua
-
+﻿
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,10 +8,7 @@ using System.IO;
 using UnityEngine.UI;
 using UObject = UnityEngine.Object;
 
-#if ToLua
 using LuaInterface;
-using LuaFramework;
-#endif
 
 namespace QFramework
 {

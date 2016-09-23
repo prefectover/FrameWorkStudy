@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-#if ToLua
+
 using LuaInterface;
-#endif
+
 using UnityEngine.UI;
 
 using System.IO;
@@ -13,9 +13,6 @@ namespace QFramework
 {
     public class QLuaComponent : MonoBehaviour {
       
-		#if ToLua
-
-
 		protected static class  FuncName
 		{
 			public static readonly string Awake = "Awake";
@@ -187,8 +184,6 @@ namespace QFramework
 			CallLuaFunction (LuaMain.FuncName.onClick);
 		}
 			
-		#endif
-
     }
 }
 

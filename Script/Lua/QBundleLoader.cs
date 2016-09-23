@@ -1,20 +1,16 @@
-﻿//#define ToLua
-using UnityEngine;
+﻿using UnityEngine;
 
 using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
-#if ToLua
 using LuaInterface;
-#endif
+
 
 namespace QFramework
 {
 	public class QBundleLoader : MonoBehaviour {
-
-		#if ToLua
 
 		public delegate void LoadFinishHandle(String lunBundleModule);   
 		public event LoadFinishHandle loadFinishEvent;   
@@ -153,6 +149,5 @@ namespace QFramework
 //		void OnGUI(){
 //			GUI.TextArea(new Rect(0,100,200,100),"bundleCount:"+bundleCount+"\n"+DebugStr);
 //		}
-		#endif
 	}
 }
