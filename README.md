@@ -3,6 +3,9 @@
 ![](./DocRes/1.png)
 
 
+&emsp;&emsp;目前运行环境: Unity 5.4.1p1<br>
+&emsp;&emsp;正在支持[ToLua](https://github.com/topameng/tolua)<br>
+&emsp;&emsp;正在整合[LuaFramework](https://github.com/jarjin/LuaFramework_UGUI)<br>
 
 ​	目前这个框架只经历了一款游戏项目,所以很多地方做得不是很完善。以后还需要多做项目多打磨,就像自己的孩子一样,要慢慢养大。
 
