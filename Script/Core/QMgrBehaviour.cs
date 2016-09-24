@@ -36,6 +36,11 @@ namespace QFramework {
 			mCurMgr = this;
 		}
 
+
+		protected QMgrBehaviour() {
+			SetupMgrId ();
+		}
+
 		// mono:要注册的脚本   
 		// msgs:每个脚本可以注册多个脚本
 		public void RegisterMsg(QMonoBehaviour behaviour,ushort[] msgs)

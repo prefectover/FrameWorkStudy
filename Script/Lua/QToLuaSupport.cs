@@ -1,4 +1,4 @@
-﻿#define ToLuaSupport
+﻿//#define ToLuaSupport
 using UnityEngine;
 using System.Collections;
 
