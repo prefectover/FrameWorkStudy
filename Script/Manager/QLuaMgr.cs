@@ -172,9 +172,15 @@ using LuaInterface;
 namespace QFramework {
 	public class QLuaMgr : QMgrBehaviour {
 
+
 		protected override void SetupMgrId ()
 		{
 			mMgrId = 0;
+		}
+
+		protected override void SetupMgr ()
+		{
+			
 		}
 
 		private LuaState lua;

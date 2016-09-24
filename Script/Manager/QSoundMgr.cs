@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using QFramework.AB;
+using QFramework.PRIVATE;
 
 namespace QFramework {
 
@@ -17,6 +18,8 @@ namespace QFramework {
 				return QMonoSingletonComponent<QSoundMgr>.Instance;
 			}
 		}
+
+
 
 		public IEnumerator Init() {
 			yield return null;
@@ -60,7 +63,7 @@ namespace QFramework {
 
 		void Start() {
 			msgIds = new ushort[] {
-				(ushort)SoundEvent.SoundSwitch
+				(ushort)QSoundEvent.SoundOn
 			};
 
 			RegisterSelf(this,msgIds);
@@ -72,7 +75,7 @@ namespace QFramework {
 		public override void ProcessMsg (QMsg msg)
 		{
 			switch (msg.msgId) {
-			case (ushort)SoundEvent.SoundSwitch:
+			case (ushort)QSoundEvent.SoundOn:
 				Debug.Log ("SoundOn:" + ((QSoundMsg)msg).soundOn);
 				break;
 			}

@@ -26,11 +26,15 @@ namespace QFramework {
 
 
 	public class QTimerMgr : QMgrBehaviour {
-
-
+		
 		protected override void SetupMgrId ()
 		{
 			mMgrId = 0;
+		}
+
+		protected override void SetupMgr ()
+		{
+			
 		}
 
         private float interval = 0;

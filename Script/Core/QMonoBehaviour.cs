@@ -2,6 +2,8 @@
 using System.Collections;
 
 namespace QFramework {
+
+
 	/// <summary>
 	/// 可以根据Futile的QNode来写,添加消息机制,替代SendMessage
 	/// </summary>
@@ -10,7 +12,23 @@ namespace QFramework {
 		public abstract void ProcessMsg (QMsg msg);
 
 		protected abstract void SetupMgr ();
-		protected QMgrBehaviour mCurMgr;
+		private QMgrBehaviour mPrivateMgr = null;
+		protected QMgrBehaviour mCurMgr {
+			get {
+				if (mPrivateMgr == null ) {
+					SetupMgr ();
+				}
+				if (mPrivateMgr == null) {
+					Debug.LogError ("没有设置Mgr");
+				}
+
+				return mPrivateMgr;
+			}
+
+			set {
+				mPrivateMgr = value;
+			}
+		}
 		/// <summary>
 		/// 短变量,指针而已
 		/// </summary>

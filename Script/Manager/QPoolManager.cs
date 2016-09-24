@@ -15,6 +15,11 @@ namespace QFramework {
 			mMgrId = 0;
 		}
 
+		protected override void SetupMgr ()
+		{
+			
+		}
+
         private Transform m_PoolRootObject = null;
         private Dictionary<string, object> m_ObjectPools = new Dictionary<string, object>();
 		private Dictionary<string, QGOPool> m_GameObjectPools = new Dictionary<string, QGOPool>();

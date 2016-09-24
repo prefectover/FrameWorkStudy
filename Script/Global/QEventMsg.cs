@@ -13,5 +13,12 @@ namespace QFramework.PRIVATE {
 		UPDATE_EXTRACT,    // 更新解包
 		UPDATE_DOWNLOAD,   // 更新下载
 		UPDATE_PROGRESS,   // 更新进度
+		End,
+	}
+
+	public enum QSoundEvent {
+		Began = QFrameworkMsg.Began,
+		SoundOn,
+		End,
 	}
 }

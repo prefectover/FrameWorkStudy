@@ -34,6 +34,11 @@ namespace QFramework {
 			mMgrId = 0;
 		}
 
+		protected override void SetupMgr ()
+		{
+			
+		}
+
         private Thread thread;
         private Action<NotiData> func;
         private Stopwatch sw = new Stopwatch();

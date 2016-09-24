@@ -25,6 +25,10 @@ namespace QFramework {
 			mMgrId = (ushort)QMgrID.UI;
 		}
 
+		protected override void SetupMgr ()
+		{
+			
+		}
 		public QUIBehaviour OpenUI<T>(CanvasLevel canvasLevel,object uiData = null) where T : QUIBehaviour
 		{
 			string behaviourName = typeof(T).ToString();

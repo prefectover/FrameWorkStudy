@@ -31,8 +31,9 @@ namespace QFramework {
 
 		protected abstract void SetupMgrId ();
 
-		protected QMgrBehaviour() {
-			SetupMgrId ();
+		protected override void SetupMgr ()
+		{
+			mCurMgr = this;
 		}
 
 		// mono:要注册的脚本   

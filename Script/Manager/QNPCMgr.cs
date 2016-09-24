@@ -7,6 +7,11 @@ public class QNPCMgr : QMgrBehaviour {
 	
 	public static QNPCMgr  Instance = null;
 
+	protected override void SetupMgr ()
+	{
+		
+	}
+
 	void Awake()
 	{
 		Instance = this;

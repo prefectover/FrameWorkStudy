@@ -6,6 +6,12 @@ using System.Collections.Generic;
 public class QAssetMgr : QMgrBehaviour {
 
 	public static QAssetMgr Instance = null;
+
+	protected override void SetupMgr ()
+	{
+		
+	}
+
 	void Awake()
 	{
 		Instance = this;
