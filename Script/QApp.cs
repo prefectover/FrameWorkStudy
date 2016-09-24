@@ -39,7 +39,7 @@ namespace QFramework {
 			Application.targetFrameRate = 60;
 		}
 
-		IEnumerator  Start()
+		IEnumerator Start()
 		{
 			var log = QLog.Instance;
 			var console = QConsole.Instance;

@@ -9,7 +9,7 @@ namespace QFramework {
 	public static class QGoExtend  {
 
 
-		public static void OnClick(this GameObject go,QVoidDelegate.WithGo callback)
+		public static void OnClick(this GameObject go,QVoidDelegate.WithVoid callback)
 		{
 			QFramework.UI.UGUIEventListener.Get (go);
 

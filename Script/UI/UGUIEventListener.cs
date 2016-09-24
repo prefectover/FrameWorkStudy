@@ -9,13 +9,15 @@ namespace QFramework.UI {
 	/// </summary>
 	public class UGUIEventListener : UnityEngine.EventSystems.EventTrigger
 	{
-		public QVoidDelegate.WithGo onClick;
-		public QVoidDelegate.WithGo onDown;
-		public QVoidDelegate.WithGo onEnter;
-		public QVoidDelegate.WithGo onExit;
-		public QVoidDelegate.WithGo onUp;
+		public QVoidDelegate.WithVoid onClick;
+	
 		public QVoidDelegate.WithGo onSelect;
 		public QVoidDelegate.WithGo onUpdateSelect;
+
+		public QVoidDelegate.WithEvent onPointerDown;
+		public QVoidDelegate.WithEvent onPointerEnter;
+		public QVoidDelegate.WithEvent onPointerExit;
+		public QVoidDelegate.WithEvent onPointerUp;
 
 		public QVoidDelegate.WithEvent onBeginDrag;
 		public QVoidDelegate.WithEvent onEndDrag;
@@ -37,23 +39,23 @@ namespace QFramework.UI {
 
 		public override void OnPointerClick(PointerEventData eventData)
 		{
-			if (onClick != null) onClick(gameObject);
+			if (onClick != null) onClick();
 		}
 		public override void OnPointerDown(PointerEventData eventData)
 		{
-			if (onDown != null) onDown(gameObject);
+			if (onPointerDown != null) onPointerDown(eventData);
 		}
 		public override void OnPointerEnter(PointerEventData eventData)
 		{
-			if (onEnter != null) onEnter(gameObject);
+			if (onPointerEnter != null) onPointerEnter(eventData);
 		}
 		public override void OnPointerExit(PointerEventData eventData)
 		{
-			if (onExit != null) onExit(gameObject);
+			if (onPointerExit != null) onPointerExit(eventData);
 		}
 		public override void OnPointerUp(PointerEventData eventData)
 		{
-			if (onUp != null) onUp(gameObject);
+			if (onPointerUp != null) onPointerUp(eventData);
 		}
 		public override void OnSelect(BaseEventData eventData)
 		{

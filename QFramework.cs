@@ -1,5 +1,4 @@
-﻿//#define ToLua
-
+﻿
 using UnityEngine;
 using System;
 using System.Collections;
@@ -39,9 +38,7 @@ namespace QFramework {
 			AddMgr<QResMgr>();
 			AddMgr<QThreadMgr>();
 			AddMgr<QPoolManager>();
-			#if ToLua
 			AddMgr<GameManager>();
-			#endif
 		}
 			
 		static GameObject mRoot;

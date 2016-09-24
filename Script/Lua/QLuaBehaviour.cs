@@ -14,7 +14,6 @@ namespace QFramework {
 			mCurMgr = QFramework.Instance.GetMgr<QLuaMgr> ();
 		}
 
-
         private string data = null;
         private Dictionary<string, LuaFunction> buttons = new Dictionary<string, LuaFunction>();
 		Dictionary<string,LuaFunction> toggles = new Dictionary<string, LuaFunction>();
@@ -34,9 +33,10 @@ namespace QFramework {
         protected void OnClickEvent(GameObject go) {
             QUtil.CallMethod(name, "OnClick", go);
         }
+
 		public override void ProcessMsg (QMsg msg)
 		{
-			throw new NotImplementedException ();
+
 		}
 
         /// <summary>

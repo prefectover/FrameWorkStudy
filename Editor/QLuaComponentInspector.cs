@@ -4,7 +4,6 @@ using System.Collections;
 using UnityEditor.SceneManagement;
 using System.Text.RegularExpressions;
 using QFramework;
-#if ToLua
 
 [CustomEditor(typeof(QLuaComponent))]
 public class QLuaComponentInspectorEditor : Editor
@@ -75,6 +74,4 @@ public class QLuaComponentInspectorEditor : Editor
 
 
 	}
-
 }
-#endif
