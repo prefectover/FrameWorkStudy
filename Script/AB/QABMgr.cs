@@ -37,8 +37,8 @@ namespace QFramework.AB
 		static string[] m_ActiveVariants =  {  };
 		static AssetBundleManifest m_AssetBundleManifest = null;
 	#if UNITY_EDITOR	
-		static int m_SimulateAssetBundleInEditor = -1;
-		const string kSimulateAssetBundles = "SimulateAssetBundles";
+		static int mDevMode = -1;
+		const string kDevMode = "DevModeAB";
 	#endif
 	
 		static Dictionary<string, QLoadedAB> m_LoadedAssetBundles = new Dictionary<string, QLoadedAB> ();
@@ -83,22 +83,22 @@ namespace QFramework.AB
 	
 	#if UNITY_EDITOR
 		// Flag to indicate if we want to simulate assetBundles in Editor without building them actually.
-		public static bool SimulateAssetBundleInEditor 
+		public static bool DevABModeInEditor 
 		{
 			get
 			{
-				if (m_SimulateAssetBundleInEditor == -1)
-					m_SimulateAssetBundleInEditor = EditorPrefs.GetBool(kSimulateAssetBundles, true) ? 1 : 0;
+				if (mDevMode == -1)
+					mDevMode = EditorPrefs.GetBool(kDevMode, true) ? 1 : 0;
 				
-				return m_SimulateAssetBundleInEditor != 0;
+				return mDevMode != 0;
 			}
 			set
 			{
 				int newValue = value ? 1 : 0;
-				if (newValue != m_SimulateAssetBundleInEditor)
+				if (newValue != mDevMode)
 				{
-					m_SimulateAssetBundleInEditor = newValue;
-					EditorPrefs.SetBool(kSimulateAssetBundles, value);
+					mDevMode = newValue;
+					EditorPrefs.SetBool(kDevMode, value);
 				}
 			}
 		}
@@ -153,7 +153,7 @@ namespace QFramework.AB
 			DontDestroyOnLoad(go);
 
 			#if UNITY_EDITOR	
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				return;
 			}
@@ -168,7 +168,7 @@ namespace QFramework.AB
 		static public ABLoadManifestOperation Initialize (string manifestAssetBundleName)
 		{
 	#if UNITY_EDITOR
-			Log (LogType.Info, "Simulation Mode: " + (SimulateAssetBundleInEditor ? "Enabled" : "Disabled"));
+			Log (LogType.Info, "Simulation Mode: " + (DevABModeInEditor ? "Enabled" : "Disabled"));
 	#endif
 	
 			var go = new GameObject("QABMgr", typeof(QABMgr));
@@ -176,7 +176,7 @@ namespace QFramework.AB
 		
 	#if UNITY_EDITOR	
 			// If we're in Editor simulation mode, we don't need the manifest assetBundle.
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 				return null;
 	#endif
 	
@@ -192,7 +192,7 @@ namespace QFramework.AB
 			Log(LogType.Info, "Loading Asset Bundle " + (isLoadingAssetBundleManifest ? "Manifest: " : ": ") + assetBundleName);
 	#if UNITY_EDITOR
 			// If we're in Editor simulation mode, we don't have to really load the assetBundle and its dependencies.
-			if (SimulateAssetBundleInEditor){
+			if (DevABModeInEditor){
 				return;
 			}
 	#endif
@@ -350,7 +350,7 @@ namespace QFramework.AB
 		static public void UnloadAssetBundle(string assetBundleName,bool force=false)
 		{
 	        #if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				return;
 			}
@@ -441,13 +441,12 @@ namespace QFramework.AB
 	
 		static public T LoadAsset<T>(string assetBundleName, string assetName, System.Type type) where T:UnityEngine.Object{
 			#if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor) {
+			if (DevABModeInEditor) {
 				string[] assetPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName (assetBundleName, assetName);
 				if (assetPaths.Length == 0) {
 					Debug.LogError ("There is no asset with name \"" + assetName + "\" in " + assetBundleName);
 					return null;
 				}
-//				var t =AssetDatabase.LoadMainAssetAtPath (assetPaths [0]);
 				var t = AssetDatabase.LoadAssetAtPath<T>(assetPaths[0]);
 				return t as T;
 			} else
@@ -486,7 +485,7 @@ namespace QFramework.AB
 
 		
 			#if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				string[] assetPaths = AssetDatabase.GetAssetPathsFromAssetBundle(assetBundleName);
 //				string[] assetPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(assetBundleName, assetName);
@@ -527,7 +526,7 @@ namespace QFramework.AB
 		static public bool IsEditorDevMode(){
 
 			#if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				return true;
 			}
@@ -545,7 +544,7 @@ namespace QFramework.AB
 	
 			ABLoadAssetOperation operation = null;
 	#if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				string[] assetPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(assetBundleName, assetName);
 				if (assetPaths.Length == 0)
@@ -583,7 +582,7 @@ namespace QFramework.AB
 	
 			ABLoadOperation operation = null;
 	#if UNITY_EDITOR
-			if (SimulateAssetBundleInEditor)
+			if (DevABModeInEditor)
 			{
 				operation = new ABLoadLevelDevModeOperation(assetBundleName, levelName, isAdditive);
 			}

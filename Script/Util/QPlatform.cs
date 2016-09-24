@@ -10,7 +10,7 @@ namespace QFramework.AB
 	/// </summary>
 	public class QPlatform
 	{
-		public const string ABundlesOutputPath = "QAB";
+		public const string ABundlesOutputForderName = "QAB";
 	
 		public static string GetPlatformName()
 		{

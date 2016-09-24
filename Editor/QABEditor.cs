@@ -6,10 +6,28 @@ using System.Collections.Generic;
 
 using QFramework;
 using QFramework.Editor;
+using QFramework.AB;
 
 namespace QFramework.PRIVATE {
 	public class QABEditor
 	{
+
+		const string kDevMode = "QFramework/AB/Dev Mode";
+
+		[MenuItem(kDevMode)]
+		public static void ToggleSimulationMode ()
+		{
+			QABMgr.DevABModeInEditor = !QABMgr.DevABModeInEditor;
+		}
+
+		[MenuItem(kDevMode, true)]
+		public static bool ToggleSimulationModeValidate ()
+		{
+			Menu.SetChecked(kDevMode, QABMgr.DevABModeInEditor);
+			return true;
+		}
+
+
 		[MenuItem("QFramework/AB/Build iOS")]
 		public static void BuildABiOS()
 		{
@@ -32,7 +50,6 @@ namespace QFramework.PRIVATE {
 			QABBuilder.BuildAssetBundles (BuildTarget.Android);
 
 			AssetDatabase.Refresh ();
-
 		}
 
 		[MenuItem("QFramework/AB/Mark")]

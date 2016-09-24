@@ -22,9 +22,7 @@ public class IABResLoader : IDisposable {
 			return mABRes.LoadAsset (resName);
 		}
 	}
-
-
-
+		
 	public UnityEngine.Object[] LoadRes(string resName)
 	{
 		if (this.mABRes == null || !this.mABRes.Contains (resName)) {
@@ -57,9 +55,7 @@ public class IABResLoader : IDisposable {
 
 		mABRes.Unload (false);
 	}
-
-
-
+		
 	public void DebugAllRes()
 	{
 		string[] tmpAssetName = mABRes.GetAllAssetNames ();
@@ -68,6 +64,4 @@ public class IABResLoader : IDisposable {
 			Debug.Log (" ABRes Contain Asset Name == " + tmpAssetName);
 		}
 	}
-
-
 }

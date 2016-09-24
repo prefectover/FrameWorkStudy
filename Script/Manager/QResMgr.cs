@@ -44,10 +44,8 @@ namespace QFramework
 
 		public GameObject LoadUIPrefabSync(string uiName)
 		{
-			#if UNITY_EDITOR
-			return UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject> ("Assets/QArt/QAB" + "/UIPrefab/" + uiName + ".prefab");
-			#endif
-			return null;
+			return QResMgr.Instance.LoadAsset<GameObject> (QAB.UIPREFAB.BUNDLENAME, uiName.ToLower ());
+
 		}
 
 

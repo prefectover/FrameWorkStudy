@@ -46,6 +46,12 @@ namespace QFramework {
 				return Application.dataPath + "/QArt/QAB";
 			}
 		}
+
+		public static string StreamingAssetsABDir {
+			get {
+				return Application.streamingAssetsPath + "/QAB";
+			}
+		}
 			
 		public static string LuaSrcPath {
 			get {
@@ -84,5 +90,7 @@ namespace QFramework {
 				return Application.dataPath + "/" + QPath.RelativeABPath;
 			}
 		}
+
+
 	}
 }
