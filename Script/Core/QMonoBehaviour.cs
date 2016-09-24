@@ -7,14 +7,15 @@ namespace QFramework {
 	/// </summary>
 	public abstract class QMonoBehaviour : MonoBehaviour {
 
-
 		public abstract void ProcessMsg (QMsg msg);
 
-
+		protected abstract void SetupMgr ();
+		protected QMgrBehaviour mCurMgr;
 		/// <summary>
 		/// 短变量,指针而已
 		/// </summary>
 		/// <value>The trans.</value>
+
 
 		private Transform mCachedTrans;
 		private GameObject mCachedGameObj;
@@ -103,6 +104,30 @@ namespace QFramework {
 
 		}
 
+		public void RegisterSelf(QMonoBehaviour mono,params ushort[] msgs)
+		{
+			mCurMgr.RegisterMsg(mono,msgIds);
+		}
+
+		public void UnRegisterSelf(QMonoBehaviour mono,params ushort[] msg)
+		{
+			mCurMgr.UnRegisterMsg(mono,msgIds);
+		}
+
+		public void SendMsg(QMsg msg)
+		{
+			mCurMgr.SendMsg(msg);
+		}
+
+		public ushort[] msgIds;
+
+		void OnDestory()
+		{
+			if (msgIds != null)
+			{
+				UnRegisterSelf(this,msgIds);
+			}
+		}
 
 	}
 }

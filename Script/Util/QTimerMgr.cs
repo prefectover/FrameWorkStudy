@@ -26,6 +26,13 @@ namespace QFramework {
 
 
 	public class QTimerMgr : QMgrBehaviour {
+
+
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+
         private float interval = 0;
         private List<QTimerInfo> objects = new List<QTimerInfo>();
 

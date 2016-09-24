@@ -9,6 +9,12 @@ namespace QFramework {
     /// 对象池管理器，分普通类对象池+资源游戏对象池
     /// </summary>
 	public class QPoolManager : QMgrBehaviour {
+
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+
         private Transform m_PoolRootObject = null;
         private Dictionary<string, object> m_ObjectPools = new Dictionary<string, object>();
 		private Dictionary<string, QGOPool> m_GameObjectPools = new Dictionary<string, QGOPool>();

@@ -22,10 +22,18 @@ namespace QFramework {
 	/// <summary>
 	/// manager基类
 	/// </summary>
-	public class QMgrBehaviour : QMonoBehaviour 
+	public abstract class QMgrBehaviour : QMonoBehaviour 
 	{
 		// 存储注册消息 key value
 		public Dictionary<ushort,QMsgNode> msgDic = new Dictionary<ushort,QMsgNode>();
+
+		protected ushort mMgrId = 0;
+
+		protected abstract void SetupMgrId ();
+
+		protected QMgrBehaviour() {
+			SetupMgrId ();
+		}
 
 		// mono:要注册的脚本   
 		// msgs:每个脚本可以注册多个脚本
@@ -60,8 +68,6 @@ namespace QFramework {
 
 				// 直接挂上
 				tmp.next = node;
-
-
 			}
 		}
 
@@ -128,8 +134,19 @@ namespace QFramework {
 						// tmp表示要找的节点的上一个节点
 						msgNode.next = null;
 					}
-
 				}
+			}
+		}
+
+		public void SendMsg(QMsg msg)
+		{
+			if ((ushort)msg.GetMgrID() == mMgrId)
+			{
+				ProcessMsg(msg);
+			}
+			else 
+			{
+				QMsgCenter.Instance.SendToMsg(msg);
 			}
 		}
 

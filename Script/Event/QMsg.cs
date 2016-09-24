@@ -25,6 +25,15 @@ public class QMsg {
 	}
 		
 }
+
+public class QSoundMsg : QMsg {
+	public bool soundOn;
+
+	public QSoundMsg(ushort msgId,bool soundOn) :base(msgId)
+	{
+		this.soundOn = soundOn;
+	}
+}
 	
 
 public class MsgTransform :QMsg

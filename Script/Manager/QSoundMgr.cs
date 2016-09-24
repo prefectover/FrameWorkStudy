@@ -7,6 +7,11 @@ namespace QFramework {
 
 	public class QSoundMgr : QMgrBehaviour {
 
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+
 		public static QSoundMgr Instance {
 			get {
 				return QMonoSingletonComponent<QSoundMgr>.Instance;
@@ -52,6 +57,27 @@ namespace QFramework {
 			}
 		}
 
+
+		void Start() {
+			msgIds = new ushort[] {
+				(ushort)SoundEvent.SoundSwitch
+			};
+
+			RegisterSelf(this,msgIds);
+		}
+
+		/// <summary>
+		/// 覆盖掉上一级的消息转发
+		/// </summary>
+		public override void ProcessMsg (QMsg msg)
+		{
+			switch (msg.msgId) {
+			case (ushort)SoundEvent.SoundSwitch:
+				Debug.Log ("SoundOn:" + ((QSoundMsg)msg).soundOn);
+				break;
+			}
+		}
+
 		/// <summary>
 		/// 异步加载太慢了
 		/// </summary>
@@ -71,7 +97,6 @@ namespace QFramework {
 					playersForClipId[id][0].clip = clips[id];
 				}
 			});
-
 		}
 
 		public void PlayClipAsync(int id,bool loop = false)

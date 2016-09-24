@@ -14,6 +14,12 @@ namespace QFramework
 {
 	public class QResMgr : QMgrBehaviour
 	{
+
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+
 		public static QResMgr Instance {
 			get {
 				return QMonoSingletonComponent<QResMgr>.Instance;

@@ -9,6 +9,13 @@ namespace QFramework {
 
 	public class Instance : QMgrBehaviour {
 
+
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+			
+
 		public static IEnumerator Init()
 		{
 			yield return QMsgCenter.Instance.Init ();

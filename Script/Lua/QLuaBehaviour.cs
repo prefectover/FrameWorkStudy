@@ -7,7 +7,14 @@ using System;
 using UnityEngine.UI;
 
 namespace QFramework {
-	public class QLuaBehaviour : QFramework.QMonoBehaviour {
+	public class QLuaBehaviour : QMonoBehaviour {
+
+		protected override void SetupMgr ()
+		{
+			mCurMgr = QFramework.Instance.GetMgr<QLuaMgr> ();
+		}
+
+
         private string data = null;
         private Dictionary<string, LuaFunction> buttons = new Dictionary<string, LuaFunction>();
 		Dictionary<string,LuaFunction> toggles = new Dictionary<string, LuaFunction>();

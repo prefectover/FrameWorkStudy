@@ -28,6 +28,12 @@ namespace QFramework {
     /// 当前线程管理器，同时只能做一个任务
     /// </summary>
 	public class QThreadMgr : QMgrBehaviour {
+
+		protected override void SetupMgrId ()
+		{
+			mMgrId = 0;
+		}
+
         private Thread thread;
         private Action<NotiData> func;
         private Stopwatch sw = new Stopwatch();

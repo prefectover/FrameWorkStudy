@@ -20,18 +20,10 @@ namespace QFramework {
 	/// </summary>
 	public class QUGUIMgr : QMgrBehaviour{ 
 
-		public void SendMsg(QMsg msg)
+		protected override void SetupMgrId ()
 		{
-			if (msg.GetMgrID() == QMgrID.UI)
-			{
-				ProcessMsg(msg);
-			}
-			else 
-			{
-				QMsgCenter.Instance.SendToMsg(msg);
-			}
+			mMgrId = (ushort)QMgrID.UI;
 		}
-			
 
 		public QUIBehaviour OpenUI<T>(CanvasLevel canvasLevel,object uiData = null) where T : QUIBehaviour
 		{
@@ -228,7 +220,7 @@ namespace QFramework {
 		/// <summary>
 		/// 删除掉层
 		/// </summary>
-		public void DeleteUIBehaviour<T>()
+		public void DeleteUI<T>()
 		{
 			string behaviourName = typeof(T).ToString();
 
@@ -245,7 +237,7 @@ namespace QFramework {
 		/// 显示UI层
 		/// </summary>
 		/// <param name="layerName">Layer name.</param>
-		public void ShowUIBehaviour<T>()
+		public void ShowUI<T>()
 		{
 			string behaviourName = typeof(T).ToString();
 
@@ -260,7 +252,7 @@ namespace QFramework {
 		/// 隐藏UI层
 		/// </summary>
 		/// <param name="layerName">Layer name.</param>
-		public void HideUIBehaviour<T>()
+		public void HideUI<T>()
 		{
 			string behaviourName = typeof(T).ToString();
 
@@ -288,7 +280,7 @@ namespace QFramework {
 
 		/// <summary>
 		/// 获取UIBehaviour
-		public T GetUIBehaviour<T>()
+		public T GetUI<T>()
 		{
 			string behaviourName = typeof(T).ToString();
 

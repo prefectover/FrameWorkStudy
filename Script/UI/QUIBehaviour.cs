@@ -6,7 +6,12 @@ using QFramework;
 using UnityEngine.UI;
 
 namespace QFramework.UI {
-	public class QUIBehaviour : QMonoBehaviour {
+	public abstract class QUIBehaviour : QMonoBehaviour {
+
+		protected override void SetupMgr ()
+		{
+			mCurMgr = QUGUIMgr.Instance;
+		}
 
 		void OnDestroy()
 		{
