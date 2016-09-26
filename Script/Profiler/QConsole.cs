@@ -47,7 +47,7 @@ namespace QFramework {
 		/// 内存监视器
 		/// </summary>
 		private QMemoryDetector memoryDetector = null;
-		private bool showGUI = true;
+		private bool showGUI = false;
 		List<ConsoleMessage> entries = new List<ConsoleMessage>();
 		Vector2 scrollPos;
 		bool scrollToBottom = true;

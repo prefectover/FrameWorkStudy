@@ -141,7 +141,7 @@ namespace QFramework {
 	/// 这里的配置参考LuaFramework_UGUI
 	/// </summary>
 	public class QAppConst {
-		public const bool DebugMode = true;                       //调试模式-用于内部测试
+		public const bool DebugMode = false;                       //调试模式-用于内部测试
 
 		/// <summary>
 		/// 如果开启更新模式，前提必须启动框架自带服务器端。

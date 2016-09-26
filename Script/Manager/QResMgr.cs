@@ -42,13 +42,6 @@ namespace QFramework
 			transform.SetParent (QApp.Instance.transform);
 		}
 
-		public GameObject LoadUIPrefabSync(string uiName)
-		{
-			return QResMgr.Instance.LoadAsset<GameObject> (QAB.UIPREFAB.BUNDLENAME, uiName.ToLower ());
-
-		}
-
-
 		/// <summary>
 		/// Initialize this instance.
 		/// </summary>

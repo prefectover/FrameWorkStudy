@@ -44,6 +44,10 @@ namespace QFramework {
         /// </summary>
         public void AddClick(GameObject go, LuaFunction luafunc) {
             if (go == null || luafunc == null) return;
+			if (buttons.ContainsKey (go.name)) {
+				Debug.LogWarning ("Already Registered :" + go.name + " click event");
+				RemoveClick (go);
+			}
             buttons.Add(go.name, luafunc);
             go.GetComponent<Button>().onClick.AddListener(
                 delegate() {
@@ -57,11 +61,15 @@ namespace QFramework {
         /// </summary>
         /// <param name="go"></param>
         public void RemoveClick(GameObject go) {
-            if (go == null) return;
+			if (go == null) {
+				Debug.LogWarning ("go is null:");
+				return;
+			}
             LuaFunction luafunc = null;
             if (buttons.TryGetValue(go.name, out luafunc)) {
                 luafunc.Dispose();
                 luafunc = null;
+				Debug.Log ("go click event removed:" + go.name);
                 buttons.Remove(go.name);
             }
         }
