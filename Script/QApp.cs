@@ -64,19 +64,17 @@ namespace QFramework {
 
 				break;
 			}
-
-
 		}
 
 		#region 全局生命周期回调
 		public delegate void LifeCircleCallback();
 
-		public LifeCircleCallback onUpdate = null;
-		public LifeCircleCallback onFixedUpdate = null;
-		public LifeCircleCallback onLatedUpdate = null;
-		public LifeCircleCallback onGUI = null;
-		public LifeCircleCallback onDestroy = null;
-		public LifeCircleCallback onApplicationQuit = null;
+		public LifeCircleCallback onUpdate = delegate{};
+		public LifeCircleCallback onFixedUpdate = delegate{};
+		public LifeCircleCallback onLatedUpdate = delegate{};
+		public LifeCircleCallback onGUI = delegate {};
+		public LifeCircleCallback onDestroy = delegate {};
+		public LifeCircleCallback onApplicationQuit = delegate {};
 
 		void Update()
 		{
