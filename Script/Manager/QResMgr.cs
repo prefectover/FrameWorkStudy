@@ -36,12 +36,6 @@ namespace QFramework
 			QMonoSingletonComponent<QResMgr>.Dispose ();
 		}
 
-
-		void Awake()
-		{
-			transform.SetParent (QApp.Instance.transform);
-		}
-
 		/// <summary>
 		/// Initialize this instance.
 		/// </summary>
@@ -89,15 +83,14 @@ namespace QFramework
 		/// <summary>
 		/// 初始化加载manifest的同步方式
 		/// </summary>
-		public IEnumerator Init ()
+		public void Init ()
 		{
 			SetABPath (false);
 			QABMgr.InitializeSync ();
-			yield return null;
 		}
 
 		/// <summary>
-		/// 加载AssetBundle 异步方式
+		/// 加载AssetBundle 同步加载方式
 		/// </summary>
 		/// <returns>The asset.</returns>
 		/// <param name="assetBundleName">Asset bundle name.</param>
@@ -146,11 +139,9 @@ namespace QFramework
 		/// 同步加载AssetBundle
 		/// </summary>
 		/// <param name="assetBundleName">Asset bundle name.</param>
-		public IEnumerator LoadAB (string bundleName)
+		public void LoadAB (string bundleName)
 		{
 			QABMgr.LoadABSync (bundleName,false);
-
-			yield return null;
 		}
 
 		private IEnumerator LoadFromABAsync<T> (string bundleName, string assetName, Action<bool, T> action)where T : UnityEngine.Object
@@ -338,6 +329,13 @@ namespace QFramework
 			if (shared != null) shared.Unload(true);
 			if (manifest != null) manifest = null;
 			Debug.Log("~ResourceManager was destroy!");
+		}
+		#endregion
+
+
+		#region 对ToLua提供支持不能使用泛型
+		public GameObject LoadPrefab(string bundlename,string asset) {
+			return LoadAsset<GameObject> (bundlename, asset);
 		}
 		#endregion
 	}

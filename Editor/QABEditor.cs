@@ -69,7 +69,8 @@ namespace QFramework.PRIVATE {
 			{
 				FileSystemInfo tmpFile = fileInfos[i];
 
-				if (tmpFile is DirectoryInfo) 
+				// TODO:先过滤掉Lua
+				if (tmpFile.Name != "Lua" && tmpFile is DirectoryInfo) 
 				{
 					string tmpPath = Path.Combine (srcAssetPath,tmpFile.Name);
 
@@ -210,7 +211,7 @@ namespace QFramework.PRIVATE {
 
 		public static void ChangeMark(FileInfo tmpFile,string replacePath,Dictionary<string,string> theWriter)
 		{
-			if (tmpFile == null ||  tmpFile.Extension == ".meta") {
+			if (tmpFile == null ||  tmpFile.Extension == ".meta" || tmpFile.Extension == ".sublime-project" || tmpFile.Extension == ".sublime-workspace" || tmpFile.Extension == ".lua") {
 				return;
 			}
 

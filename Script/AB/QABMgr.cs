@@ -453,7 +453,7 @@ namespace QFramework.AB
 			#endif
 			{
 				QLoadedAB bundle =null;
-				Debug.Log (m_LoadedAssetBundles.Count+" ********** loadedassetbundles count******** ");
+				Debug.Log (m_LoadedAssetBundles.Count+" ********** loadedassetbundles count******** " + assetBundleName);
 				m_LoadedAssetBundles.TryGetValue (assetBundleName,out bundle);
 				if (bundle.m_AssetBundle != null) {
 					return bundle.m_AssetBundle.LoadAsset<T> (assetName);
