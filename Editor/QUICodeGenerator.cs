@@ -96,20 +96,20 @@ public class QUICodeGenerator
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}");
                 strBuilder.Append("\t").AppendLine("protected override void OnShow()");
-				strBuilder.Append("\t\t").AppendLine("base.OnShow()");
+				strBuilder.Append("\t\t").AppendLine("base.OnShow();");
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
                 strBuilder.Append("\t").AppendLine("protected override void OnHide()");
-				strBuilder.Append("\t\t").AppendLine("base.OnHide()");
+				strBuilder.Append("\t\t").AppendLine("base.OnHide();");
                 strBuilder.Append("\t").AppendLine("{");
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
-                strBuilder.Append("\t").AppendLine("private void ShowLog(string content)");
+                strBuilder.Append("\t").AppendLine("void ShowLog(string content)");
                 strBuilder.Append("\t").AppendLine("{");
 				strBuilder.Append("\t\t").AppendFormat("Debug.Log(\"[ {0}:]\" + content);",strDlg).AppendLine();
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
 
                 //CreateUIObjectCode(ref strBuilder); //add properties
-				strBuilder.Append("\t").AppendFormat("private {0}Components mUIComponents = null;", strDlg).AppendLine();
+				strBuilder.Append("\t").AppendFormat("{0}Components mUIComponents = null;", strDlg).AppendLine();
                 strBuilder.Append("}");
 
                 sw.Write(strBuilder);
