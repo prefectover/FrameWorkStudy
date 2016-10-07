@@ -34,15 +34,16 @@ public class QMsgCenter : MonoBehaviour
 	/// <summary>
 	/// 转发消息
 	/// </summary>
-	private void ForwardMsg(QMsg tempMsg)
+	private void ForwardMsg(QMsg msg)
 	{
-		QMgrID tmpId = tempMsg.GetMgrID();
+		QMgrID tmpId = msg.GetMgrID();
 
 		switch (tmpId)
 		{
 		case QMgrID.AB:
 			break;
 		case QMgrID.Sound:
+			QSoundMgr.Instance.SendMsg (msg);
 			break;
 		case  QMgrID.CharactorManager:
 			break;

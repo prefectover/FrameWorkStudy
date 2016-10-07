@@ -10,7 +10,7 @@ namespace QFramework {
 
 		protected override void SetupMgrId ()
 		{
-			mMgrId = 0;
+			mMgrId = (ushort)QMgrID.Sound;
 		}
 
 		public static QSoundMgr Instance {
@@ -18,9 +18,7 @@ namespace QFramework {
 				return QMonoSingletonComponent<QSoundMgr>.Instance;
 			}
 		}
-
-
-
+			
 		public IEnumerator Init() {
 			yield return null;
 		}
@@ -29,7 +27,7 @@ namespace QFramework {
 		private AudioListener listener;											// 音监听器
 		private string mCurClipName;											// 当前的音效名字
 
-		private QSoundMgr(){}
+		protected QSoundMgr():base(){}
 
 		public AudioClip[] clips = new AudioClip[SOUND.COUNT];					// 多少种Clips
 
@@ -63,7 +61,7 @@ namespace QFramework {
 
 		void Start() {
 			msgIds = new ushort[] {
-				(ushort)QSoundEvent.SoundOn
+				(ushort)SoundEvent.SoundSwitch
 			};
 
 			RegisterSelf(this,msgIds);
@@ -75,7 +73,7 @@ namespace QFramework {
 		public override void ProcessMsg (QMsg msg)
 		{
 			switch (msg.msgId) {
-			case (ushort)QSoundEvent.SoundOn:
+			case (ushort)SoundEvent.SoundSwitch:
 				Debug.Log ("SoundOn:" + ((QSoundMsg)msg).soundOn);
 				break;
 			}

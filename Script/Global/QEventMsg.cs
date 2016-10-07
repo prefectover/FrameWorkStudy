@@ -15,10 +15,4 @@ namespace QFramework.PRIVATE {
 		UPDATE_PROGRESS,   // 更新进度
 		End,
 	}
-
-	public enum QSoundEvent {
-		Began = QFrameworkMsg.Began,
-		SoundOn,
-		End,
-	}
 }
