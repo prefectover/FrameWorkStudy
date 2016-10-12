@@ -61,7 +61,7 @@ namespace QFramework {
 
 		void Start() {
 			msgIds = new ushort[] {
-				(ushort)SoundEvent.SoundSwitch
+				(ushort)QSoundEvent.SoundSwitch
 			};
 
 			RegisterSelf(this,msgIds);
@@ -73,7 +73,7 @@ namespace QFramework {
 		public override void ProcessMsg (QMsg msg)
 		{
 			switch (msg.msgId) {
-			case (ushort)SoundEvent.SoundSwitch:
+			case (ushort)QSoundEvent.SoundSwitch:
 				Debug.Log ("SoundOn:" + ((QSoundMsg)msg).soundOn);
 				break;
 			}

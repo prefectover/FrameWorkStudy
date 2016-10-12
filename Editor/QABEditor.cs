@@ -37,20 +37,46 @@ namespace QFramework.PRIVATE {
 
 			QABBuilder.BuildAssetBundles (BuildTarget.iOS);
 
-			AssetDatabase.Refresh ();
+			AssetDatabase.Refresh ();		
 		}
 
 		[MenuItem("QFramework/AB/Build Android")]
 		public static void BuildABAndroid()
 		{
 			string outputPath = QPath.ABBuildOutPutDir (RuntimePlatform.Android);
-				
+
 			QIO.CreateDirIfNotExists (outputPath);
 
 			QABBuilder.BuildAssetBundles (BuildTarget.Android);
 
 			AssetDatabase.Refresh ();
 		}
+
+		[MenuItem("QFramework/AB/Build OSX")]
+		public static void BuildABOSX()
+		{
+
+			string outputPath = QPath.ABBuildOutPutDir (RuntimePlatform.OSXEditor);
+
+			QIO.CreateDirIfNotExists (outputPath);
+
+			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneOSXIntel64);
+
+			AssetDatabase.Refresh ();
+		}
+
+		[MenuItem("QFramework/AB/Build Windows")]
+		public static void BuildABWindows()
+		{
+			string outputPath = QPath.ABBuildOutPutDir (RuntimePlatform.WindowsEditor);
+
+			QIO.CreateDirIfNotExists (outputPath);
+
+			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneWindows64);
+
+			AssetDatabase.Refresh ();
+		}
+
 
 		[MenuItem("QFramework/AB/Mark")]
 		public static void MarkAssetBundle()
