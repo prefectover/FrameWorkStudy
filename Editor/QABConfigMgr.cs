@@ -99,17 +99,17 @@ namespace QFramework.PRIVATE
 
 		public void Refresh ()
 		{
-			List<string> removedKey = new List<string> ();
-
-			foreach (string key in markItems4AbsPath.Keys) {
-				if (!markItems4AbsPath [key].ExistInProject ()) {
-					removedKey.Add (key);
-				}
-			}
-
-			foreach (var key in removedKey) {
-				markItems4AbsPath.Remove (key);
-			}
+//			List<string> removedKey = new List<string> ();
+//			foreach (string key in markItems4AbsPath.Keys) {
+//				if (!markItems4AbsPath [key].ExistInProject ()) {
+//					removedKey.Add (key);
+//				}
+//			}
+//
+//			foreach (var key in removedKey) {
+//				markItems4AbsPath.Remove (key);
+//			}
+			markItems4AbsPath.Clear();
 		}
 
 		public string AddItem (string abspath)
@@ -143,7 +143,6 @@ namespace QFramework.PRIVATE
 		{
 			XmlDocument xmlDoc = new XmlDocument ();
 			XmlNode configElement = xmlDoc.AppendChild (xmlDoc.CreateElement ("config"));
-
 			foreach (string key in markItems4AbsPath.Keys) {
 				QABItem item = markItems4AbsPath [key];
 				if (item.ExistInProject ()) {

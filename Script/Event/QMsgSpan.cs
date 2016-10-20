@@ -14,4 +14,5 @@ public enum QMgrID
 	CharactorManager = QMsgSpan.Count * 4,
 	AB = QMsgSpan.Count * 5,
 	NetManager = QMsgSpan.Count * 6,
+	Info = QMsgSpan.Count * 7
 }
