@@ -29,7 +29,6 @@ namespace QFramework.UI {
 			{
 				UnRegisterSelf(this,mMsgIds);
 			}
-			//			UIManager.Instance.InternalRemoveMenu(this);
 			Debug.Log(name + " unLoad Success");
 		}
 

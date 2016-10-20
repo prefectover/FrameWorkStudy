@@ -161,10 +161,7 @@ namespace QFramework {
 		{
 			if (!msgDic.ContainsKey(msg.msgId))
 			{
-				Debug.LogError("msg not found");
-
-				Debug.LogError("Msg Manager");
-
+				Debug.LogError("msg not found:" + msg.msgId);
 				return;
 			}
 			else 
