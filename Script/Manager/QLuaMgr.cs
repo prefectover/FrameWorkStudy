@@ -169,10 +169,8 @@ using UnityEngine;
 using QFramework;
 using LuaInterface;
 
-namespace QFramework {
+namespace QFrameworkLua {
 	public class QLuaMgr : QMgrBehaviour {
-
-
 		protected override void SetupMgrId ()
 		{
 			mMgrId = 0;
@@ -222,12 +220,11 @@ namespace QFramework {
 		}
 
 		void StartMain() {
-			lua.DoFile("Main.lua");
+			lua.DoFile(QFrameworkLua.QLuaApp.Instance.luaFileName);
 			LuaFunction main = lua.GetFunction("Main");
 			main.Call();
 			main.Dispose();
 			main = null;   
-
 		}
 
 		/// <summary>

@@ -181,7 +181,7 @@ namespace QFramework {
         /// </summary>
         public static void ClearMemory() {
             GC.Collect(); Resources.UnloadUnusedAssets();
-			QLuaMgr mgr = QFramework.Instance.GetMgr<QLuaMgr>();
+			QFrameworkLua.QLuaMgr mgr = QFrameworkLua.Instance.GetMgr<QFrameworkLua.QLuaMgr>();
             if (mgr != null) mgr.LuaGC();
         }
 
@@ -253,7 +253,7 @@ namespace QFramework {
                 break;
 			default:
 					path = Application.streamingAssetsPath + "/";
-                break;
+                break;	
             }
             return path;
         }
@@ -298,14 +298,6 @@ namespace QFramework {
             return 0;
         }
 
-        /// <summary>
-        /// 执行Lua方法
-        /// </summary>
-        public static object[] CallMethod(string module, string func, params object[] args) {
-			QLuaMgr luaMgr = QFramework.Instance.GetMgr<QLuaMgr>();
-            if (luaMgr == null) return null;
-            return luaMgr.CallFunction(module + "." + func, args);
-        }
 
                 /// <summary>
         /// 检查运行环境

@@ -18,8 +18,8 @@ public class QMsgCenter : MonoBehaviour
 
 	void Awake()
 	{
-		transform.SetParent (QApp.Instance.transform);
 	}
+
 	public IEnumerator Init()
 	{
 		Debug.Log ("QMsgCenter Init");

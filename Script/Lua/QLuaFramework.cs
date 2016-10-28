@@ -3,8 +3,8 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
-namespace QFramework {
+using QFramework;
+namespace QFrameworkLua {
 
 	public class Instance : QMgrBehaviour {
 
@@ -22,14 +22,10 @@ namespace QFramework {
 		{
 			yield return QMsgCenter.Instance.Init ();
 
-//			yield return QResMgr.Instance.Init ();
-
-//			yield return QSoundMgr.Instance.Init ();
-
-			// TODO:要配置 以后支持NGUI
-			yield return QUGUIMgr.Init ();
+			if (!QUtil.CheckLuaEnvironment()) yield return null;
 
 			//-----------------初始化管理器-----------------------
+			AddMgr<QLuaMgr>();
 			AddMgr<QTimerMgr>();
 			AddMgr<QSoundMgr> ();
 			AddMgr<QResMgr>();
@@ -44,7 +40,7 @@ namespace QFramework {
 		static GameObject FrameworkRoot {
 			get {
 				if (mRoot == null) {
-					mRoot = GameObject.Find("QApp");
+					mRoot = QLuaApp.Instance.gameObject;
 				}
 				return mRoot;
 			}

@@ -5,8 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
-
-namespace QFramework {
+using QFramework;
+namespace QFrameworkLua {
 	public class QLuaBehaviour : QMonoBehaviour {
 
 		protected override void SetupMgr ()
@@ -19,19 +19,19 @@ namespace QFramework {
 		Dictionary<string,LuaFunction> toggles = new Dictionary<string, LuaFunction>();
 
         protected void Awake() {
-            QUtil.CallMethod(name, "Awake", gameObject);
+            QLuaUtil.CallMethod(name, "Awake", gameObject);
         }
 
         protected void Start() {
-            QUtil.CallMethod(name, "Start");
+			QLuaUtil.CallMethod(name, "Start");
         }
 
         protected void OnClick() {
-            QUtil.CallMethod(name, "OnClick");
+			QLuaUtil.CallMethod(name, "OnClick");
         }
 
         protected void OnClickEvent(GameObject go) {
-            QUtil.CallMethod(name, "OnClick", go);
+			QLuaUtil.CallMethod(name, "OnClick", go);
         }
 
 		public override void ProcessMsg (QMsg msg)

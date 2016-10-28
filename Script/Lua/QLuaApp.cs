@@ -1,68 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
-using QFramework;
 using QFramework.UI;
+using System.Collections;
 
-namespace QFramework {
-	public enum QAppMode {
-		Developing,
-		QA,
-		Release
-	}
-		
+namespace QFrameworkLua {
 	/// <summary>
 	/// 全局唯一继承于MonoBehaviour的单例类，保证其他公共模块都以App的生命周期为准
 	/// </summary>
-	public class QApp : MonoBehaviour
-	{
+	public class QLuaApp : MonoBehaviour {
+				
 		/// <summary>
 		/// 组合的方式实现单例的模板
 		/// </summary>
 		/// <value>The instance.</value>
-		public static QApp Instance {
+		public static QLuaApp Instance {
 			get {
-				return QMonoSingletonComponent<QApp>.Instance;
+				return QFramework.QMonoSingletonComponent<QLuaApp>.Instance;
 			}
 		}
+			
+		private QLuaApp() {}
 
-		public QAppMode mode = QAppMode.Developing;
-
-		private QApp() {}
+		public string luaFileName = "main.lua";
 
 		void Awake()
 		{
-			// 确保不被销毁
-			DontDestroyOnLoad(gameObject);
-
 			// 进入欢迎界面
 			Application.targetFrameRate = 60;
 		}
 
 		IEnumerator Start()
 		{
-			var log = QLog.Instance;
-			var console = QConsole.Instance;
-			yield return QFramework.Instance.Init ();
-
-			// 配置文件加载 类似PlayerPrefs
-			QSetting.Load();
-
-			switch (QApp.Instance.mode) {
-			case QAppMode.Developing:
-				{
-					yield return GetComponent<ITestEntry> ().Launch ();
-				}
-				break;
-			case QAppMode.QA:
-				{
-				}
-				break;
-
-			case QAppMode.Release:
-				yield return GameManager.Instance.Launch ();
-
-				break;
-			}
+			yield return QFrameworkLua.Instance.Init ();
 		}
 
 		#region 全局生命周期回调
@@ -102,7 +71,7 @@ namespace QFramework {
 
 		protected  void OnDestroy() 
 		{
-			QMonoSingletonComponent<QApp>.Dispose ();
+			QFramework.QMonoSingletonComponent<QLuaApp>.Dispose ();
 
 			if (this.onDestroy != null)
 				this.onDestroy();
