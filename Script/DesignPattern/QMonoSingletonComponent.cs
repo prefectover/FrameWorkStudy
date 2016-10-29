@@ -32,8 +32,6 @@ namespace QFramework {
 							instanceGO = new GameObject (instanceName);
 						mInstance = instanceGO.AddComponent<T> ();
 
-						MonoBehaviour.DontDestroyOnLoad (instanceGO);	
-
 						Debug.Log ("Add New Singleton " + mInstance.name + " in Game!");
 
 					} else {

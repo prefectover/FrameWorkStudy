@@ -39,6 +39,16 @@ namespace QFramework {
 			
 		}
 
+		public static QThreadMgr Instance {
+			get {
+				return QMonoSingletonComponent<QThreadMgr>.Instance;
+			}
+		}
+
+		public static void Dispose() {
+			QMonoSingletonComponent<QThreadMgr>.Dispose();
+		}
+
         private Thread thread;
         private Action<NotiData> func;
         private Stopwatch sw = new Stopwatch();
@@ -51,6 +61,7 @@ namespace QFramework {
         private ThreadSyncEvent m_SyncEvent;
 
         void Awake() {
+			DontDestroyOnLoad (this);
             m_SyncEvent = OnSyncEvent;
             thread = new Thread(OnUpdate);
         }

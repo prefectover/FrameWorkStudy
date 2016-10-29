@@ -36,6 +36,11 @@ namespace QFramework
 			QMonoSingletonComponent<QResMgr>.Dispose ();
 		}
 
+
+		void Awake() {
+			DontDestroyOnLoad (this);
+		}
+
 		/// <summary>
 		/// Initialize this instance.
 		/// </summary>

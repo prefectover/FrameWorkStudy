@@ -18,7 +18,7 @@ namespace QFrameworkLua {
 				return QFramework.QMonoSingletonComponent<QLuaApp>.Instance;
 			}
 		}
-			
+						
 		private QLuaApp() {}
 
 		public string luaFileName = "main.lua";
@@ -34,7 +34,7 @@ namespace QFrameworkLua {
 			yield return QFrameworkLua.Instance.Init ();
 		}
 
-		#region 全局生命周期回调
+		#region 当前模块的生命周期回调
 		public delegate void LifeCircleCallback();
 
 		public LifeCircleCallback onUpdate = delegate{};
@@ -69,16 +69,16 @@ namespace QFrameworkLua {
 				this.onGUI();
 		}
 
-		protected  void OnDestroy() 
+		void OnDestroy() 
 		{
-			QFramework.QMonoSingletonComponent<QLuaApp>.Dispose ();
-
 			if (this.onDestroy != null)
 				this.onDestroy();
+			QFramework.QMonoSingletonComponent<QLuaApp>.Dispose ();
 		}
 
 		void OnApplicationQuit()
-		{
+		{	
+			
 			if (this.onApplicationQuit != null)
 				this.onApplicationQuit();
 		}

@@ -181,7 +181,7 @@ namespace QFramework {
         /// </summary>
         public static void ClearMemory() {
             GC.Collect(); Resources.UnloadUnusedAssets();
-			QFrameworkLua.QLuaMgr mgr = QFrameworkLua.Instance.GetMgr<QFrameworkLua.QLuaMgr>();
+			QFrameworkLua.QLuaMgr mgr = QFrameworkLua.QLuaMgr.Instance;
             if (mgr != null) mgr.LuaGC();
         }
 
@@ -270,57 +270,9 @@ namespace QFramework {
             Debug.LogError(str);
         }
 
-        /// <summary>
-        /// 防止初学者不按步骤来操作
-        /// </summary>
-        /// <returns></returns>
-        public static int CheckRuntimeFile() {
-            if (!Application.isEditor) return 0;
-            string streamDir = Application.dataPath + "/StreamingAssets/";
-            if (!Directory.Exists(streamDir)) {
-                return -1;
-            } else {
-                string[] files = Directory.GetFiles(streamDir);
-                if (files.Length == 0) return -1;
-
-                if (!File.Exists(streamDir + "files.txt")) {
-                    return -1;
-                }
-            }
-			// 这里用生成
-			string sourceDir = Application.dataPath + "/ToLua/Source/Generate/";
-            if (!Directory.Exists(sourceDir)) {
-                return -2;
-            } else {
-                string[] files = Directory.GetFiles(sourceDir);
-                if (files.Length == 0) return -2;
-            }
-            return 0;
-        }
 
 
-                /// <summary>
-        /// 检查运行环境
-        /// </summary>
-        public static bool CheckLuaEnvironment() {
-#if UNITY_EDITOR && ToLua
-            int resultId = QUtil.CheckRuntimeFile();
-            if (resultId == -1) {
-                Debug.LogError("没有找到框架所需要的资源，单击Game菜单下Build xxx Resource生成！！");
-                EditorApplication.isPlaying = false;
-                return false;
-            } else if (resultId == -2) {
-                Debug.LogError("没有找到Wrap脚本缓存，单击Lua菜单下Gen Lua Wrap Files生成脚本！！");
-                EditorApplication.isPlaying = false;
-                return false;
-            }
-            if (Application.loadedLevelName == "Test" && !QAppConst.DebugMode) {
-                Debug.LogError("测试场景，必须打开调试模式，AppConst.DebugMode = true！！");
-                EditorApplication.isPlaying = false;
-                return false;
-            }
-#endif
-            return true;
-        }
+
+
     }
 }

@@ -18,6 +18,7 @@ public class QMsgCenter : MonoBehaviour
 
 	void Awake()
 	{
+		DontDestroyOnLoad (this);
 	}
 
 	public IEnumerator Init()

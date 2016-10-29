@@ -20,6 +20,17 @@ namespace QFramework {
 			
 		}
 
+		public static QPoolManager Instance {
+			get {
+				return QMonoSingletonComponent<QPoolManager>.Instance;
+			}
+		}
+
+		public static void Dispose() {
+			QMonoSingletonComponent<QPoolManager>.Dispose();
+		}
+
+
         private Transform m_PoolRootObject = null;
         private Dictionary<string, object> m_ObjectPools = new Dictionary<string, object>();
 		private Dictionary<string, QGOPool> m_GameObjectPools = new Dictionary<string, QGOPool>();
@@ -36,6 +47,10 @@ namespace QFramework {
                 return m_PoolRootObject;
             }
         }
+
+		void Awake() {
+			DontDestroyOnLoad (this);
+		}
 
 		public QGOPool CreatePool(string poolName, int initSize, int maxSize, GameObject prefab) {
 			var pool = new QGOPool(poolName, prefab, initSize, maxSize, PoolRootObject);

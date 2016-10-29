@@ -37,6 +37,12 @@ namespace QFramework {
 			
 		}
 
+		public static QTimerMgr Instance {
+			get {
+				return QMonoSingletonComponent<QTimerMgr>.Instance;
+			}
+		}
+
         private float interval = 0;
         private List<QTimerInfo> objects = new List<QTimerInfo>();
 
@@ -47,6 +53,7 @@ namespace QFramework {
 
         // Use this for initialization
         void Start() {
+			DontDestroyOnLoad (this);
             StartTimer(1.0f);
         }
 

@@ -171,6 +171,16 @@ using LuaInterface;
 
 namespace QFrameworkLua {
 	public class QLuaMgr : QMgrBehaviour {
+		protected static bool mInitialized = false;
+		public bool Initialized {
+			get {
+				return mInitialized;
+			}
+			set {
+				mInitialized = value;
+			}
+		}
+
 		protected override void SetupMgrId ()
 		{
 			mMgrId = 0;
@@ -181,12 +191,23 @@ namespace QFrameworkLua {
 			
 		}
 
+		public static QLuaMgr Instance {
+			get {
+				return QMonoSingletonComponent<QLuaMgr>.Instance;
+			}
+		}
+
+		public static void Dispose() {
+			QMonoSingletonComponent<QLuaMgr>.Dispose ();
+		}
+
 		private LuaState lua;
 		private LuaLoader loader;
 		private LuaLooper loop = null;
 
 		// Use this for initialization
 		void Awake() {
+			DontDestroyOnLoad (this);
 			loader = new LuaLoader();
 			lua = new LuaState();
 			this.OpenLibs();
@@ -197,13 +218,23 @@ namespace QFrameworkLua {
 		}
 
 		public void InitStart() {
+			
 			InitLuaPath();
 			InitLuaBundle();
 			this.lua.Start();    //启动LUAVM
-			this.StartMain();    //执行mai函数
+			ExecuteLuaFile (QFrameworkLua.QLuaApp.Instance.luaFileName,"Main");
 			this.StartLooper();
+			mInitialized = true;
 		}
 
+		public void ExecuteLuaFile(string luaFileName,string functionName) {
+			lua.DoFile(luaFileName);
+			LuaFunction main = lua.GetFunction(functionName);
+			main.Call();
+			main.Dispose();
+			main = null;   
+		}
+			
 		void StartLooper() {
 			loop = gameObject.AddComponent<LuaLooper>();
 			loop.luaState = lua;
@@ -218,14 +249,7 @@ namespace QFrameworkLua {
 			lua.OpenLibs(LuaDLL.luaopen_cjson_safe);
 			lua.LuaSetField(-2, "cjson.safe");
 		}
-
-		void StartMain() {
-			lua.DoFile(QFrameworkLua.QLuaApp.Instance.luaFileName);
-			LuaFunction main = lua.GetFunction("Main");
-			main.Call();
-			main.Dispose();
-			main = null;   
-		}
+			
 
 		/// <summary>
 		/// 初始化加载第三方库
@@ -247,7 +271,6 @@ namespace QFrameworkLua {
 		/// 初始化Lua代码加载路径
 		/// </summary>
 		void InitLuaPath() {
-
 			if (QAppConst.DebugMode) {
 				string rootPath = QPath.RelativeABPath;
 				lua.AddSearchPath(Application.dataPath + "/" +  rootPath + "/Lua");
@@ -255,7 +278,6 @@ namespace QFrameworkLua {
 			} else {
 				lua.AddSearchPath(QUtil.DataPath + "lua");
 			}
-
 		}
 
 		/// <summary>
@@ -299,7 +321,6 @@ namespace QFrameworkLua {
 		}
 
 		public void LuaGC() {
-
 			lua.LuaGC(LuaGCOptions.LUA_GCCOLLECT);
 		}
 
