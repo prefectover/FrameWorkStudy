@@ -11,7 +11,7 @@ namespace QFrameworkLua {
 
 		protected override void SetupMgr ()
 		{
-			mCurMgr = QFramework.Instance.GetMgr<QLuaMgr> ();
+			mCurMgr = QLuaMgr.Instance;
 		}
 
         private string data = null;

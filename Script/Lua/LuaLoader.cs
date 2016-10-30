@@ -11,15 +11,6 @@ namespace QFrameworkLua {
     /// 集成自LuaFileUtils，重写里面的ReadFile，
     /// </summary>
     public class LuaLoader : LuaFileUtils {
-		private QResMgr m_resMgr;
-
-		QResMgr resMgr {
-            get { 
-                if (m_resMgr == null)
-					m_resMgr = QFramework.Instance.GetMgr<QResMgr>();
-                return m_resMgr;
-            }
-        }
 
         // Use this for initialization
         public LuaLoader() {

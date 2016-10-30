@@ -13,7 +13,7 @@ namespace QFrameworkLua {
 		/// 执行Lua方法
 		/// </summary>
 		public static object[] CallMethod(string module, string func, params object[] args) {
-			QFrameworkLua.QLuaMgr luaMgr = QFramework.Instance.GetMgr<QFrameworkLua.QLuaMgr>();
+			QLuaMgr luaMgr = QLuaMgr.Instance;
 			if (luaMgr == null) return null;
 			return luaMgr.CallFunction(module + "." + func, args);
 		}

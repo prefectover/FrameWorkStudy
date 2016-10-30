@@ -25,20 +25,7 @@ namespace QFramework {
             }
             return t;
         }
-
-        /// <summary>
-        /// 资源管理器
-        /// </summary>
-		public static QResMgr GetResManager() {
-			return QFramework.Instance.GetMgr<QResMgr>();
-        }
-
-        /// <summary>
-        /// 音乐管理器
-        /// </summary>
-		public static QSoundMgr GetSoundManager() {
-			return QFramework.Instance.GetMgr<QSoundMgr>();
-        }
+			
 
 
         /// <summary>
