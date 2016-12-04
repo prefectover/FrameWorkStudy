@@ -3,9 +3,9 @@
 ![](./DocRes/1.png)
 
 
-&emsp;&emsp;目前运行环境: Unity 5.4.1p1<br>
-&emsp;&emsp;正在支持[ToLua](https://github.com/topameng/tolua)<br>
-&emsp;&emsp;正在整合[LuaFramework](https://github.com/jarjin/LuaFramework_UGUI)<br>
+&emsp;&emsp;目前运行环境: Unity 5.4.2p1<br>
+
+* 目前基本功能完成,正在调整组织架构<br>
 
 ​	目前这个框架只经历了一款游戏项目,所以很多地方做得不是很完善。以后还需要多做项目多打磨,就像自己的孩子一样,要慢慢养大。
 
@@ -13,14 +13,6 @@
 
 ----------------
 
-2016年7月1日更新:
-​	这个框架已经用在公司的项目上了,开始第二次打磨了.....
-
-2016年7月8日更新:
-	有很多朋友反馈说游戏一运行就会报错,是由于GameManager没有实现。因为这个框架是边做项目边进行更新的,而GameManager是根据不同的游戏实现的,所以希望大家自己实现一份。在这里我只提供样例的源码。也谢谢反馈的朋友们。
-	
-2016年7月10日更新:
-	现在框架还差资源加载部分。
 	
 ```
 using UnityEngine;
