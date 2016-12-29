@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{D34B38C6-23CF-B45B-0DF2-9B1F683F31DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_1;UNITY_5_4;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\QFramework\QFramework.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\ABLoadOperation.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\AssetBase.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\AssetEvent.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABManifestLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABRelationMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABResLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\IABSceneMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\NPCBase.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\NativeResLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\AB\QABMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\CSV\CSVColITem.cs" />
+     <Compile Include="Assets\QFramework\Script\CSV\CSVRowItem.cs" />
+     <Compile Include="Assets\QFramework\Script\CSV\CSVTable.cs" />
+     <Compile Include="Assets\QFramework\Script\CSV\CSVValue.cs" />
+     <Compile Include="Assets\QFramework\Script\Core\QMgrBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Script\Core\QMonoBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QFSM.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QMonoSingleton.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QMonoSingletonAtom.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QMonoSingletonComponent.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QSingleton.cs" />
+     <Compile Include="Assets\QFramework\Script\DesignPattern\QSingletonComponent.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\IMsgReceiver.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\IMsgSender.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\QMsg.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\QMsgCenter.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\QMsgDispatcher.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\QMsgSpan.cs" />
+     <Compile Include="Assets\QFramework\Script\Event\UIEventMsg.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\Delegates.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\Enum.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\LocalPath.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\QAppConst.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\QEventMsg.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\QPath.cs" />
+     <Compile Include="Assets\QFramework\Script\Global\SceneName.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\ICmd.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\ICtrl.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\IModel.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\IMsg.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\IScene.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\IService.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\ITestEntry.cs" />
+     <Compile Include="Assets\QFramework\Script\Interface\IView.cs" />
+     <Compile Include="Assets\QFramework\Script\Log\ILogOutput.cs" />
+     <Compile Include="Assets\QFramework\Script\Log\QFileLogOutput.cs" />
+     <Compile Include="Assets\QFramework\Script\Log\QLog.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\LuaCoroutineComponent.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\LuaLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\LuaMain.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QBundleLoader.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QBundlesMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaApp.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaComponent.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaFramework.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaHelper.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QLuaUtil.cs" />
+     <Compile Include="Assets\QFramework\Script\Lua\QToLuaSupport.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QAssetMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QCSVMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QConfigMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QCoroutineMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QLuaMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QNPCMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QPoolManager.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QResMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QSoundMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QThreadMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Manager\QUGUIMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Platform\UnityToiOS.cs" />
+     <Compile Include="Assets\QFramework\Script\Platform\iOSTest.cs" />
+     <Compile Include="Assets\QFramework\Script\Pool\ObjectPool.cs" />
+     <Compile Include="Assets\QFramework\Script\Pool\QGOPool.cs" />
+     <Compile Include="Assets\QFramework\Script\Pool\TestObjectClass.cs" />
+     <Compile Include="Assets\QFramework\Script\Profiler\QConsole.cs" />
+     <Compile Include="Assets\QFramework\Script\Profiler\QFPSCounter.cs" />
+     <Compile Include="Assets\QFramework\Script\Profiler\QMemoryDetector.cs" />
+     <Compile Include="Assets\QFramework\Script\QApp.cs" />
+     <Compile Include="Assets\QFramework\Script\Setting\QSetting.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\Common\UIScrollPage.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\Common\UIScrollPageMark.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\IUIChild.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\NGUIManager.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\QUIBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\QUIFactory.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\QUIMark.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\UGUIEventListener.cs" />
+     <Compile Include="Assets\QFramework\Script\UI\UIProperty.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\IPathTools.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QAlgoFunc.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QBehaviourExtend.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QGoExtend.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QIO.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QMath.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QPlatform.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QTest.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QTimer.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QTimerMgr.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QTransExtend.cs" />
+     <Compile Include="Assets\QFramework\Script\Util\QUtil.cs" />
+     <Compile Include="Assets\QFramework\Script\particle\QLightCircle.cs" />
+     <Compile Include="Assets\QFramework\Script\particle\core\AfterburnerPhysicsForce.cs" />
+     <Compile Include="Assets\_Script\GameManager.cs" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
