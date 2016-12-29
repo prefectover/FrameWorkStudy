@@ -44,9 +44,6 @@ namespace QFramework {
 			var console = QConsole.Instance;
 			yield return QFramework.Instance.Init ();
 
-			// 配置文件加载 类似PlayerPrefs
-			QSetting.Load();
-
 			switch (QApp.Instance.mode) {
 			case QAppMode.Developing:
 				{

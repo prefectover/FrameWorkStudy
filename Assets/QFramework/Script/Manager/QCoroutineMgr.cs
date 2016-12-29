@@ -96,7 +96,4 @@ namespace QFramework {
 			Debug.LogWarning ("CoroutineMgr @@@@ " + actionName + ":" + content);
 		}
 	}
-
-
-
 }
