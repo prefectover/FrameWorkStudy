@@ -269,10 +269,5 @@ namespace QFramework {
         public static void LogError(string str) {
             Debug.LogError(str);
         }
-
-
-
-
-
     }
 }

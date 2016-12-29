@@ -89,7 +89,6 @@
      <Compile Include="Assets\QFramework\QAB\Script\IABRelationMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\IABResLoader.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\IABSceneMgr.cs" />
-     <Compile Include="Assets\QFramework\QAB\Script\NPCBase.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\NativeResLoader.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QABMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QAssetMgr.cs" />
@@ -110,7 +109,6 @@
      <Compile Include="Assets\QFramework\Script\Log\QFileLogOutput.cs" />
      <Compile Include="Assets\QFramework\Script\Log\QLog.cs" />
      <Compile Include="Assets\QFramework\Script\Manager\QCoroutineMgr.cs" />
-     <Compile Include="Assets\QFramework\Script\Manager\QNPCMgr.cs" />
      <Compile Include="Assets\QFramework\Script\Manager\QSoundMgr.cs" />
      <Compile Include="Assets\QFramework\Script\Manager\QThreadMgr.cs" />
      <Compile Include="Assets\QFramework\Script\Platform\UnityToiOS.cs" />
