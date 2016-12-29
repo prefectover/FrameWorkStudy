@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/QFramework/Editor/QABBuilder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/QFramework/QFramework.cs">
     <Files>
-      <File FileName="Assets/_Script/GameManager.cs" Line="9" Column="8" />
-      <File FileName="Assets/QFramework/Script/QApp.cs" Line="62" Column="39" />
-      <File FileName="Assets/QFramework/Editor/QABBuilder.cs" Line="12" Column="20" />
+      <File FileName="Assets/QFramework/Editor/QLuaComponentInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QFramework.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

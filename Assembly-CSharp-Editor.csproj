@@ -45,14 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\QFramework\Editor\Packager.cs" />
-     <Compile Include="Assets\QFramework\Editor\QABBuilder.cs" />
-     <Compile Include="Assets\QFramework\Editor\QABCodeGenerator.cs" />
-     <Compile Include="Assets\QFramework\Editor\QABConfigMgr.cs" />
-     <Compile Include="Assets\QFramework\Editor\QABEditor.cs" />
-     <Compile Include="Assets\QFramework\Editor\QEditorUtil.cs" />
-     <Compile Include="Assets\QFramework\Editor\QLuaComponentInspector.cs" />
-     <Compile Include="Assets\QFramework\Editor\QUICodeGenerator.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\Packager.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QABBuilder.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QABCodeGenerator.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QABConfigMgr.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QABEditor.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QEditorUtil.cs" />
+     <Compile Include="Assets\QFramework\QUIFramework\Editor\QUICodeGenerator.cs" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

@@ -11,9 +11,9 @@ namespace QFramework {
 
 		public static void OnClick(this GameObject go,QVoidDelegate.WithVoid callback)
 		{
-			QFramework.UI.UGUIEventListener.Get (go);
+			QFramework.UI.QUIEventListener.Get (go);
 
-			var listener = QFramework.UI.UGUIEventListener.CheckAndAddListener (go);
+			var listener = QFramework.UI.QUIEventListener.CheckAndAddListener (go);
 			listener.onClick += callback;
 		}
 

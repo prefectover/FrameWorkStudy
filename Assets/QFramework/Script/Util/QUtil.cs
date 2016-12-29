@@ -181,8 +181,8 @@ namespace QFramework {
         /// </summary>
         public static void ClearMemory() {
             GC.Collect(); Resources.UnloadUnusedAssets();
-			QFrameworkLua.QLuaMgr mgr = QFrameworkLua.QLuaMgr.Instance;
-            if (mgr != null) mgr.LuaGC();
+//			QFrameworkLua.QLuaMgr mgr = QFrameworkLua.QLuaMgr.Instance;
+//            if (mgr != null) mgr.LuaGC();
         }
 
         /// <summary>

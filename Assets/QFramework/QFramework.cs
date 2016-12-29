@@ -26,15 +26,11 @@ namespace QFramework {
 
 //			yield return QSoundMgr.Instance.Init ();
 
-			// TODO:要配置 以后支持NGUI
-			yield return QUGUIMgr.Init ();
-
 			//-----------------初始化管理器-----------------------
 			var a = QTimerMgr.Instance;
 			var b = QSoundMgr.Instance;
 			var c = QResMgr.Instance;
 			var d = QThreadMgr.Instance;
-			var e = QPoolManager.Instance;
 			var f = GameManager.Instance;
 		}
 	}

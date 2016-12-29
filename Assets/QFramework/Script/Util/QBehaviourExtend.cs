@@ -7,9 +7,9 @@ namespace QFramework.Extend {
 
 		public static void OnClick(this MonoBehaviour behaviour,QVoidDelegate.WithVoid callback)
 		{
-			QFramework.UI.UGUIEventListener.Get (behaviour.gameObject);
+			QFramework.UI.QUIEventListener.Get (behaviour.gameObject);
 
-			var listener = QFramework.UI.UGUIEventListener.CheckAndAddListener (behaviour.gameObject);
+			var listener = QFramework.UI.QUIEventListener.CheckAndAddListener (behaviour.gameObject);
 			listener.onClick += callback;
 		}
 
