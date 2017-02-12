@@ -21,7 +21,12 @@ namespace QFramework.UI
 			IUIComponents retComponents = null;
 			switch (strUI)
 			{
-
+				case "UIFirstPage":
+					retComponents = new UIFirstPageComponents();
+					break;
+				case "UIMainPage":
+					retComponents = new UIMainPageComponents();
+					break;
 			}
 			return retComponents;
 		}

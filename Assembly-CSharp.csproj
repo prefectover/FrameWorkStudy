@@ -118,7 +118,12 @@
      <Compile Include="Assets\QFramework\Script\Util\QTimer.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QTransExtend.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QUtil.cs" />
+     <Compile Include="Assets\_Script\1.UIFramework\Main.cs" />
      <Compile Include="Assets\_Script\GameManager.cs" />
+     <Compile Include="Assets\_Script\UI\UIFirstPage.cs" />
+     <Compile Include="Assets\_Script\UI\UIFirstPageComponents.cs" />
+     <Compile Include="Assets\_Script\UI\UIMainPage.cs" />
+     <Compile Include="Assets\_Script\UI\UIMainPageComponents.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
