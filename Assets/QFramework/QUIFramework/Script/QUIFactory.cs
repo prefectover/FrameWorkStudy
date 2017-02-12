@@ -21,6 +21,7 @@ namespace QFramework.UI
 			IUIComponents retComponents = null;
 			switch (strUI)
 			{
+
 			}
 			return retComponents;
 		}
