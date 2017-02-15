@@ -228,7 +228,7 @@ namespace QFramework.Event {
 				
 			// 略过,不用看
 			if (!mMsgHandlerDict[QMsgChannel.Global].ContainsKey(msgName)){
-				Debug.LogError("SendMsg is UnRegister");
+				Debug.LogError(msgName + " UnRegistered");
 				return;
 			}
 

@@ -6,6 +6,7 @@ using QFramework;
 using QFramework.UI;
 using QFramework.Event;
 
+
 public class UIFirstPage : QUIBehaviour
 {
 	protected override void InitUI(object uiData = null)

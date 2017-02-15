@@ -6,6 +6,10 @@ using QFramework;
 using QFramework.UI;
 using QFramework.Event;
 
+
+/// <summary>
+/// 主界面
+/// </summary>
 public class UIMainPage : QUIBehaviour
 {
 	protected override void InitUI(object uiData = null)

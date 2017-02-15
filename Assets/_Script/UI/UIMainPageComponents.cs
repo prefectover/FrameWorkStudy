@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
 using QFramework.UI;
+
 public class UIMainPageComponents : IUIComponents
 {
 	public void InitUIComponents()

@@ -4,7 +4,7 @@ using System.Collections;
 using QFramework;
 using QFramework.UI;
 
-namespace QFramework.Example.UIFramework {
+namespace QFramework.UIFramework.Example1 {
 	
 	public class Main : MonoBehaviour {
 
@@ -12,7 +12,5 @@ namespace QFramework.Example.UIFramework {
 		void Start () {
 			QUIManager.Instance.OpenUI<UIMainPage> (QUILevel.Common, null);
 		}
-			
 	}
-
 }

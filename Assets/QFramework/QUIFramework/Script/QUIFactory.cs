@@ -27,6 +27,12 @@ namespace QFramework.UI
 				case "UIMainPage":
 					retComponents = new UIMainPageComponents();
 					break;
+				case "UIUnityMsgChildPanel":
+					retComponents = new UIUnityMsgChildPanelComponents();
+					break;
+				case "UIUnityMsgRootPage":
+					retComponents = new UIUnityMsgRootPageComponents();
+					break;
 			}
 			return retComponents;
 		}
