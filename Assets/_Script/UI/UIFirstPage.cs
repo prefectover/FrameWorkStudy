@@ -12,13 +12,20 @@ public class UIFirstPage : QUIBehaviour
 	{
 		mUIComponents = mIComponents as UIFirstPageComponents;
 		//please add init code here
+
+		mUIComponents.ContentText_Text.text = uiData as string;
 	}
 	public override void ProcessMsg (QMsg msg)
 	{
 		throw new System.NotImplementedException ();
 	}
+
 	protected override void RegisterUIEvent()
 	{
+		mUIComponents.BtnBack_Button.onClick.AddListener (delegate {
+			QUIManager.Instance.DeleteUI<UIFirstPage>();
+			QUIManager.Instance.OpenUI<UIMainPage>(QUILevel.Common,null);
+		});
 	}
 	protected override void OnShow()
 	{

@@ -58,3 +58,7 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/admin/QFramework/Temp/bin/Debug/Assembly-CSharp-Editor.dll.mdb
+/Users/admin/QFramework/Temp/bin/Debug/Assembly-CSharp-Editor.dll
+/Users/admin/QFramework/obj/Debug/Assembly-CSharp-Editor.dll
+/Users/admin/QFramework/obj/Debug/Assembly-CSharp-Editor.dll.mdb

@@ -47,16 +47,6 @@ namespace QFramework.UI {
 			return null;
 		}
 
-		public void Close()
-		{
-			SetVisible(false);
-			OnClose();
-			if (mUnloadAll == false)
-			{
-				//                PTResourceManager.UnloadAssetBundle(this.name.ToLower(), false);
-			}
-		}
-
 		public void SetVisible(bool visible)
 		{
 			this.gameObject.SetActive(visible);
@@ -75,13 +65,8 @@ namespace QFramework.UI {
 			SetVisible(true);
 		}
 
-		protected virtual void OnAwake() { }
-		protected virtual void OnStart() { }
 		protected virtual void InitUI(object uiData = null) { }
 		protected virtual void RegisterUIEvent() { }
-		protected virtual void OnUpdate() { }
-		protected virtual void OnFixedUpdate() { }
-		protected virtual void OnClose() { }
 		protected virtual void DestroyUI() { }
 
 		protected void SetUIBehavior(IUIComponents uiChild)
@@ -198,21 +183,6 @@ namespace QFramework.UI {
 
 
 		#region 原来自己的框架
-		public void Enter(object uiData)
-		{
-			gameObject.SetActive (false);
-			OnEnter (uiData);
-		}
-
-		/// <summary>
-		/// 资源加载之后用
-		/// </summary>
-		protected virtual void OnEnter(object uiData)
-		{
-			Debug.LogWarning ("On Enter:" + name);
-		}
-
-
 		public void Show()
 		{
 			OnShow ();
@@ -241,21 +211,6 @@ namespace QFramework.UI {
 			gameObject.SetActive (false);
 			Debug.LogWarning ("On Hide:" + name);
 		}
-
-		public void Exit()
-		{
-			OnExit ();
-		}
-
-		/// <summary>
-		/// 删除时候调用
-		/// </summary>
-		protected virtual void OnExit()
-		{
-			Debug.LogWarning ("On Exit:" + name);
-		}
 		#endregion
-
 	}
-
 }

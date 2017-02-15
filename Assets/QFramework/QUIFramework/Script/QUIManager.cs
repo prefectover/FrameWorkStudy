@@ -38,7 +38,6 @@ namespace QFramework {
 		static GameObject mGo;
 		public static QUIManager Instance {
 			get {
-
 				if (mGo) {
 				} else {
 					mGo = GameObject.Find ("QUIManager");
@@ -59,7 +58,6 @@ namespace QFramework {
 			// DefaultResolution is 1024 768
 			SetResolution (768, 1024);
 			SetMatchOnWidthOrHeight (0.0f);
-
 		}
 
 		public void SetResolution(int width,int height) {
@@ -70,7 +68,10 @@ namespace QFramework {
 			mCanvasScaler.matchWidthOrHeight = heightPercent;
 		}
 
-		public QUIBehaviour OpenUI<T>(QUILevel canvasLevel,string bundleName,object uiData = null) where T : QUIBehaviour
+		/// <summary>
+		/// Create&ShowUI
+		/// </summary>
+		public QUIBehaviour OpenUI<T>(QUILevel canvasLevel,string bundleName = null,object uiData = null) where T : QUIBehaviour
 		{
 			string behaviourName = typeof(T).ToString();
 			if (!mAllUI.ContainsKey(behaviourName))
@@ -79,29 +80,6 @@ namespace QFramework {
 			}
 			mAllUI [behaviourName].Show ();
 			return mAllUI[behaviourName];
-		}
-
-		public void CloseUI<T>() where T : QUIBehaviour
-		{
-			string strDlg = typeof(T).ToString();
-			if (mAllUI.ContainsKey(strDlg))
-			{
-				mAllUI[strDlg].Close();
-			}
-		}
-
-		public void CloseAllUI()
-		{
-			List<QUIBehaviour> listHandler = new List<QUIBehaviour>();
-			foreach (string key in mAllUI.Keys)
-			{
-				listHandler.Add(mAllUI[key]);
-			}
-
-			for (int i = 0; i < listHandler.Count; i++)
-			{
-				listHandler[i].Close();
-			}
 		}
 
 		public Transform Get<T>(string strUIName)
@@ -118,15 +96,10 @@ namespace QFramework {
 			return null;
 		}
 
-		public void Close()
-		{
-			mAllUI.Clear();
-		}
-
 		/// <summary>
 		/// 增加UI层
 		/// </summary>
-		public QUIBehaviour CreateUI<T>  (QUILevel level,string bundleName,object uiData = null) where T : QUIBehaviour {
+		public QUIBehaviour CreateUI<T>  (QUILevel level,string bundleName,object initData = null) where T : QUIBehaviour {
 
 			string behaviourName = typeof(T).ToString();
 
@@ -138,7 +111,7 @@ namespace QFramework {
 				mAllUI [behaviourName].transform.localEulerAngles = Vector3.zero;
 				mAllUI [behaviourName].transform.localScale = Vector3.one;
 
-				mAllUI [behaviourName].Enter (uiData);
+				mAllUI [behaviourName].Show ();
 
 			} else {
 				GameObject prefab = Resources.Load<GameObject> (behaviourName);
@@ -175,25 +148,10 @@ namespace QFramework {
 
 				T t = mUIGo.AddComponent<T>();
 				mAllUI.Add (behaviourName, t);
-				t.Init (uiData);
+				t.Init (initData);
 			}
 
 			return mAllUI [behaviourName];
-		}
-
-		/// <summary>
-		/// 删除掉层
-		/// </summary>
-		public void DeleteUI<T>()
-		{
-			string behaviourName = typeof(T).ToString();
-
-			if (mAllUI.ContainsKey (behaviourName)) 
-			{
-				mAllUI [behaviourName].Close ();
-				GameObject.Destroy (mAllUI [behaviourName].gameObject);
-				mAllUI.Remove (behaviourName);
-			}
 		}
 
 		/// <summary>
@@ -231,11 +189,24 @@ namespace QFramework {
 		{
 			foreach (var layer in mAllUI) 
 			{
-				layer.Value.Exit ();
 				GameObject.Destroy (layer.Value);
 			}
 
 			mAllUI.Clear ();
+		}
+
+		/// <summary>
+		/// 删除掉层
+		/// </summary>
+		public void DeleteUI<T>()
+		{
+			string behaviourName = typeof(T).ToString();
+
+			if (mAllUI.ContainsKey (behaviourName)) 
+			{
+				GameObject.Destroy (mAllUI [behaviourName].gameObject);
+				mAllUI.Remove (behaviourName);
+			}
 		}
 
 		/// <summary>

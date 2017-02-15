@@ -21,12 +21,12 @@ public class UIMainPage : QUIBehaviour
 	{
 		mUIComponents.BtnFirst_Button.onClick.AddListener (delegate {
 			QUIManager.Instance.OpenUI<UIFirstPage> (QUILevel.Common, null, "这是第一关");
-			QUIManager.Instance.HideUI<UIMainPage> ();
+			QUIManager.Instance.DeleteUI<UIMainPage> ();
 		});
 
 		mUIComponents.BtnSecond_Button.onClick.AddListener(delegate {
 			QUIManager.Instance.OpenUI<UIFirstPage> (QUILevel.Common, null, "这是第二关");
-			QUIManager.Instance.HideUI<UIMainPage> ();
+			QUIManager.Instance.DeleteUI<UIMainPage> ();
 		});
 	}
 	protected override void OnShow()
