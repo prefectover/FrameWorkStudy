@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using QFramework;
 using QFramework.UI;
 using QFramework.Event;
+using QFramework.UIFramework.Example2;
 
 public class UIUnityMsgRootPage : QUIBehaviour,IMsgReceiver
 {
@@ -19,13 +20,22 @@ public class UIUnityMsgRootPage : QUIBehaviour,IMsgReceiver
 	}
 	public override void ProcessMsg (QMsg msg)
 	{
-		throw new System.NotImplementedException ();
+		switch (msg.msgId) {
+		case (ushort)UIEvent.Hello:
+			mUIComponents.ReceivedMsg_Text.text = ((QStrMsg)msg).strMsg;
+			break;
+		}
 	}
 	protected override void RegisterUIEvent()
 	{
 		mUIComponents.BtnOpenChildPage_Button.onClick.AddListener (delegate {
 			QUIManager.Instance.OpenUI<UIUnityMsgChildPanel> (QUILevel.PopUI,null,null);	
 		});
+
+		mMsgIds = new ushort[] {
+			(ushort)UIEvent.Hello
+		};
+		this.RegisterSelf (this, null);
 	}
 	protected override void OnShow()
 	{

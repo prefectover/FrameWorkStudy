@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Example\1.UIFramework\Main.cs" />
      <Compile Include="Assets\Example\2.UnityMsg\Main.cs" />
+     <Compile Include="Assets\Example\2.UnityMsg\MsgDefine.cs" />
      <Compile Include="Assets\QFramework\Core\AI\QFSM.cs" />
      <Compile Include="Assets\QFramework\Core\Debug\ILogOutput.cs" />
      <Compile Include="Assets\QFramework\Core\Debug\QConsole.cs" />

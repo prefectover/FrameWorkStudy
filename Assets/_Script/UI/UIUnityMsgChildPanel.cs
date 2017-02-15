@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using QFramework;
 using QFramework.UI;
 using QFramework.Event;
+using QFramework.UIFramework.Example2;
 
 public class UIUnityMsgChildPanel : QUIBehaviour,IMsgSender
 {
@@ -12,6 +13,7 @@ public class UIUnityMsgChildPanel : QUIBehaviour,IMsgSender
 	{
 		mUIComponents = mIComponents as UIUnityMsgChildPanelComponents;
 		//please add init code here
+
 	}
 	public override void ProcessMsg (QMsg msg)
 	{
@@ -19,6 +21,8 @@ public class UIUnityMsgChildPanel : QUIBehaviour,IMsgSender
 	}
 	protected override void RegisterUIEvent()
 	{
+
+		
 		mUIComponents.BtnClose_Button.onClick.AddListener (delegate {
 			QUIManager.Instance.HideUI<UIUnityMsgChildPanel>();
 		});
@@ -26,11 +30,21 @@ public class UIUnityMsgChildPanel : QUIBehaviour,IMsgSender
 		mUIComponents.BtnSendMsg_Button.onClick.AddListener (delegate {
 			System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch ();
 			watch.Start ();
-			for (int i = 0;i < 10000;i++) {
+			for (int i = 0;i < 100000;i++) {
 				this.SendGlobalMsg("ReceiveMsgFromChild","hello");
 			}
 			watch.Stop();
-			Debug.Log(watch.ElapsedMilliseconds);
+			Debug.Log("EnumMsg " + watch.ElapsedMilliseconds);
+		});
+
+		mUIComponents.BtnSendMsgWithEnumMsg_Button.onClick.AddListener (delegate {
+			System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch ();
+			watch.Start ();
+			for (int i = 0;i < 100000;i++) {
+				this.SendMsg(new QStrMsg((ushort)UIEvent.Hello,"hello"));
+			}
+			watch.Stop();
+			Debug.Log("EnumMsg " + watch.ElapsedMilliseconds);
 		});
 	}
 	protected override void OnShow()

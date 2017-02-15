@@ -244,7 +244,6 @@ namespace QFramework.Event {
 				var handler = handlers[index];
 
 				if (handler.receiver != null) {
-					Debug.Log ("SendLogicMsg:" + msgName + " Succeed");
 					handler.callback (paramList);
 				} else {
 					handlers.Remove (handler);

@@ -34,6 +34,14 @@ public class QSoundMsg : QMsg {
 		this.soundOn = soundOn;
 	}
 }
+
+public class QStrMsg  :QMsg {
+	public string strMsg;
+
+	public QStrMsg(ushort msgId,string strMsg) :base(msgId) {
+		this.strMsg = strMsg;
+	}
+}
 	
 
 public class MsgTransform :QMsg
