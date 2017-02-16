@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Example\0.CodeStyle\CodeSample.cs" />
      <Compile Include="Assets\Example\1.UIFramework\Main.cs" />
      <Compile Include="Assets\Example\2.UnityMsg\Main.cs" />
      <Compile Include="Assets\Example\2.UnityMsg\MsgDefine.cs" />
