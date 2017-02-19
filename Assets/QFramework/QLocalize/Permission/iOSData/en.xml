@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 考虑给 Config 添加语言属性<Config language = "zh-cn"> 但是貌似没啥好处-->
+<Config>
+  <Child Index="0" PermissionKey="NSPhotoLibraryUsageDescription" DescriptionString="This app needs your permission to access the album." />
+  <Child Index="1" PermissionKey="NSCameraUsageDescription" DescriptionString="This app needs your permission to access the camera." />
+  <Child Index="2" PermissionKey="NSMicrophoneUsageDescription" DescriptionString="This app needs your permission to access the microphone." />
+  <Child Index="3" PermissionKey="NSLocationUsageDescription" DescriptionString="This app needs your permission to access the location." />
+  <Child Index="4" PermissionKey="NSLocationWhenInUseUsageDescription" DescriptionString="This app needs your permission to access the location during use." />
+  <Child Index="5" PermissionKey="NSLocationAlwaysUsageDescription" DescriptionString="This app needs your permission to always access the location." />
+  <Child Index="6" PermissionKey="NSCalendarsUsageDescription" DescriptionString="This app needs your permission to access the calendar." />
+  <Child Index="7" PermissionKey="NSRemindersUsageDescription" DescriptionString="This app needs your permission to issue reminders." />
+  <Child Index="8" PermissionKey="NSMotionUsageDescription" DescriptionString="This app needs your permission to access sports and fitness." />
+  <Child Index="9" PermissionKey="NSHealthUpdateUsageDescription" DescriptionString="This app needs your permission to access health updates." />
+  <Child Index="10" PermissionKey="NSHealthShareUsageDescription" DescriptionString="This app needs your permission to access health sharing." />
+  <Child Index="11" PermissionKey="NSBluetoothPeripheralUsageDescription" DescriptionString="This app needs your permission to access Bluetooth." />
+  <Child Index="12" PermissionKey="NSAppleMusicUsageDescription" DescriptionString="This app needs your permission to access the media database." />
+</Config>

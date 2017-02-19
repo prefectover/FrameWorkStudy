@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 考虑给 Config 添加语言属性<Config language = "zh-cn"> 但是貌似没啥好处-->
+<Config>
+  <Child Index="0" PermissionKey="NSPhotoLibraryUsageDescription" DescriptionString="App需要您的同意,才能访问相册" />
+  <Child Index="1" PermissionKey="NSCameraUsageDescription" DescriptionString="App需要您的同意,才能访问相机" />
+  <Child Index="2" PermissionKey="NSMicrophoneUsageDescription" DescriptionString="App需要您的同意,才能访问麦克风" />
+  <Child Index="3" PermissionKey="NSLocationUsageDescription" DescriptionString="App需要您的同意,才能访问位置" />
+  <Child Index="4" PermissionKey="NSLocationWhenInUseUsageDescription" DescriptionString="App需要您的同意,才能在使用期间访问位置" />
+  <Child Index="5" PermissionKey="NSLocationAlwaysUsageDescription" DescriptionString="App需要您的同意,才能始终访问位置" />
+  <Child Index="6" PermissionKey="NSCalendarsUsageDescription" DescriptionString="App需要您的同意,才能访问日历" />
+  <Child Index="7" PermissionKey="NSRemindersUsageDescription" DescriptionString="App需要您的同意,才能访问提醒事项" />
+  <Child Index="8" PermissionKey="NSMotionUsageDescription" DescriptionString="App需要您的同意,才能访问运动与健身" />
+  <Child Index="9" PermissionKey="NSHealthUpdateUsageDescription" DescriptionString="App需要您的同意,才能访问健康更新" />
+  <Child Index="10" PermissionKey="NSHealthShareUsageDescription" DescriptionString="App需要您的同意,才能访问健康分享" />
+  <Child Index="11" PermissionKey="NSBluetoothPeripheralUsageDescription" DescriptionString="App需要您的同意,才能访问蓝牙" />
+  <Child Index="12" PermissionKey="NSAppleMusicUsageDescription" DescriptionString="App需要您的同意,才能访问媒体资料库" />
+</Config>
