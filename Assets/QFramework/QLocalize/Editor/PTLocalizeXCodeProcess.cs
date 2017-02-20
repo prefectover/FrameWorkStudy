@@ -135,8 +135,8 @@ namespace PTGame.Localize {
 				}
 
 				File.WriteAllText(filePath, content);
-
-				var result = project.AddFile(filePath,"", (PBXGroup)variant,"SOURCE_ROOT",  true,  false);
+				var result = project.AddFile(filePath,(PBXGroup)variant,"SOURCE_ROOT",  true,  false);
+//				var result = project.AddFile(filePath,"", (PBXGroup)variant,"SOURCE_ROOT",  true,  false);
 				string firstKey = "";
 
 				foreach (KeyValuePair<string,object> resultEntry in result) {

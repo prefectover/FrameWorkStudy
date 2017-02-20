@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using PTGame.AssetBundles;
+using QFramework;
+using QFramework.AB;
 using System.Xml;
 
 /// <summary>
@@ -105,9 +106,9 @@ namespace PTGame.Localize {
 						retValue = "en";
 						break;
 				}
-				if (DevelopmentSetting.TestFreeMode) {
-					return "en";
-				}
+//				if (DevelopmentSetting.TestFreeMode) {
+//					return "en";
+//				}
 				return retValue;
 			}
 		}
@@ -119,9 +120,8 @@ namespace PTGame.Localize {
 		public void Parse() {
 			if (null == mTextItemDict) {
 				mTextItemDict = new Dictionary<string, Dictionary<string, string>> ();
-
-				PTResourceManager.Instance.LoadAssetBundle ("configFile");
-				TextAsset textAsset = PTResourceManager.Instance.LoadAsset<TextAsset> ("configFile", "word");
+				QResMgr.Instance.LoadAB ("configFile");
+				TextAsset textAsset = QResMgr.Instance.LoadAsset<TextAsset> ("configFile", "word");
 //				Debug.LogError (textAsset.text);
 
 				XmlDocument xmlDoc = new XmlDocument ();
@@ -176,7 +176,7 @@ namespace PTGame.Localize {
 		#if UNITY_EDITOR
 		void OnGUI() {
 			if (GUI.Button(new Rect(0,0,200,100),"Change Language")) {
-				DevelopmentSetting.TestFreeMode = !DevelopmentSetting.TestFreeMode;
+//				DevelopmentSetting.TestFreeMode = !DevelopmentSetting.TestFreeMode;
 				ChangeLanguage ();
 			}
 		}

@@ -1,9 +1,9 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QFramework", "Assembly-CSharp.csproj", "{D34B38C6-23CF-B45B-0DF2-9B1F683F31DB}"
+# Visual Studio 2008
+
+Project("{7EFF5260-A303-DAD3-B603-CC82A71FB9FE}") = "QFramework", "Assembly-CSharp.csproj", "{D34B38C6-23CF-B45B-0DF2-9B1F683F31DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QFramework", "Assembly-CSharp-Editor.csproj", "{4F389199-0399-B11C-B10A-CE424DE921F6}"
+Project("{7EFF5260-A303-DAD3-B603-CC82A71FB9FE}") = "QFramework", "Assembly-CSharp-Editor.csproj", "{4F389199-0399-B11C-B10A-CE424DE921F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
