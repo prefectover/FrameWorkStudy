@@ -108,8 +108,11 @@ namespace PTGame.Localize
 			PermissionDesEditorWindow window = (PermissionDesEditorWindow)EditorWindow.GetWindow(typeof(PermissionDesEditorWindow),true);
             window.titleContent = new  GUIContent("Config PermissionDes");
 			window.Show();
-			window.xmlPermissionPath = Application.dataPath + "/PTUGame/PTLocalize/Permission/iOSData";
+			window.xmlPermissionPath = Application.dataPath + "/QConfig/Localize/Permission/iOSData";
 
+			if (!Directory.Exists (window.xmlPermissionPath)) {
+				Directory.CreateDirectory (window.xmlPermissionPath);
+			}
             window.init();
         }
         /// <summary>
