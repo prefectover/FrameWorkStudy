@@ -58,11 +58,11 @@ namespace QFramework {
 
 
 		void Start() {
-			msgIds = new ushort[] {
+			mMsgIds = new ushort[] {
 				(ushort)QSoundEvent.SoundSwitch
 			};
 
-			RegisterSelf(this,msgIds);
+			RegisterSelf(this,mMsgIds);
 		}
 
 		/// <summary>
@@ -86,7 +86,7 @@ namespace QFramework {
 		{
 			QTest.TimeBegan (soundName);
 
-			QResMgr.Instance.LoadResAsync (bundleName, soundName,delegate(bool success,Object resObj) {
+			QResourceManager.Instance.LoadResAsync (bundleName, soundName,delegate(bool success,Object resObj) {
 				if (resObj)
 				{
 
@@ -167,7 +167,7 @@ namespace QFramework {
 		public void PreloadMusic(string bundleName,string musicName)
 		{
 
-			QResMgr.Instance.LoadResAsync (bundleName,musicName, delegate(bool succes,Object resObj) {
+			QResourceManager.Instance.LoadResAsync (bundleName,musicName, delegate(bool succes,Object resObj) {
 				if (resObj)
 				{
 					Debug.LogWarning ("loaded: " + musicName + " " + musicName.ToString());

@@ -273,7 +273,7 @@ public class NativeResLoader : AssetBase {
 	}
 	void Awake()
 	{
-		msgIds = new ushort[] {
+		mMsgIds = new ushort[] {
 			(ushort)AssetEvent.ReleaseSingleObj,
 			(ushort)AssetEvent.ReleaseBundleObj,
 			(ushort)AssetEvent.ReleaseSingleBundle,
@@ -282,6 +282,6 @@ public class NativeResLoader : AssetBase {
 			(ushort)AssetEvent.HunkRes,
 		};
 
-		RegisterSelf (this, msgIds);
+		RegisterSelf (this, mMsgIds);
 	}
 }

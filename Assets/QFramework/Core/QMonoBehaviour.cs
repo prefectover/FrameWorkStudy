@@ -126,12 +126,12 @@ namespace QFramework {
 
 		public void RegisterSelf(QMonoBehaviour mono,ushort[] msgs)
 		{
-			mCurMgr.RegisterMsg(mono,msgIds);
+			mCurMgr.RegisterMsg(mono,mMsgIds);
 		}
 
 		public void UnRegisterSelf(QMonoBehaviour mono,ushort[] msg)
 		{
-			mCurMgr.UnRegisterMsg(mono,msgIds);
+			mCurMgr.UnRegisterMsg(mono,mMsgIds);
 		}
 
 		public void SendMsg(QMsg msg)
@@ -139,13 +139,13 @@ namespace QFramework {
 			mCurMgr.SendMsg(msg);
 		}
 
-		public ushort[] msgIds;
+		public ushort[] mMsgIds;
 
 		void OnDestory()
 		{
-			if (msgIds != null)
+			if (mMsgIds != null)
 			{
-				UnRegisterSelf(this,msgIds);
+				UnRegisterSelf(this,mMsgIds);
 			}
 		}
 

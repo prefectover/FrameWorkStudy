@@ -42,7 +42,6 @@ namespace QFramework {
 				} else {
 					mGo = GameObject.Find ("QUIManager");
 					if (mGo) {
-
 					} else {
 						mGo = GameObject.Instantiate (Resources.Load ("QUIManager")) as GameObject;
 					}
@@ -115,6 +114,10 @@ namespace QFramework {
 
 			} else {
 				GameObject prefab = Resources.Load<GameObject> (behaviourName);
+
+				if (null == prefab) {
+					prefab = QResourceManager.Instance.LoadAsset<GameObject> (bundleName, behaviourName);
+				}
 
 				GameObject mUIGo = Instantiate (prefab);
 				switch (level) {

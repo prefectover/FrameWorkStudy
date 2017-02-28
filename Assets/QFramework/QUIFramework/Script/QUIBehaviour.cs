@@ -29,7 +29,7 @@ namespace QFramework.UI {
 			{
 				UnRegisterSelf(this,mMsgIds);
 			}
-			Debug.Log(name + " unLoad Success");
+			Debug.Log(name + " remove Success");
 		}
 
 		public void Init(object uiData = null)
@@ -101,63 +101,8 @@ namespace QFramework.UI {
 		{
 			get { return false; }
 		}
-		protected ushort[] mMsgIds = null;
 		protected IUIComponents mIComponents = null;
 		private Dictionary<string, Transform> mUIComponentsDic = new Dictionary<string, Transform>();
-
-	
-
-		public void AddButtonListener(UnityAction action)
-		{
-			if (null != action)
-			{
-				Button btn = transform.GetComponent<Button> ();
-
-				btn.onClick.AddListener (action);
-			}
-		}
-
-
-		public void RemoveButtonListener(UnityAction action)
-		{
-			if (null != action) 
-			{
-				Button btn = transform.GetComponent<Button> ();
-
-				btn.onClick.RemoveListener (action);
-			}
-		}
-
-
-		public void AddSliderListener(UnityAction<float> action)
-		{
-			if (null != action) 
-			{
-				Slider slider = transform.GetComponent<Slider> ();
-
-				slider.onValueChanged.AddListener (action);
-			}
-		}
-
-		public void RemoveSliderListener(UnityAction<float> action)
-		{
-			if (null != action) 
-			{
-				Slider slider = transform.GetComponent<Slider> ();
-
-				slider.onValueChanged.RemoveListener (action);
-			}
-		}
-
-		public void AddInputListener(UnityAction<string> action)
-		{
-			if (null != action) 
-			{
-				InputField btn = transform.GetComponent<InputField> ();
-
-				btn.onValueChanged.AddListener (action);
-			}
-		}
 
 		public override void ProcessMsg (QMsg msg)
 		{
@@ -165,12 +110,17 @@ namespace QFramework.UI {
 		}
 
 
-		public void RegisterSelf(QMonoBehaviour behaviour,ushort[] msgs)
+		public void RegisterSelf(QMonoBehaviour behaviour,ushort[] msgs = null)
 		{
-			QUIManager.Instance.RegisterMsg(behaviour,mMsgIds);
+			if (null != msgs) {
+				mMsgIds = msgs;
+				QUIManager.Instance.RegisterMsg (behaviour, msgs);
+			} else {
+				QUIManager.Instance.RegisterMsg (behaviour, mMsgIds);
+			}
 		}
 
-		public void UnRegisterSelf(QMonoBehaviour behaviour,ushort[] msg)
+		public void UnRegisterSelf(QMonoBehaviour behaviour)
 		{
 			QUIManager.Instance.UnRegisterMsg(behaviour,mMsgIds);
 		}
@@ -179,8 +129,6 @@ namespace QFramework.UI {
 		{
 			QUIManager.Instance.SendMsg(msg);
 		}
-
-
 
 		#region 原来自己的框架
 		public void Show()

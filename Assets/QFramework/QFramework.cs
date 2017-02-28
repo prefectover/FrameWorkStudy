@@ -29,7 +29,7 @@ namespace QFramework {
 			//-----------------初始化管理器-----------------------
 			var a = QTimerMgr.Instance;
 			var b = QSoundMgr.Instance;
-			var c = QResMgr.Instance;
+			var c = QResourceManager.Instance;
 			var d = QThreadMgr.Instance;
 			var f = GameManager.Instance;
 		}

@@ -4,13 +4,13 @@ using System.CodeDom.Compiler;
 using Microsoft.CSharp;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PTGame.AssetBundles;
 namespace QFramework.PRIVATE
 {
 	public  class QABCodeGenerator
 	{
 
-		public static void WriteClass (TextWriter writer, string ns, List<QABItemInfo> assetBundleInfos)
+		public static void WriteClass (TextWriter writer, string ns, List<QABItemInfo> assetBundleInfos,string projectTag=null)
 		{
 			var compileUnit = new CodeCompileUnit ();
 			var codeNamespace = new CodeNamespace (ns);
@@ -19,7 +19,16 @@ namespace QFramework.PRIVATE
 
 			for(int i=0;i<assetBundleInfos.Count;i++){
 				QABItemInfo assetBundleInfo = assetBundleInfos [i];
-				string className = assetBundleInfo.name.ToUpper(); 
+				string className = assetBundleInfo.name.ToUpper();
+
+				string bundleName = className.Substring (0, 1).ToUpper () + className.Substring (1);
+				className = className.Substring(0,1).ToUpper()+className.Substring(1).Replace("/","_").Replace("@","_").Replace("!","_");
+				if (!string.IsNullOrEmpty (projectTag)) {
+					className = className.Replace ("_project_" + projectTag, "");
+					bundleName = bundleName.Replace ("_project_" + projectTag, "");
+				}
+
+ 
 
 				var codeType = new CodeTypeDeclaration (className);
 				codeNamespace.Types.Add (codeType);
@@ -29,7 +38,7 @@ namespace QFramework.PRIVATE
 				bundleNameField.Name = "BUNDLENAME";
 				bundleNameField.Type = new CodeTypeReference(typeof(System.String));
 				codeType.Members.Add(bundleNameField);
-				bundleNameField.InitExpression  =new CodePrimitiveExpression(assetBundleInfo.absPath.ToLowerInvariant());
+				bundleNameField.InitExpression  =new CodePrimitiveExpression(assetBundleInfo.path.ToLowerInvariant());
 
 				foreach (var asset in assetBundleInfo.assets) {
 					CodeMemberField assetField = new CodeMemberField();
@@ -51,5 +60,7 @@ namespace QFramework.PRIVATE
 
 			provider.GenerateCodeFromCompileUnit (compileUnit, writer, options);
 		}
+
+
 	}
 }

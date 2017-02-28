@@ -35,7 +35,7 @@ namespace QFramework.PRIVATE {
 
 			QIO.CreateDirIfNotExists (outputPath);
 
-			QABBuilder.BuildAssetBundles (BuildTarget.iOS);
+			QABBuilder.BuildAssetBundles (BuildTarget.iOS,null);
 
 			AssetDatabase.Refresh ();		
 		}
@@ -47,7 +47,7 @@ namespace QFramework.PRIVATE {
 
 			QIO.CreateDirIfNotExists (outputPath);
 
-			QABBuilder.BuildAssetBundles (BuildTarget.Android);
+			QABBuilder.BuildAssetBundles (BuildTarget.Android,null);
 
 			AssetDatabase.Refresh ();
 		}
@@ -60,7 +60,7 @@ namespace QFramework.PRIVATE {
 
 			QIO.CreateDirIfNotExists (outputPath);
 
-			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneOSXIntel64);
+			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneOSXIntel64,null);
 
 			AssetDatabase.Refresh ();
 		}
@@ -72,7 +72,7 @@ namespace QFramework.PRIVATE {
 
 			QIO.CreateDirIfNotExists (outputPath);
 
-			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneWindows64);
+			QABBuilder.BuildAssetBundles (BuildTarget.StandaloneWindows64,null);
 
 			AssetDatabase.Refresh ();
 		}

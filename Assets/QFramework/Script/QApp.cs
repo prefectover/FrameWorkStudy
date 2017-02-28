@@ -5,9 +5,9 @@ using QFramework.UI;
 
 namespace QFramework {
 	public enum QAppMode {
-		Developing,
-		QA,
-		Release
+		Developing,	// 开发版本,为了快速快发,而写的测试入口。
+		QA,			// 发布版本,跑整个游戏
+		Release		// 发布版本,跑整个游戏
 	}
 		
 	/// <summary>
@@ -56,6 +56,7 @@ namespace QFramework {
 				break;
 
 			case QAppMode.Release:
+					
 				yield return GameManager.Instance.Launch ();
 
 				break;

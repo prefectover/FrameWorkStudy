@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_1;UNITY_5_4;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_3;UNITY_5_4;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -93,8 +93,12 @@
      <Compile Include="Assets\QFramework\Core\Util\QTest.cs" />
      <Compile Include="Assets\QFramework\Core\Util\QTimerMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\ABLoadOperation.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\ABUtility.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\AssetBase.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\AssetBundleLoadOperation.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\AssetBundleManager.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\AssetEvent.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\Example.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\IABLoader.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\IABManifestLoader.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\IABMgr.cs" />
@@ -105,7 +109,9 @@
      <Compile Include="Assets\QFramework\QAB\Script\QABMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QAssetMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QResMgr.cs" />
-     <Compile Include="Assets\QFramework\QExcel2XML\NewBehaviourScript.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\QResourceManager.cs" />
+     <Compile Include="Assets\QFramework\QAB\Script\QResourceManager_1.cs" />
+     <Compile Include="Assets\QFramework\QConfig\QConfigManager.cs" />
      <Compile Include="Assets\QFramework\QFramework.cs" />
      <Compile Include="Assets\QFramework\QLocalize\LaunchScreen\PTAlphaTween.cs" />
      <Compile Include="Assets\QFramework\QLocalize\LaunchScreen\PTLaunchScreenCanvas.cs" />
@@ -142,9 +148,11 @@
      <Compile Include="Assets\_Script\UI\UIUnityMsgRootPageComponents.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />
+     <None Include="Assets\QFramework\QAB\Script\readme.txt" />
      <None Include="Assets\QFramework\QLocalize\readme.txt" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hans.xml" />
      <None Include="Assets\QFramework\QLocalize\Template\strings.xml" />
+     <None Include="Assets\QFramework\QAB\Script\ptversion.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hant.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -153,13 +161,13 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Excel">
- <HintPath>/Users/admin/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>/Users/admin/QFramework/Assets/QFramework/QExcel2XML/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/admin/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

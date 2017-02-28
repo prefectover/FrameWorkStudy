@@ -271,6 +271,7 @@ public class QUICodeGenerator
     private string GetUIPrefabPath()
     {
 		var retDir = Application.dataPath + "/Resources";
+//		var retDir = Application.dataPath + "/QArt/QAB/UIPrefab";
 		if (!Directory.Exists (retDir)) {
 			Directory.CreateDirectory (retDir);
 		}
