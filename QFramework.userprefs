@@ -1,13 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/GameManager.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/QFramework/QExcel2XML/NewBehaviourScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Example/0.CodeStyle/CodeSample.cs" Line="1" Column="1" />
       <File FileName="Assets/QFramework/Core/AI/QFSM.cs" Line="1" Column="1" />
       <File FileName="Assets/QFramework/Script/Manager/QCoroutineMgr.cs" Line="1" Column="1" />
       <File FileName="Assets/QFramework/Script/Manager/QThreadMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/_Script/GameManager.cs" Line="12" Column="1" />
+      <File FileName="Assets/_Script/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QUIFramework/Script/QUIFactory.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QAB/Editor/QABCodeGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QUIFramework/Editor/QUICodeGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QAB/Editor/QABBuilder.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
