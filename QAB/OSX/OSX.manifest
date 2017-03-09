@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1490000555
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: uiprefab_project_qframework
+      Dependencies: {}

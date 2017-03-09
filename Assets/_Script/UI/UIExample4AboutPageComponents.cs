@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
-
 public class UIExample4AboutPageComponents : IUIComponents
 {
 	public void InitUIComponents()

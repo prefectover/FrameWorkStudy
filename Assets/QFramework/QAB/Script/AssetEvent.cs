@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using QFramework;
+using QFramework;
 
 public enum AssetEvent
 {

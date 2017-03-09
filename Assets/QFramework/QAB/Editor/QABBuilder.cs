@@ -123,7 +123,7 @@ namespace QFramework.PRIVATE
 			string[] allABNames = abMainfest.GetAllAssetBundles ();
 			XmlDocument xmlDoc = new XmlDocument ();
 			XmlElement xmlRoot = xmlDoc.CreateElement ("config");
-			xmlRoot.SetAttribute ("res_version", PTAssetBundleBuilder.resVersion);
+			xmlRoot.SetAttribute ("res_version", QAssetBundleBuilder.resVersion);
 
 			xmlDoc.AppendChild (xmlRoot);
 			mABInfos.Clear ();
@@ -170,7 +170,7 @@ namespace QFramework.PRIVATE
 
 			AssetDatabase.Refresh ();
 
-			if (PTAssetBundleBuilder.isEnableGenerateClass) {
+			if (QAssetBundleBuilder.isEnableGenerateClass) {
 				if (!Directory.Exists (Application.dataPath +  Path.DirectorySeparatorChar + "QData")) {
 					Directory.CreateDirectory (Application.dataPath +  Path.DirectorySeparatorChar + "QData");
 				}

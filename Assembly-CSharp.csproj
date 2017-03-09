@@ -137,7 +137,7 @@
      <Compile Include="Assets\QFramework\Script\Util\QTimer.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QTransExtend.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QUtil.cs" />
-     <Compile Include="Assets\QFrameworkData\QAB\QAssets.cs" />
+     <Compile Include="Assets\QFrameworkData\QAssets.cs" />
      <Compile Include="Assets\_Script\GameManager.cs" />
      <Compile Include="Assets\_Script\UI\UIExample4AboutPage.cs" />
      <Compile Include="Assets\_Script\UI\UIExample4AboutPageComponents.cs" />
@@ -158,13 +158,13 @@
      <Compile Include="Assets\_Script\UI\UIHomePage.cs" />
      <Compile Include="Assets\_Script\UI\UIHomePageComponents.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
-     <None Include="Assets\QFrameworkData\QAB\resitems.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />
      <None Include="Assets\QFramework\QAB\Script\readme.txt" />
      <None Include="Assets\QFramework\QLocalize\readme.txt" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hans.xml" />
      <None Include="Assets\QFramework\QLocalize\Template\strings.xml" />
      <None Include="Assets\QFramework\QAB\Script\ptversion.xml" />
+     <None Include="Assets\QFrameworkData\resitems.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hant.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -174,9 +174,6 @@
  </Reference>
  <Reference Include="Excel">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>

@@ -56,7 +56,7 @@ namespace QFramework.PRIVATE
 	{
 		public Dictionary<string,QABItem> markItems4AbsPath;
 
-		private const string abDataDirPath = "Assets/QData/QAB";
+		private const string abDataDirPath = "Assets/QFrameworkData/QAB";
 		private const string srcABDirPath = "Assets/QArt/QAB";
 		private string recordFilePath {
 			get {
