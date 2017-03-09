@@ -4,6 +4,7 @@ using QFramework;
 
 public class GameManager : QSingleton<GameManager> {
 
+	private GameManager() {}
 	public IEnumerator Launch() {
 
 		yield return null;

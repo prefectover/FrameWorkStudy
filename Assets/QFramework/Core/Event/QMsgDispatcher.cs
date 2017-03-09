@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace QFramework.Event {
+namespace QFramework {
 
 	public enum QMsgChannel {
 		Global,	// 全局

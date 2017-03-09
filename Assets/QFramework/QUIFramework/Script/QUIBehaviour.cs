@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using QFramework;
 using UnityEngine.UI;
 
-namespace QFramework.UI {
+namespace QFramework {
 	public abstract class QUIBehaviour : QMonoBehaviour {
 
 		protected override void SetupMgr ()

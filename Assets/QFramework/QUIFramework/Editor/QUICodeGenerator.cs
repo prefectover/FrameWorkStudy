@@ -43,7 +43,7 @@ public class QUICodeGenerator
         for (int i = 0; i < trans.childCount; i++)
         {
             Transform childTrans = trans.GetChild(i);
-			QFramework.UI.QUIMark uiMark = childTrans.GetComponent<QFramework.UI.QUIMark>();
+			QFramework.QUIMark uiMark = childTrans.GetComponent<QFramework.QUIMark>();
             if (null != uiMark)
             {
                 if (!m_dicNameToTrans.ContainsKey(childTrans.name))
@@ -75,9 +75,7 @@ public class QUICodeGenerator
                 strBuilder.AppendLine("using System.Collections.Generic;");
                 strBuilder.AppendLine("using UnityEngine;");
                 strBuilder.AppendLine("using UnityEngine.UI;");
-				strBuilder.AppendLine ("using QFramework;");
-				strBuilder.AppendLine("using QFramework.UI;");
-				strBuilder.AppendLine("using QFramework.Event;").AppendLine();
+				strBuilder.AppendLine ("using QFramework;").AppendLine();
 
                 strBuilder.AppendFormat("public class {0} : QUIBehaviour", strDlg);
                 strBuilder.AppendLine();
@@ -134,7 +132,7 @@ public class QUICodeGenerator
         strBuilder.AppendLine("using System;");
         strBuilder.AppendLine("using QFramework;").AppendLine();
 
-		strBuilder.AppendLine("namespace QFramework.UI");
+		strBuilder.AppendLine("namespace QFramework");
         strBuilder.AppendLine("{");
         strBuilder.Append("\tpublic class QUIFactory");
         strBuilder.AppendLine();
@@ -192,7 +190,6 @@ public class QUICodeGenerator
         strBuilder.AppendLine("using UnityEngine;");
         strBuilder.AppendLine("using UnityEngine.UI;");
 		strBuilder.AppendLine("using QFramework;");
-		strBuilder.AppendLine("using QFramework.UI;");
 
 		strBuilder.AppendFormat("public class {0}Components : IUIComponents", behaviourName);
         strBuilder.AppendLine();
@@ -270,8 +267,8 @@ public class QUICodeGenerator
 
     private string GetUIPrefabPath()
     {
-		var retDir = Application.dataPath + "/Resources";
-//		var retDir = Application.dataPath + "/QArt/QAB/UIPrefab";
+//		var retDir = Application.dataPath + "/Resources";
+		var retDir = Application.dataPath + "/QArt/UIPrefab";
 		if (!Directory.Exists (retDir)) {
 			Directory.CreateDirectory (retDir);
 		}

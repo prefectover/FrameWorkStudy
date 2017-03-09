@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-namespace QFramework.UI {
+namespace QFramework {
 
 	/// <summary>
 	/// 事件监听器

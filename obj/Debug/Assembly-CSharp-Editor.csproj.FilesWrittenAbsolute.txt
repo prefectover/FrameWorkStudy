@@ -65,3 +65,9 @@
 /Users/admin/QFramework/Temp/bin/Debug/Excel.dll
 /Users/admin/QFramework/Temp/bin/Debug/ICSharpCode.SharpZipLib.dll
 /Users/admin/QFramework/Temp/bin/Debug/System.Data.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DiffieHellman.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Org.Mentalis.Security.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Tamir.SharpSSH.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Excel.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/ICSharpCode.SharpZipLib.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/System.Data.dll

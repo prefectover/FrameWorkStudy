@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace QFramework.Event {
+namespace QFramework {
 	
 	public interface IMsgSender  {
 

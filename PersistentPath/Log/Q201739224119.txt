@@ -1,0 +1,26 @@
+03/09/2017 22:41:19	Instance Name: QMsgCenter
+03/09/2017 22:41:19	Add New Singleton QMsgCenter in Game!
+03/09/2017 22:41:19	QMsgCenter Init
+03/09/2017 22:41:19	Instance Name: QTimerMgr
+03/09/2017 22:41:19	Add New Singleton QTimerMgr in Game!
+03/09/2017 22:41:19	Instance Name: QSoundMgr
+03/09/2017 22:41:19	Add New Singleton QSoundMgr in Game!
+03/09/2017 22:41:19	Instance Name: QThreadMgr
+03/09/2017 22:41:19	Add New Singleton QThreadMgr in Game!
+---------------------------------------------------------------------------------------------------------------------
+03/09/2017 22:41:19	Exception: Non-public ctor() not found!
+
+QFramework.QSingleton`1[GameManager].get_Instance () (at Assets/QFramework/Core/DesignPattern/QSingleton.cs:37)
+QFramework.Instance+<Init>c__IteratorE.MoveNext () (at Assets/QFramework/QFramework.cs:34)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+03/09/2017 22:41:21	The compiler this script was imported with is not available anymore.
+
+UnityEditorInternal.InternalEditorUtility:GetMonoIslands()
+UnityEditor.SyncVS:SyncIfFirstFileOpenSinceDomainLoad()
+UnityEditorInternal.LogEntries:RowGotDoubleClicked(Int32)
+UnityEditor.DockArea:OnGUI()
+
+---------------------------------------------------------------------------------------------------------------------

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using QFramework.AB;
-using QFramework.UI;
+using QFramework;
 
 namespace QFramework {
 

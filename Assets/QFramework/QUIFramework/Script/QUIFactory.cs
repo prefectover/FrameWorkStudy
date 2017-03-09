@@ -1,7 +1,7 @@
 ﻿using System;
 using QFramework;
 
-namespace QFramework.UI
+namespace QFramework
 {
 	public class QUIFactory
 	{
@@ -21,7 +21,6 @@ namespace QFramework.UI
 			IUIComponents retComponents = null;
 			switch (strUI)
 			{
-
 			}
 			return retComponents;
 		}

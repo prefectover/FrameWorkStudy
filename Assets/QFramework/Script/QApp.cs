@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using QFramework;
-using QFramework.UI;
 
 namespace QFramework {
 	public enum QAppMode {

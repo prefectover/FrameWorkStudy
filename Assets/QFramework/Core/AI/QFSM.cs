@@ -1,111 +1,120 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
+using QFramework;
 
-/// <summary>
-/// 状态机实现
-/// </summary>
-public class QFSM {
-	// 定义函数指针类型
-	public delegate void FSMCallfunc();
+namespace QFramework {
 
 	/// <summary>
-	/// 状态类
+	/// 状态机基类
 	/// </summary>
-	class QState 
-	{		
-		public string name;
-		
-		public QState(string name)
-		{
+	public class QFSMState
+	{
+		public QFSMState(ushort name) {
 			this.name = name;
 		}
 
+		public ushort name;						// 字符串
+		public virtual void OnEnter() {}			// 进入状态(逻辑)
+		public virtual void OnExit() {}			// 离开状态(逻辑)
 		/// <summary>
 		/// 存储事件对应的条转
 		/// </summary>
-		public Dictionary <string,FSMTranslation> TranslationDict = new Dictionary<string,FSMTranslation>();
+		public Dictionary <ushort,QFSMTranslation> TranslationDict = new Dictionary<ushort,QFSMTranslation>();
 	}
-
+		
 	/// <summary>
 	/// 跳转类
 	/// </summary>
-	public class FSMTranslation
+	public class QFSMTranslation
 	{
-		public string fromState;
-		public string name;
-		public string toState;
-		public FSMCallfunc callfunc;	// 回调函数
+		public QFSMState fromState;
+		public ushort eventName;
+		public QFSMState toState;
 
-		public FSMTranslation(string fromState,string name, string toState,FSMCallfunc callfunc)
+		public QFSMTranslation(QFSMState fromState,ushort eventName, QFSMState toState)
 		{
 			this.fromState = fromState;
 			this.toState   = toState;
-			this.name = name;
-			this.callfunc = callfunc;
-		}
-	}
-		
-	// 当前状态
-	private string mCurState;
-
-	public string State {
-		get {
-			return mCurState;
+			this.eventName = eventName;
 		}
 	}
 
-	// 状态
-	Dictionary <string,QState> StateDict = new Dictionary<string,QState>();
-
-	/// <summary>
-	/// 添加状态
-	/// </summary>
-	/// <param name="state">State.</param>
-	public void AddState(string name)
+	public class QFSM
 	{
-		StateDict [name] = new QState(name);
-	}
-		
-	/// <summary>
-	/// 添加条转
-	/// </summary>
-	/// <param name="translation">Translation.</param>
-	public void AddTranslation(string fromState,string name,string toState,FSMCallfunc callfunc)
-	{
-		StateDict [fromState].TranslationDict [name] = new FSMTranslation (fromState, name, toState, callfunc);
-	}
+		QFSMState mCurState;
 
-	/// <summary>
-	/// 启动状态机
-	/// </summary>
-	/// <param name="state">State.</param>
-	public void Start(string name)
-	{
-		mCurState = name;
-	}
-
-
-	/// <summary>
-	/// 处理事件
-	/// </summary>
-	/// <param name="name">Name.</param>
-	public void HandleEvent(string name)
-	{	
-		if (mCurState != null && StateDict[mCurState].TranslationDict.ContainsKey(name)) {
-			System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch ();
-			watch.Start ();
-
-			FSMTranslation tempTranslation = StateDict [mCurState].TranslationDict [name];
-			tempTranslation.callfunc ();
-			mCurState =  tempTranslation.toState;
-
-			watch.Stop ();
+		public QFSMState State {
+			get {
+				return mCurState;
+			}
 		}
-	}
 
-	public void Clear()
-	{
-		StateDict.Clear ();
+		// 状态字典
+		Dictionary<ushort, QFSMState> mStateDict = new Dictionary<ushort, QFSMState>();
+
+		/// <summary>
+		/// 添加状态
+		/// </summary>
+		/// <param name="state">State.</param>
+		public void AddState(QFSMState state)
+		{
+			mStateDict.Add (state.name, state);
+		}
+
+
+		/// <summary>
+		/// 添加条转
+		/// </summary>
+		/// <param name="translation">Translation.</param>
+		public void AddTranslation(QFSMTranslation translation)
+		{
+			mStateDict [translation.fromState.name].TranslationDict.Add(translation.eventName, translation);
+		}
+
+
+		/// <summary>
+		/// 添加条转
+		/// </summary>
+		/// <param name="translation">Translation.</param>
+		public void AddTranslation(QFSMState fromState,ushort eventName,QFSMState toState)
+		{
+			mStateDict [fromState.name].TranslationDict.Add(eventName, new QFSMTranslation (fromState, eventName, toState));
+		}
+
+		/// <summary>
+		/// 启动状态机
+		/// </summary>
+		/// <param name="state">State.</param>
+		public void Start(QFSMState startState)
+		{
+			mCurState = startState;
+			mCurState.OnEnter ();
+		}
+
+		/// <summary>
+		/// 处理事件
+		/// </summary>
+		/// <param name="name">Name.</param>
+		public void HandleEvent(ushort eventName)
+		{	
+			if (mCurState != null && mStateDict[mCurState.name].TranslationDict.ContainsKey(eventName)) {
+				QFSMTranslation tempTranslation = mStateDict [mCurState.name].TranslationDict [eventName];
+				tempTranslation.fromState.OnExit ();
+				mCurState =  tempTranslation.toState;
+				tempTranslation.toState.OnEnter ();
+			}
+		}
+			
+		/// <summary>
+		/// 清空
+		/// </summary>
+		public void Clear()
+		{
+			mStateDict.Clear ();
+		}
 	}
 }

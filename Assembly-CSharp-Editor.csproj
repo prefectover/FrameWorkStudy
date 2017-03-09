@@ -92,6 +92,7 @@
      <Compile Include="Assets\QFramework\QLocalize\Editor\PermissionDesEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QUIFramework\Editor\QUICodeGenerator.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
+     <None Include="Assets\QFrameworkData\QAB\resitems.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />
      <None Include="Assets\QFramework\QAB\Script\readme.txt" />
      <None Include="Assets\QFramework\QLocalize\readme.txt" />
@@ -123,6 +124,15 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
+ <Reference Include="DiffieHellman">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/DiffieHellman.dll</HintPath>
+ </Reference>
+ <Reference Include="Org.Mentalis.Security">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Org.Mentalis.Security.dll</HintPath>
+ </Reference>
+ <Reference Include="Tamir.SharpSSH">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Tamir.SharpSSH.dll</HintPath>
+ </Reference>
  <Reference Include="Excel">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
  </Reference>
@@ -143,15 +153,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="Org.Mentalis.Security">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Org.Mentalis.Security.dll</HintPath>
- </Reference>
- <Reference Include="Tamir.SharpSSH">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Tamir.SharpSSH.dll</HintPath>
- </Reference>
- <Reference Include="DiffieHellman">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/DiffieHellman.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

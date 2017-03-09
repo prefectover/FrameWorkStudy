@@ -1,0 +1,23 @@
+03/09/2017 22:42:31	Instance Name: QMsgCenter
+03/09/2017 22:42:31	Add New Singleton QMsgCenter in Game!
+03/09/2017 22:42:31	QMsgCenter Init
+03/09/2017 22:42:31	Instance Name: QTimerMgr
+03/09/2017 22:42:31	Add New Singleton QTimerMgr in Game!
+03/09/2017 22:42:31	Instance Name: QSoundMgr
+03/09/2017 22:42:31	Add New Singleton QSoundMgr in Game!
+---------------------------------------------------------------------------------------------------------------------
+03/09/2017 22:42:31	NullReferenceException: Object reference not set to an instance of an object
+
+QFramework.QApp+<Start>c__Iterator11.MoveNext () (at Assets/QFramework/Script/QApp.cs:49)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+03/09/2017 22:42:32	The compiler this script was imported with is not available anymore.
+
+UnityEditorInternal.InternalEditorUtility:GetMonoIslands()
+UnityEditor.SyncVS:SyncIfFirstFileOpenSinceDomainLoad()
+UnityEditorInternal.LogEntries:RowGotDoubleClicked(Int32)
+UnityEditor.DockArea:OnGUI()
+
+---------------------------------------------------------------------------------------------------------------------

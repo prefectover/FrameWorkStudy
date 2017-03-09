@@ -22,15 +22,10 @@ namespace QFramework {
 		{
 			yield return QMsgCenter.Instance.Init ();
 
-//			yield return QResMgr.Instance.Init ();
-
-//			yield return QSoundMgr.Instance.Init ();
-
 			//-----------------初始化管理器-----------------------
 			var a = QTimerMgr.Instance;
 			var b = QSoundMgr.Instance;
 			var c = QResourceManager.Instance;
-			var d = QThreadMgr.Instance;
 			var f = GameManager.Instance;
 		}
 	}

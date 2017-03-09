@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-namespace QFramework.UI {
+namespace QFramework {
 	/// <summary>
 	/// UI的标记
 	/// </summary>

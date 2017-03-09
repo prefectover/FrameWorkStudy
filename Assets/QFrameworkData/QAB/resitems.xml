@@ -1,0 +1,6 @@
+<config>
+  <item name="first3" abspath="first2/first3" assetpath="Assets/QArt/QAB/first2/first3" />
+  <item name="first4" abspath="first2/first4" assetpath="Assets/QArt/QAB/first2/first4" />
+  <item name="first5" abspath="first2/first5" assetpath="Assets/QArt/QAB/first2/first5" />
+  <item name="first6" abspath="first2/first6" assetpath="Assets/QArt/QAB/first2/first6" />
+</config>
