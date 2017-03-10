@@ -38,7 +38,7 @@ namespace QFramework
 			AssetDatabase.Refresh ();
 		}
 
-//		[MenuItem ("PuTaoTool/AssetBundles/AssetBundleBuilder")]
+		[MenuItem ("PuTaoTool/AssetBundles/AssetBundleBuilder")]
 		public static void ExecuteAssetBundle ()
 		{
 		
