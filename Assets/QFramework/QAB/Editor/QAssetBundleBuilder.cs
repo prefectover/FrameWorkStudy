@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace QFramework
 {
-	public class PTAssetBundleBuilder : EditorWindow
+	public class QAssetBundleBuilder : EditorWindow
 	{
 
 		private int buildTargetIndex = 0;
@@ -38,11 +38,11 @@ namespace QFramework
 			AssetDatabase.Refresh ();
 		}
 
-		[MenuItem ("PuTaoTool/AssetBundles/AssetBundleBuilder")]
+//		[MenuItem ("PuTaoTool/AssetBundles/AssetBundleBuilder")]
 		public static void ExecuteAssetBundle ()
 		{
 		
-			PTAssetBundleBuilder	window = (PTAssetBundleBuilder)GetWindow (typeof(PTAssetBundleBuilder), true);
+			QAssetBundleBuilder	window = (QAssetBundleBuilder)GetWindow (typeof(QAssetBundleBuilder), true);
 			Debug.Log (Screen.width + " screen width*****");
 			window.position = new Rect (100, 100, 500, 400);
 			window.Show ();

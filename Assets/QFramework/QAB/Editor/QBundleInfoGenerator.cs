@@ -20,12 +20,14 @@ namespace QFramework
 			for(int i=0;i<assetBundleInfos.Count;i++){
 				AssetBundleInfo assetBundleInfo = assetBundleInfos [i];
 				string className = assetBundleInfo.name;
-				string bundleName = className.ToUpper ();
+				string bundleName = className.Substring (0, 1).ToUpper () + className.Substring (1);
 				className = className.Substring(0,1).ToUpper()+className.Substring(1).Replace("/","_").Replace("@","_").Replace("!","_");
 				if (!string.IsNullOrEmpty (projectTag)) {
 					className = className.Replace ("_project_" + projectTag, "");
 					bundleName = bundleName.Replace ("_project_" + projectTag, "");
 				}
+
+				className = className.ToUpper ();
 
 				var codeType = new CodeTypeDeclaration (className);
 				codeNamespace.Types.Add (codeType);

@@ -30,7 +30,7 @@ namespace QFramework
 	{
 		public static string overloadedDevelopmentServerURL = "";
 	
-		private static string projectTag = "putaogame";
+		private static string projectTag = "qframework";
 
 		public static void SetProjectTag(){
 
@@ -50,7 +50,6 @@ namespace QFramework
 					} else {
 						ai.assetBundleName = abName + projectMark + projectTag;
 					}
-
 				}
 				AssetDatabase.SaveAssets ();
 
@@ -60,7 +59,7 @@ namespace QFramework
 		public static void BuildAssetBundles(BuildTarget buildTarget,string inputProjectTag)
 		{
 			if (string.IsNullOrEmpty (inputProjectTag)) {
-				projectTag = "putaogame";
+				projectTag = "qframework";
 			} else {
 				projectTag = inputProjectTag;
 			}
@@ -98,9 +97,6 @@ namespace QFramework
 		public static void EncryptLua(string srcPath,string toPath)
 		{
 
-//			string srcPath = Application.dataPath + "/Lua/" + dic + "/";
-//			string toPath = Application.dataPath + "/Data/Lua/" + dic + "/";
-
 			DirectoryInfo srcDirInfo = new DirectoryInfo(srcPath);
 			DirectoryInfo toDirInfo = new DirectoryInfo(toPath);
 
@@ -135,26 +131,7 @@ namespace QFramework
 					fi.Attributes = FileAttributes.Normal; //去除只读属性
 				}          
 			}
-
-			//以下是进行lua脚本的加密,（加密:windows版l已OK（luac批处理）,ios的请高手提交代码; 解密:待完善,即让lua requrie函数使用c#函数来执行解密）
-			/*
-          //luac 
-			runLuac();
-			*/
-
-//			if (API.usingEncryptLua)
-//			{
-//				//rc4 lua files
-//				foreach (FileInfo luaFile in toDirInfo.GetFiles("*.lua", SearchOption.AllDirectories))
-//				{
-//					string allPath = luaFile.FullName;
-//					Debug.Log("加密" + allPath);
-//					EncryptFile(allPath, allPath,true); //进行RC4
-//				}
-//			}
 		}
-
-
 
 		public static  List<string> PackZips(string outpath){
 			 List<string> finalZipFiles = new List<string>();
@@ -250,7 +227,7 @@ namespace QFramework
 			string[] allABNames = abMainfest.GetAllAssetBundles ();
 			XmlDocument xmlDoc = new XmlDocument ();
 			XmlElement xmlRoot = xmlDoc.CreateElement ("config");
-			xmlRoot.SetAttribute ("res_version", PTAssetBundleBuilder.resVersion);
+			xmlRoot.SetAttribute ("res_version", QAssetBundleBuilder.resVersion);
 			xmlDoc.AppendChild (xmlRoot);
 			assetBundleInfos.Clear ();
 			for (int i = 0; i < allABNames.Length; i++) {
@@ -291,7 +268,7 @@ namespace QFramework
 
 		
 
-			if (PTAssetBundleBuilder.isEnableGenerateClass) {
+			if (QAssetBundleBuilder.isEnableGenerateClass) {
 				if (!Directory.Exists ("QFrameworkData")) {
 					Directory.CreateDirectory ("QFrameworkData");
 				}
