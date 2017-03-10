@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	public interface IFTPInterface
 	{

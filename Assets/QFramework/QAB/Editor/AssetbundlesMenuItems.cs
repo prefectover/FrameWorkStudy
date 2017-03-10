@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	public class AssetBundlesMenuItems
 	{
@@ -11,13 +11,13 @@ namespace PTGame.AssetBundles
 		[MenuItem(kSimulationMode)]
 		public static void ToggleSimulationMode ()
 		{
-			PTAssetBundleTool.SimulateAssetBundleInEditor = !PTAssetBundleTool.SimulateAssetBundleInEditor;
+			QAssetBundleTool.SimulateAssetBundleInEditor = !QAssetBundleTool.SimulateAssetBundleInEditor;
 		}
 	
 		[MenuItem(kSimulationMode, true)]
 		public static bool ToggleSimulationModeValidate ()
 		{
-			Menu.SetChecked(kSimulationMode, PTAssetBundleTool.SimulateAssetBundleInEditor);
+			Menu.SetChecked(kSimulationMode, QAssetBundleTool.SimulateAssetBundleInEditor);
 			return true;
 		}
 

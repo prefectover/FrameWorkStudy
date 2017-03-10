@@ -4,12 +4,12 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
-using PTGame.AssetBundles;
+using QFramework;
 using System.Linq;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
-	public class QAssetBundleBuilder : EditorWindow
+	public class PTAssetBundleBuilder : EditorWindow
 	{
 
 		private int buildTargetIndex = 0;
@@ -29,8 +29,8 @@ namespace PTGame.AssetBundles
 
 		//[MenuItem ("PuTaoTool/AssetBundles/ForceClear")]
 		public static void ForceClear(){
-			if (Directory.Exists (PTAssetBundleTool.AssetBundlesOutputPath)) {
-				Directory.Delete (PTAssetBundleTool.AssetBundlesOutputPath,true);
+			if (Directory.Exists (QAssetBundleTool.AssetBundlesOutputPath)) {
+				Directory.Delete (QAssetBundleTool.AssetBundlesOutputPath,true);
 			}
 			if(Directory.Exists(Application.streamingAssetsPath+"/AssetBundles")){
 				Directory.Delete (Application.streamingAssetsPath+"/AssetBundles",true);
@@ -42,7 +42,7 @@ namespace PTGame.AssetBundles
 		public static void ExecuteAssetBundle ()
 		{
 		
-			QAssetBundleBuilder	window = (QAssetBundleBuilder)GetWindow (typeof(QAssetBundleBuilder), true);
+			PTAssetBundleBuilder	window = (PTAssetBundleBuilder)GetWindow (typeof(PTAssetBundleBuilder), true);
 			Debug.Log (Screen.width + " screen width*****");
 			window.position = new Rect (100, 100, 500, 400);
 			window.Show ();
@@ -76,11 +76,34 @@ namespace PTGame.AssetBundles
 			GUILayout.Toolbar (buildTargetIndex, platformLabels);
 		}
 
+		void DrawAssetBundleList ()
+		{
+//			GUILayout.BeginVertical ();
+//
+//			List<MarkItem> nodelist = PTConfigManager.Instance.markItems;
+//			if (nodelist != null) {
+//				for (int i = 0; i < nodelist.Count; i++) {
+//					EditorGUILayout.LabelField (nodelist [i].path, new GUIStyle (EditorStyles.helpBox){ fontSize = 13 }, GUILayout.Width (400), GUILayout.Height (30));
+//				}
+//			}
+//
+//			GUILayout.EndVertical ();
+		}
+
+//		public void OnFocus ()
+//		{
+//			PTConfigManager.Instance.CheckItems ();
+//		}
+
 		public void OnDisable ()
 		{
 			EditorPrefs.SetBool (KEY_AUTOGENERATE_CLASS,isEnableGenerateClass);
 			EditorPrefs.SetString (KEY_PTAssetBundleBuilder_RESVERSION,resVersion);
 			EditorPrefs.SetString (KEY_ProjectTag,projectTag);
+			//EditorPrefs.SetBool (KEY_ZipFramework,isUseFramework);
+
+
+//			PTConfigManager.Instance.Dispose ();
 		}
 
 
@@ -98,6 +121,7 @@ namespace PTGame.AssetBundles
 			}
 
 			DrawMenu ();
+			DrawAssetBundleList ();
 
 			isEnableGenerateClass = GUILayout.Toggle (isEnableGenerateClass, "auto generate class");
 
@@ -145,8 +169,12 @@ namespace PTGame.AssetBundles
 			//PTAssetBundleTool.SetProjectTag();
 			AssetDatabase.RemoveUnusedAssetBundleNames ();
 			AssetDatabase.Refresh ();
-			QFramework.PRIVATE.QABBuilder.BuildAssetBundles (buildTarget,projectTag);
+			BuildScript.BuildAssetBundles (buildTarget,projectTag);
 		}
+
+	
+	
+
 	}
 
 }

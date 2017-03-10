@@ -5,10 +5,10 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEditorInternal;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	[InitializeOnLoad]
-	public class PTAssetBundleTool
+	public class QAssetBundleTool
 	{
 
 		public const string AssetBundlesOutputPath = "AssetBundles";
@@ -45,7 +45,7 @@ namespace PTGame.AssetBundles
 		public const string LABEL_AB = "ptab_ab";
 		public const string LABEL_ZIP = "ptab_zip";
 		public const string LABEL_FILE = "ptab_file";
-		static PTAssetBundleTool ()
+		static QAssetBundleTool ()
 		{
 			Selection.selectionChanged = OnSelectionChanged;
 		 

@@ -70,18 +70,10 @@
      <Compile Include="Assets\QFramework\QAB\Editor\FTPClient.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\IFTPInterface.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\LoomEditorWindow.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\PTAssetBundleTool.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\PTAssetBundleUploader.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\PTBundleInfoGenerator.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\PTConfigManager.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\PTCustomAssets.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\Packager.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\QABBuilder.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\QABCodeGenerator.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\QABConfigMgr.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\QABEditor.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\QAssetBundleBuilder.cs" />
-     <Compile Include="Assets\QFramework\QAB\Editor\QEditorUtil.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QAssetBundleTool.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QAssetBundleUploader.cs" />
+     <Compile Include="Assets\QFramework\QAB\Editor\QBundleInfoGenerator.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\SFTPHelper.cs" />
      <Compile Include="Assets\QFramework\QExcel2XML\Editor\GenXML.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameAndroidResGenerator.cs" />
@@ -99,6 +91,7 @@
      <None Include="Assets\QFramework\QLocalize\Template\strings.xml" />
      <None Include="Assets\QFramework\QAB\Script\ptversion.xml" />
      <None Include="Assets\QFrameworkData\resitems.xml" />
+     <None Include="Assets\StreamingAssets\AssetBundles\OSX\putaogame\resconfig.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hant.xml" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -127,6 +120,9 @@
  <Reference Include="DiffieHellman">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/DiffieHellman.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="Org.Mentalis.Security">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Org.Mentalis.Security.dll</HintPath>
  </Reference>
@@ -150,9 +146,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

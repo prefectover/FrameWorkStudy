@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using UnityEditor;
 #endif
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	public class ABUtility
 	{

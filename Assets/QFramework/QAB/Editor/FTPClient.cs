@@ -3,7 +3,7 @@ using System.IO;
 using System;
 using System.Text;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	class FTPClient:IFTPInterface
 	{

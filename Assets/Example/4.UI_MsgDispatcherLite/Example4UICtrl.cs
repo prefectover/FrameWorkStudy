@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using QFramework;
-using PTGame.AssetBundles;
-using QAB;
+using QFramework;
+using QAssetBundle;
 
 /// <summary>
 /// 可以接收的消息类型
@@ -39,12 +39,12 @@ namespace QFramework {
 			this.RegisterMsgByChannel(QMsgChannel.UI,Example4UIMsg.SEND_MSG_TO_EXAMPLE_4_UI_CTRL,ProcessEvent);
 
 			QResourceManager.Instance.Init ();
-			QResourceManager.Instance.LoadAssetBundle (UIPREFAB.BUNDLENAME);
+			QResourceManager.Instance.LoadAssetBundle (UIPREFAB.BUNDLE_NAME);
 
 			QUIManager.Instance.SetResolution (1024, 768);
 			QUIManager.Instance.SetMatchOnWidthOrHeight (0);
 
-			QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLENAME);
+			QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 		}
 
 		/// <summary>
@@ -57,22 +57,22 @@ namespace QFramework {
 			switch (eventName) {
 				case Example4UIMsg.MAIN_PAGE_BTN_START_CLICK:
 					QUIManager.Instance.DeleteUI<UIExample4MainPage> ();
-					QUIManager.Instance.OpenUI<UIExample4GamePage> (QUILevel.Common, UIPREFAB.BUNDLENAME);
+					QUIManager.Instance.OpenUI<UIExample4GamePage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.MAIN_PAGE_BTN_ABOUT_CLICK:
 					QUIManager.Instance.DeleteUI<UIExample4MainPage> ();
-					QUIManager.Instance.OpenUI<UIExample4AboutPage> (QUILevel.Common, UIPREFAB.BUNDLENAME);
+					QUIManager.Instance.OpenUI<UIExample4AboutPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.MAIN_PAGE_BTN_QUIT_CLICK:
-					QUIManager.Instance.OpenUI<UIExample4Dialog> (QUILevel.Forward, UIPREFAB.BUNDLENAME);
+					QUIManager.Instance.OpenUI<UIExample4Dialog> (QUILevel.Forward, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.ABOUT_PAGE_BTN_BACK_CLICK:
 					QUIManager.Instance.DeleteUI<UIExample4AboutPage> ();
-					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLENAME);
+					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.GAME_PAGE_BTN_BACK_CLICK:
 					QUIManager.Instance.DeleteUI<UIExample4GamePage> ();
-					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLENAME);
+					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 
 				case Example4UIMsg.DIALOG_BTN_SURE_CLICK:

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	class MonoInstallationFinder
 	{

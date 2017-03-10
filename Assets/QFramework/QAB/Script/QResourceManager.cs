@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using PTGame.AssetBundles;
+using QFramework;
 using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
-using PTGame.AssetBundles;
+using QFramework;
 
 namespace QFramework {
 	public class QResourceManager : MonoBehaviour

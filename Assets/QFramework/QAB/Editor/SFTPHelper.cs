@@ -6,7 +6,7 @@ using System.Collections;
 using Tamir.SharpSsh;
 using Tamir.SharpSsh.jsch;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	class SFTPHelper:IFTPInterface
 	{

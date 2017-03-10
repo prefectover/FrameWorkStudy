@@ -7,7 +7,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
 	public class LoomEditorWindow : EditorWindow
 	{

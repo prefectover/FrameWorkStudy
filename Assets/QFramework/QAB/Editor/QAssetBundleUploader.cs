@@ -8,9 +8,9 @@ using System.Threading;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {
-	public class PTAssetBundleUploader : LoomEditorWindow
+	public class QAssetBundleUploader : LoomEditorWindow
 	{
 
 		static string dataPath;
@@ -18,7 +18,7 @@ namespace PTGame.AssetBundles
 		[MenuItem ("PuTaoTool/AssetBundles/AssetBundleUploader")]
 		public static void ExecuteAssetBundle ()
 		{
-			PTAssetBundleUploader window = (PTAssetBundleUploader)GetWindow (typeof(PTAssetBundleUploader), true);
+			QAssetBundleUploader window = (QAssetBundleUploader)GetWindow (typeof(QAssetBundleUploader), true);
 			Debug.Log (Screen.width + " screen width*****");
 			window.position = new Rect (100, 100, 500, 400);
 			dataPath = Application.dataPath;

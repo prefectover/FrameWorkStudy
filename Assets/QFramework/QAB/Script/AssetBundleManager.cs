@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 
 
-namespace PTGame.AssetBundles
+namespace QFramework
 {	
 	// Loaded assetBundle contains the references count which can be used to unload dependent assetBundles automatically.
 	public class LoadedAssetBundle
