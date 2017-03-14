@@ -127,38 +127,8 @@ namespace QFramework
 				/* Specify the Type of FTP Request */
 				ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 				/* Establish Return Communication with the FTP Server */
-//			ftpStream = ftpRequest.GetRequestStream();
-				/* Open a File Stream to Read the File for Upload */
-//			FileStream localFileStream = new FileStream(localFile, FileMode.Create);
-//			/* Buffer for the Downloaded Data */
-//			byte[] byteBuffer = new byte[bufferSize];
-//			int bytesSent = localFileStream.Read(byteBuffer, 0, bufferSize);
-//			/* Upload the File by Sending the Buffered Data Until the Transfer is Complete */
-//			try
-//			{
-//				while (bytesSent != 0)
-//				{
-//					ftpStream.Write(byteBuffer, 0, bytesSent);
-//					bytesSent = localFileStream.Read(byteBuffer, 0, bufferSize);
-//				}
-//			}
-//			catch (Exception ex) 
-//			{
-//				Console.WriteLine(ex.ToString());
-//			
-//				return false;
-//			}
-
-
-
-//				StreamReader sourceStream = new StreamReader (localFile);
-//				byte[] fileContents = Encoding.UTF8.GetBytes (sourceStream.ReadToEnd ());
-//				sourceStream.Close ();
-//				ftpRequest.ContentLength = fileContents.Length;
-//				UnityEngine.Debug.Log(fileContents.Length+" *****ftpRequest.ContentLength ***********"+localFile);
-//
 				Stream requestStream = ftpRequest.GetRequestStream ();
-//				requestStream.Write (fileContents, 0, fileContents.Length);
+
 			
 				UnityEngine.Debug.Log("localFile****** :"+localFile);
 				FileStream fileStream = File.Open ( localFile, FileMode.Open );
