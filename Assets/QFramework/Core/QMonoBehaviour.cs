@@ -124,8 +124,11 @@ namespace QFramework {
 
 		}
 
-		public void RegisterSelf(QMonoBehaviour mono,ushort[] msgs)
+		public void RegisterSelf(QMonoBehaviour mono,ushort[] msgs = null)
 		{
+			if (null != msgs) {
+				mMsgIds = msgs;
+			}
 			mCurMgr.RegisterMsg(mono,mMsgIds);
 		}
 
