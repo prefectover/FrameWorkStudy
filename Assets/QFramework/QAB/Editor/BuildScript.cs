@@ -409,17 +409,12 @@ namespace QFramework
 				fileMD5 += Convert.ToString(b, 16);
 			}
 			return fileMD5;   
-//			return " ";
 		}
 
 		public static string getSize(byte[] data)
 		{
 			return data.Length.ToString();
-//			return 10.ToString();
 		}
-
-
-
 
 		private static void GetDirectorys(string strPath, ref List<string> lstDirect)  
 		{  
@@ -476,82 +471,5 @@ namespace QFramework
 				}
 			}
 		}
-
-//		private static void AddAssetBundlePrefix(string projectTag) {
-//			List<FileInfo> lstFiles = new List<FileInfo>();  
-//			List<string> lstDirect = new List<string>();  
-//			lstDirect.Add(Application.dataPath);  
-//			DirectoryInfo diFliles = null;  
-//			GetDirectorys(Application.dataPath, ref lstDirect);  
-//			foreach (string str in lstDirect)  
-//			{  
-//				try  
-//				{  
-//					string head = "  assetBundleName: ";
-//					string tagString = "_project_";
-//					diFliles = new DirectoryInfo(str);  
-//					foreach(var file in diFliles.GetFiles()) {
-//						
-//						if (file.Extension == ".meta") {
-//							var writer = file.OpenRead();
-//							byte[] bytes = new byte[file.Length];
-//
-//							writer.Read(bytes,0,(int)file.Length);
-//							writer.Close();
-//							writer = file.OpenWrite();
-//
-//
-//							string buffer = System.Text.Encoding.Default.GetString(bytes);
-//
-//
-//							int begin = buffer.IndexOf(head);
-//
-//
-//							if (begin >= 0)
-//							{
-//								string lastString = buffer.Substring(begin);
-//								int end = lastString.IndexOf('\n');
-//								int last = buffer.IndexOf('\n',begin);
-//								string assetBundleName = lastString.Substring(0,end);
-//								if (assetBundleName != head){
-//									assetBundleName = assetBundleName.Substring(head.Length);
-//									//屏蔽回车
-//									if (assetBundleName == "\r"){
-//										continue;
-//									}
-//									int index = assetBundleName.IndexOf(tagString);
-//									if (index >= 0){
-//										if (assetBundleName.StartsWith(projectTag+tagString)){
-//											writer.Close();
-//											continue;
-//										}else{
-//											assetBundleName = assetBundleName.Substring(0, index);
-//										}
-//									}
-//									assetBundleName = head + assetBundleName + tagString + projectTag;
-//									buffer = buffer.Substring(0,begin) + assetBundleName + buffer.Substring(last);
-//									bytes = System.Text.Encoding.Default.GetBytes (buffer);
-//									writer.Write(bytes,0,bytes.Length);
-//								}
-//							}
-//							writer.Close();
-//
-//
-//						}
-//					}
-//				}  
-//				catch   
-//				{  
-//					continue;  
-//				}  
-//			}  
-//			return ;  
-//
-//		}
-//
-
-
 	}
-
 }
-	
