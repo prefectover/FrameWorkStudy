@@ -92,7 +92,6 @@
      <None Include="Assets\QFramework\QLocalize\Template\strings.xml" />
      <None Include="Assets\QFramework\QAB\Script\ptversion.xml" />
      <None Include="Assets\QFrameworkData\resitems.xml" />
-     <None Include="Assets\StreamingAssets\AssetBundles\OSX\putaogame\resconfig.xml" />
      <None Include="Assets\StreamingAssets\AssetBundles\OSX\qframework\resconfig.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\zh-Hant.xml" />
  <Reference Include="UnityEditor.Advertisements">
