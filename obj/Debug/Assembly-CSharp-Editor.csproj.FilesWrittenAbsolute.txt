@@ -71,3 +71,11 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Excel.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/ICSharpCode.SharpZipLib.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/System.Data.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.PlaymodeTestsRunner.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.Analytics.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.HoloLens.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.VR.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.VR.dll

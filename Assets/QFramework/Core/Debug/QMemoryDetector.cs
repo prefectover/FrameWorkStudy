@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.Profiling;
 
 namespace QFramework {
 	/// <summary>
@@ -46,7 +46,7 @@ namespace QFramework {
 		void OnGUI()
 		{
 			GUI.Label(this.allocMemoryRect, 
-				string.Format(TotalAllocMemroyFormation, Profiler.GetTotalAllocatedMemory() * ByteToM));
+				string.Format(TotalAllocMemroyFormation,Profiler.GetTotalAllocatedMemory() * ByteToM));
 			GUI.Label(this.reservedMemoryRect, 
 				string.Format(TotalReservedMemoryFormation, Profiler.GetTotalReservedMemory() * ByteToM));
 			GUI.Label(this.unusedReservedMemoryRect, 
