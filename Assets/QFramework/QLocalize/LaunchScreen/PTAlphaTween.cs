@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-namespace PTGame.Localize {
+namespace QFramework {
 	public enum AlphaTweenAction
 	{
 		MOVE_X,

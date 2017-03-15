@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-namespace PTGame.Localize {
+namespace QFramework {
 	public class AppNameEditorWindow : EditorWindow {
 
-		[MenuItem("PuTaoTool/Localize/App Name")]
+		[MenuItem("QFramework/Localize/App Name")]
 		static void Open() {
 
 			AppNameEditorWindow appNameEditorWindow = (AppNameEditorWindow)EditorWindow.GetWindow(typeof(AppNameEditorWindow),true);

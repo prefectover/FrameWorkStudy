@@ -46,25 +46,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\MiniJSON\MiniJSON.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXBuildFile.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXBuildPhase.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXDictionary.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXFileReference.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXGroup.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXList.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXObject.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXParser.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXProject.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXSortedDictionary.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\PBX Editor\PBXVariantGroup.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\Plist\Plist.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCBuildConfiguration.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCConfigurationList.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCMod.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCPlist.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCProject.cs" />
-     <Compile Include="Assets\QFramework\Editor\XUPorter-master\XCodePostProcess.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\MiniJSON\MiniJSON.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXBuildFile.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXBuildPhase.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXDictionary.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXFileReference.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXGroup.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXList.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXObject.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXParser.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXProject.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXSortedDictionary.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXVariantGroup.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\Plist\Plist.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCBuildConfiguration.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCConfigurationList.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCMod.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCPlist.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCProject.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCodePostProcess.cs" />
+     <Compile Include="Assets\QFramework\Core\Path\Editor\PathEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\AssetbundlesMenuItems.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\BuildScript.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\ExecuteInternalMono.cs" />
@@ -81,8 +82,8 @@
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameConfigData.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\LocalizeAssetPostprocessor.cs" />
-     <Compile Include="Assets\QFramework\QLocalize\Editor\PTLocalizeXCodeProcess.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\PermissionDesEditorWindow.cs" />
+     <Compile Include="Assets\QFramework\QLocalize\Editor\QLocalizeXCodeProcess.cs" />
      <Compile Include="Assets\QFramework\QUIFramework\Editor\QUICodeGenerator.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />

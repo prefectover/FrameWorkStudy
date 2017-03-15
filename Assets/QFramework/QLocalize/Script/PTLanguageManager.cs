@@ -11,7 +11,7 @@ using System.Xml;
 /// 1.监听系统语言切换事件,对注册其他语言的Component进行广播。
 /// 2.
 /// </summary>
-namespace PTGame.Localize {
+namespace QFramework {
 
 	public enum Language {
 		Chinese 					= 6,

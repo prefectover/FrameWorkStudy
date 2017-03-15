@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace PTGame.Localize {
+namespace QFramework {
 
 	public class LanguageData {
 		public int Index = 0;

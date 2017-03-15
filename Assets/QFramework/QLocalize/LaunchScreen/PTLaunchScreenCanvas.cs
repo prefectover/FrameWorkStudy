@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-namespace PTGame.Localize {
+namespace QFramework {
 	public class PTLaunchScreenCanvas : MonoBehaviour {
 
 		Image mLaunchScreenEnImage;
@@ -14,7 +14,7 @@ namespace PTGame.Localize {
 
 		IEnumerator Start() {
 			Image curLaunchScreenImage;
-			if (PTGame.Localize.PTLanguageManager.Instance.IsChinese) {
+			if (QFramework.PTLanguageManager.Instance.IsChinese) {
 				curLaunchScreenImage = mLaunchScreenCnImage;
 			}
 			else {

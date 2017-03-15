@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using System.Xml;
-namespace PTGame.Localize {
+namespace QFramework {
 	/// <summary>
 	/// 生成Android资源文件
 	/// </summary>

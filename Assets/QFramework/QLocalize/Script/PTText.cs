@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-namespace PTGame.Localize {
+namespace QFramework {
 
 	/// <summary>
 	/// 多语言Text

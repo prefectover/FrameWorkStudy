@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace PTGame.Localize {
+namespace QFramework {
 	/// <summary>
 	/// 本地化接口
 	/// </summary>

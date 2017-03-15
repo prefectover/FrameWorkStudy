@@ -7,8 +7,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace PTGame.Localize {
-	public static class PTLocalizeXCodeProcess 
+namespace QFramework {
+	public static class QLocalizeXCodeProcess 
 	{
 		[PostProcessBuild(1002)]
 		public static void OnPostProcessBuild( BuildTarget target, string pathToBuiltProject )
@@ -21,56 +21,7 @@ namespace PTGame.Localize {
 
 			#region 写入Plist
 			Debug.Log("Run mine ----------------------------------------------------------------- ");
-			//修改工程文件 内容
-			//string projPath = PBXProject.GetPBXProjectPath(path);
-			//PBXProject proj = new PBXProject();
-			//proj.ReadFromString(File.ReadAllText(projPath));
-			//string target = proj.TargetGuidByName("Unity-iPhone");
 
-			// add extra framework(s) 添加额外的Framework
-			//proj.AddFrameworkToProject(target, "AssetsLibrary.framework", false);
-
-			// set code sign identity & provisioning profile 设置证书签名等
-			//proj.SetBuildProperty(target, "CODE_SIGN_IDENTITY", "iPhone Distribution: _______________");
-			//proj.SetBuildProperty(target, "PROVISIONING_PROFILE", "********-****-****-****-************");
-
-			// rewrite to file
-			//File.WriteAllText(projPath, proj.WriteToString());
-
-			//修改Info.plist
-			// Get plist
-
-			// Get root
-			//读取配置文件
-//			string _path = Application.dataPath +
-//				"/PTGameData/Editor/config_ptgame/ptconfig_XCodePermission.xml";
-//			XmlDocument xmlDoc = new XmlDocument();
-//			xmlDoc.Load(_path);
-//			//获取Config的所有子节点
-//			XmlNodeList nodeList = xmlDoc.SelectSingleNode("Config").ChildNodes;
-//			foreach (XmlElement _xmlele in nodeList)
-//			{
-//				if (_xmlele.GetAttribute("Choose") == "True")
-//				{
-//					//				rootDict.SetString(_xmlele.GetAttribute("PermissionKey"), _xmlele.GetAttribute("DescriptionString"));
-//				}
-//			}
-			//		PlistElementDict _https = rootDict.CreateDict ("NSAppTransportSecurity");
-			//		_https.SetBoolean ("NSAllowsArbitraryLoads",true);
-			// Change value of CFBundleDevelopmentRegion in Xcode plist //设置语言为中文
-			//rootDict.SetString("CFBundleDevelopmentRegion", "zh_CN");
-
-			//PlistElementArray urlTypes = rootDict.CreateArray("CFBundleURLTypes");
-
-			// add weixin url scheme
-			//PlistElementDict wxUrl = urlTypes.AddDict();
-			//wxUrl.SetString("CFBundleTypeRole", "Editor");
-			//wxUrl.SetString("CFBundleURLName", "weixin");
-			//PlistElementArray wxUrlScheme = wxUrl.CreateArray("CFBundleURLSchemes");
-			//wxUrlScheme.AddString("____________");
-
-			// Write to file
-			//		File.WriteAllText(plistPath, plist.WriteToString());
 			string plistPath = pathToBuiltProject + "/Info.Plist";
 			Dictionary<string,object> dict = (Dictionary<string,object>)PlistCS.Plist.readPlist (plistPath);
 
@@ -170,9 +121,9 @@ namespace PTGame.Localize {
 
 			XmlDocument xmlDoc = new XmlDocument ();
 			Debug.Log (language);
-			if (File.Exists (Application.dataPath + "/PTUGame/PTLocalize/Permission/iOSData/" + language + ".xml")) {
+			if (File.Exists (Application.dataPath + "/QFramework/QLocalize/Permission/iOSData/" + language + ".xml")) {
 				Debug.Log (language + ": exists");
-				xmlDoc.Load (Application.dataPath + "/PTUGame/PTLocalize/Permission/iOSData/" + language + ".xml");
+				xmlDoc.Load (Application.dataPath + "/QFramework/QLocalize/Permission/iOSData/" + language + ".xml");
 			}
 			else {
 				Debug.Log (language + ": not exists");

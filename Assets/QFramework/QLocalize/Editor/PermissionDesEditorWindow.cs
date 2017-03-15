@@ -9,12 +9,12 @@ using UnityEditor.Callbacks;
 using UnityEditor.XCodeEditor;
 #endif
 
-namespace PTGame.Localize
+namespace QFramework
 {    
     /// <summary>
     /// 对应xml中文件条目
     /// </summary>
-    public class PTPermissionData
+    public class QPermissionData
     {
         /// <summary>
         /// 权限下标
@@ -29,8 +29,8 @@ namespace PTGame.Localize
         /// </summary>
         public string permision_desc;
 
-        public PTPermissionData() { }
-        public PTPermissionData(string index,string name,string desc) 
+        public QPermissionData() { }
+        public QPermissionData(string index,string name,string desc) 
         {
             this.permision_index = index;
             this.permision_name = name;
@@ -41,13 +41,13 @@ namespace PTGame.Localize
     /// <summary>
     /// 组合选择信息
     /// </summary>
-    public class PTChooseData
+    public class QChooseData
     {
         public bool choose;
-        public PTPermissionData data;
+        public QPermissionData data;
 
-        public PTChooseData() { }
-        public PTChooseData(bool choose,PTPermissionData data)
+        public QChooseData() { }
+        public QChooseData(bool choose,QPermissionData data)
         {
             this.choose = choose;
             this.data = data;
@@ -77,7 +77,7 @@ namespace PTGame.Localize
         /// <summary>
         /// 组合选择和具体内容
         /// </summary>
-        private List<PTChooseData> chooseDatas = null;
+        private List<QChooseData> chooseDatas = null;
 
         /// <summary>
         /// 某个文件的权限描述
@@ -176,7 +176,7 @@ namespace PTGame.Localize
 
             if (this.chooseDatas == null)
             {
-                this.chooseDatas = new List<PTChooseData>();
+                this.chooseDatas = new List<QChooseData>();
                 this.allPermissions = new Dictionary<string, XmlElement>();
             }
             else
@@ -196,7 +196,7 @@ namespace PTGame.Localize
         /// </summary>
         private void ShowAConfig(XmlElement _element, string index, string _key, string _value)
         {
-            this.chooseDatas.Add(new PTChooseData(this.usingIndexs.Contains(index), new PTPermissionData(index, _key, _value)));
+            this.chooseDatas.Add(new QChooseData(this.usingIndexs.Contains(index), new QPermissionData(index, _key, _value)));
             this.allPermissions.Add(_key, _element);
         }
 

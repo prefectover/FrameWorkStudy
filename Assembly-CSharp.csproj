@@ -82,12 +82,12 @@
      <Compile Include="Assets\QFramework\Core\Interface\IService.cs" />
      <Compile Include="Assets\QFramework\Core\Interface\ITestEntry.cs" />
      <Compile Include="Assets\QFramework\Core\Interface\IView.cs" />
+     <Compile Include="Assets\QFramework\Core\Path\QPath.cs" />
      <Compile Include="Assets\QFramework\Core\QAppConst.cs" />
      <Compile Include="Assets\QFramework\Core\QDelegates.cs" />
      <Compile Include="Assets\QFramework\Core\QEventMsg.cs" />
      <Compile Include="Assets\QFramework\Core\QMgrBehaviour.cs" />
      <Compile Include="Assets\QFramework\Core\QMonoBehaviour.cs" />
-     <Compile Include="Assets\QFramework\Core\QPath.cs" />
      <Compile Include="Assets\QFramework\Core\Util\IPathTools.cs" />
      <Compile Include="Assets\QFramework\Core\Util\QAlgoFunc.cs" />
      <Compile Include="Assets\QFramework\Core\Util\QIO.cs" />
