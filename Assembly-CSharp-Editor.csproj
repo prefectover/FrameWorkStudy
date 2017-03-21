@@ -85,6 +85,7 @@
      <Compile Include="Assets\QFramework\QLocalize\Editor\PermissionDesEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\QLocalizeXCodeProcess.cs" />
      <Compile Include="Assets\QFramework\QUIFramework\Editor\QUICodeGenerator.cs" />
+     <Compile Include="Assets\UnitTest\Editor\TestMsgDispatcher.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />
      <None Include="Assets\QFramework\QAB\Script\readme.txt" />

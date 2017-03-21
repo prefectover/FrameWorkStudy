@@ -1,31 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/QFramework/QConfig/QConfigManager.cs">
-    <Files>
-      <File FileName="Assets/QFramework/Core/Debug/QMemoryDetector.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/Script/Util/QGoExtend.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/Script/Util/QTransExtend.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QUIFramework/Script/QUIMark.cs" Line="1" Column="1" />
-      <File FileName="Assets/Example/0.CodeStyle/CodeStyle.cs" Line="29" Column="3" />
-      <File FileName="Assets/QFramework/Core/DesignPattern/QMonoSingletonComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/Core/DesignPattern/QSingleton.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QFramework.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/Script/Manager/QSoundMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QAB/Script/QResourceManager_1.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QAB/Script/AssetBundleManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QAB/Editor/ExecuteInternalMono.cs" Line="34" Column="39" />
-      <File FileName="Assets/QFramework/QUIFramework/Editor/QUICodeGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QAB/Editor/QBundleInfoGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets/Example/6.AdvancedFSM/AdvancedFSMExample.cs" Line="1" Column="1" />
-      <File FileName="Assets/Example/7.AdvancedMsgDispatcher/AdvancedMsgDispatcherExample.cs" Line="39" Column="12" />
-      <File FileName="Assets/QFramework/Core/QMonoBehaviour.cs" Line="130" Column="12" />
-      <File FileName="Assets/QFramework/QAB/Editor/BuildScript.cs" Line="189" Column="12" />
-      <File FileName="Assets/QFramework/QAB/Editor/QAssetBundleBuilder.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/QAB/Editor/SFTPHelper.cs" Line="1" Column="1" />
-      <File FileName="Assets/QFramework/Editor/XUPorter-master/Plist/Plist.cs" Line="60" Column="44" />
-      <File FileName="Assets/QFramework/QConfig/QConfigManager.cs" Line="46" Column="20" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

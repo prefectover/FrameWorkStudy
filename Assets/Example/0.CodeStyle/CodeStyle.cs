@@ -4,18 +4,61 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace QFramework {
+namespace QFramework.Example {
 	
 	/// <summary>
 	/// 展示编码风格
 	/// </summary>
 	public class CodeStyle : MonoBehaviour {
-
+		#region Basic
 		/// <summary>
 		/// 1.private/protected使用m开头+驼峰式
 		/// 2.前缀最好展示所属的Component类型比如Button->Btn
 		/// </summary>
 		[SerializeField] Button mBtnEnterMainPage;
+
+		/// <summary>
+		/// public类型使用首字母大写驼峰式
+		/// </summary>
+		public int LastIndex = 0;
+
+		/// <summary>
+		/// public 类型属性也算public类型变量
+		/// </summary>
+		public int CurSelectIndex {
+			get {
+				return mCurSelectIndex;
+			}
+		}
+
+		void Start () {
+			mBtnEnterMainPage = transform.Find ("BtnEnterMainPage").GetComponent<Button>();
+
+			// GameObject命名
+			// 临时变量命名采用首字母小写驼峰式
+			GameObject firstPosGo = transform.Find ("FirstPosGo").gameObject;
+		}
+
+		/// <summary>
+		/// 方法名一律首字母大写驼峰式
+		/// </summary>
+		public void Hide() {
+			gameObject.SetActive (false);
+		}
+		#endregion
+
+		#region Advanced
+		/*
+		 * GameObject->Go
+		 * Transform->Trans
+		 * Button->Btn
+		 * 
+		 * For->4
+		 * To->2
+		 * Dictionary->Dict
+		 * Number->Num
+		 * Current->Cur
+		 */
 
 		/// <summary>
 		/// 1.Bg肯定是图片
@@ -42,7 +85,6 @@ namespace QFramework {
 		/// </summary>
 		[SerializeField] RectTransform mScrollContentRectTrans;
 
-
 		/// <summary>
 		/// 1.Pos肯定是Vector3、Vector2
 		/// 2.Size肯定是Vector2
@@ -63,36 +105,6 @@ namespace QFramework {
 		[SerializeField] List<Vector3> mCachedPosList;
 		[SerializeField] Dictionary<string,Vector3> mPos4ChildName;
 		[SerializeField] Dictionary<string,Vector3> mChildPosDict;
-
-		/// <summary>
-		/// public类型使用首字母大写驼峰式
-		/// </summary>
-		public int LastIndex = 0;
-
-		/// <summary>
-		/// public 类型属性也算public类型变量
-		/// </summary>
-		public int CurSelectIndex {
-			get {
-				return mCurSelectIndex;
-			}
-		}
-
-		// Use this for initialization
-		void Start () {
-			// GameObject命名
-			mBtnEnterMainPage = transform.Find ("BtnEnterMainPage").GetComponent<Button>();
-
-			// GameObject命名
-			// 临时变量命名采用首字母小写驼峰式
-			GameObject firstPosGo = transform.Find ("FirstPosGo").gameObject;
-		}
-
-		/// <summary>
-		/// 方法名一律首字母大写驼峰式
-		/// </summary>
-		public void Hide() {
-			gameObject.SetActive (false);
-		}
+		#endregion
 	}
 }
