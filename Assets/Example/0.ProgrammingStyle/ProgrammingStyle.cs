@@ -9,7 +9,7 @@ namespace QFramework.Example {
 	/// <summary>
 	/// 展示编码风格
 	/// </summary>
-	public class CodeStyle : MonoBehaviour {
+	public class ProgrammingStyle : MonoBehaviour {
 		#region Basic
 		/// <summary>
 		/// 1.private/protected使用m开头+驼峰式
