@@ -82,6 +82,7 @@
      <Compile Include="Assets\QFramework\Core\Interface\IService.cs" />
      <Compile Include="Assets\QFramework\Core\Interface\ITestEntry.cs" />
      <Compile Include="Assets\QFramework\Core\Interface\IView.cs" />
+     <Compile Include="Assets\QFramework\Core\Path\PathDicionary.cs" />
      <Compile Include="Assets\QFramework\Core\Path\QPath.cs" />
      <Compile Include="Assets\QFramework\Core\QAppConst.cs" />
      <Compile Include="Assets\QFramework\Core\QDelegates.cs" />
@@ -192,6 +193,9 @@
  </Reference>
  <Reference Include="System.Data">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Log">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/Plugins/Log.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Example/1.UIFramework/UIFrameworkCtrl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/QFramework/Core/Editor/EditorUtils.cs">
     <Files>
-      <File FileName="Assets/Example/7.AdvancedMsgDispatcher/AdvancedMsgDispatcherExample.cs" Line="1" Column="1" />
-      <File FileName="Assets/Example/1.UIFramework/UIFrameworkCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Editor/EditorUtils.cs" Line="43" Column="30" />
+      <File FileName="Assets/QFramework/Core/Path/AppConfig.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/QAppConst.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/IView.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/ITestEntry.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/IService.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/IScene.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/IMsg.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/IModel.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/ICtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Interface/ICmd.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/QConfig/QConfigManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Script/QApp.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Path/Editor/PathEditorWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Path/Editor/AppConfigEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets/QFramework/Core/Editor/EditorFileUtils.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

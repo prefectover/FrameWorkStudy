@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\QFramework\Core\Editor\EditorFileUtils.cs" />
+     <Compile Include="Assets\QFramework\Core\Editor\EditorUtils.cs" />
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\MiniJSON\MiniJSON.cs" />
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXBuildFile.cs" />
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\PBX Editor\PBXBuildPhase.cs" />
@@ -65,6 +67,7 @@
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCPlist.cs" />
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCProject.cs" />
      <Compile Include="Assets\QFramework\Core\Editor\XUPorter-master\XCodePostProcess.cs" />
+     <Compile Include="Assets\QFramework\Core\Path\Editor\PathConfigEditor.cs" />
      <Compile Include="Assets\QFramework\Core\Path\Editor\PathEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\AssetbundlesMenuItems.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\BuildScript.cs" />
@@ -173,6 +176,9 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Log">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/Plugins/Log.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

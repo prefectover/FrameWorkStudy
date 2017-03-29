@@ -11,8 +11,6 @@ namespace QFramework {
 
 		public abstract void ProcessMsg (QMsg msg);
 
-
-
 		protected abstract void SetupMgr ();
 		private QMgrBehaviour mPrivateMgr = null;
 		protected QMgrBehaviour mCurMgr {
@@ -144,7 +142,7 @@ namespace QFramework {
 
 		public ushort[] mMsgIds;
 
-		void OnDestory()
+		void OnDestroy()
 		{
 			if (mMsgIds != null)
 			{

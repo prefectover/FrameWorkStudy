@@ -79,3 +79,4 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.HoloLens.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.VR.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Log.dll
