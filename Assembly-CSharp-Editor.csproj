@@ -80,7 +80,6 @@
      <Compile Include="Assets\QFramework\QAB\Editor\QAssetBundleUploader.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\QBundleInfoGenerator.cs" />
      <Compile Include="Assets\QFramework\QAB\Editor\SFTPHelper.cs" />
-     <Compile Include="Assets\QFramework\QExcel2XML\Editor\GenXML.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameAndroidResGenerator.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameConfigData.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\AppNameEditorWindow.cs" />
@@ -88,6 +87,7 @@
      <Compile Include="Assets\QFramework\QLocalize\Editor\PermissionDesEditorWindow.cs" />
      <Compile Include="Assets\QFramework\QLocalize\Editor\QLocalizeXCodeProcess.cs" />
      <Compile Include="Assets\QFramework\QUIFramework\Editor\QUICodeGenerator.cs" />
+     <Compile Include="Assets\QFramework\UnManaged\QExcel2XML\Editor\GenXML.cs" />
      <Compile Include="Assets\UnitTest\Editor\TestMsgDispatcher.cs" />
      <None Include="Assets\QFramework\QLocalize\ptversion.xml" />
      <None Include="Assets\QFramework\QLocalize\Permission\iOSData\en.xml" />
@@ -159,12 +159,6 @@
  <Reference Include="Tamir.SharpSSH">
  <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QAB/Editor/Tamir.SharpSSH.dll</HintPath>
  </Reference>
- <Reference Include="Excel">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -179,6 +173,12 @@
  </Reference>
  <Reference Include="Log">
  <HintPath>/Users/liangxie/git/QFramework/Assets/Plugins/Log.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/UnManaged/QExcel2XML/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Excel">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/UnManaged/QExcel2XML/Excel.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -115,7 +115,6 @@
      <Compile Include="Assets\QFramework\QAB\Script\QResMgr.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QResourceManager.cs" />
      <Compile Include="Assets\QFramework\QAB\Script\QResourceManager_1.cs" />
-     <Compile Include="Assets\QFramework\QConfig\QConfigManager.cs" />
      <Compile Include="Assets\QFramework\QFramework.cs" />
      <Compile Include="Assets\QFramework\QLocalize\LaunchScreen\PTAlphaTween.cs" />
      <Compile Include="Assets\QFramework\QLocalize\LaunchScreen\PTLaunchScreenCanvas.cs" />
@@ -140,6 +139,7 @@
      <Compile Include="Assets\QFramework\Script\Util\QTimer.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QTransExtend.cs" />
      <Compile Include="Assets\QFramework\Script\Util\QUtil.cs" />
+     <Compile Include="Assets\QFramework\UnManaged\QConfig\QConfigManager.cs" />
      <Compile Include="Assets\QFrameworkData\QAssets.cs" />
      <Compile Include="Assets\_Script\GameManager.cs" />
      <Compile Include="Assets\_Script\UI\UIExample4AboutPage.cs" />
@@ -188,14 +188,14 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
- <Reference Include="Excel">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/Excel.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/QExcel2XML/System.Data.dll</HintPath>
- </Reference>
  <Reference Include="Log">
  <HintPath>/Users/liangxie/git/QFramework/Assets/Plugins/Log.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/UnManaged/QExcel2XML/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Excel">
+ <HintPath>/Users/liangxie/git/QFramework/Assets/QFramework/UnManaged/QExcel2XML/Excel.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
