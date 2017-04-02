@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace QFramework
+namespace QFrameworkAB
 {
 	public abstract class AssetBundleLoadOperation : IEnumerator
 	{

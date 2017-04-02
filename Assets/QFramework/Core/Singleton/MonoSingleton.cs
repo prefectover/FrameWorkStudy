@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PTGame.Framework
+namespace QFramework
 {
     public class MonoSingleton : MonoBehaviour
     {

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using QFramework;
 
-namespace QFramework
+namespace QFrameworkAB
 {
 	public class AssetBundlesMenuItems
 	{

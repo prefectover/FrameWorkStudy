@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace PTGame.Framework
+namespace QFramework
 {
     public class TSingleton<T> : ISingleton where T : TSingleton<T>, new()
 	{

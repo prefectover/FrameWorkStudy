@@ -34,7 +34,7 @@ namespace QFramework {
 
 		public QFileLogOutput()
 		{
-			QApp.Instance.onApplicationQuit += Close;
+			Framework.Instance.onApplicationQuit += Close;
 			this.mWritingLogQueue = new Queue<QLog.LogData>();
 			this.mWaitingLogQueue = new Queue<QLog.LogData>();
 			this.mLogLock = new object();

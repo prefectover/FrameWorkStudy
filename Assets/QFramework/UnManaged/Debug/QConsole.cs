@@ -67,8 +67,8 @@ namespace QFramework {
 			this.fpsCounter = new QFPSCounter(this);
 			this.memoryDetector = new QMemoryDetector(this);
 			//        this.showGUI = App.Instance().showLogOnGUI;
-			QApp.Instance.onUpdate += Update;
-			QApp.Instance.onGUI += OnGUI;
+			Framework.Instance.onUpdate += Update;
+			Framework.Instance.onGUI += OnGUI;
 			Application.logMessageReceived += HandleLog;
 
 		}

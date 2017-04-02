@@ -16,6 +16,7 @@ namespace QFramework.Libs {
 		public static void CreateDirIfNotExists(string dirFullPath)
 		{
 			if (!Directory.Exists (dirFullPath)) {
+				Debug.Log ("dir " + dirFullPath + " is not exist,create new one");
 				Directory.CreateDirectory (dirFullPath);
 			}
 		}

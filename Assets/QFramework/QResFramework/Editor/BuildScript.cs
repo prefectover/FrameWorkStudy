@@ -13,9 +13,10 @@ using System.Text;
 using System.Security.Cryptography;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Linq;
+using QFramework;
+using QFramework.Libs;
 
-
-namespace QFramework
+namespace QFrameworkAB
 {
 	public class AssetBundleInfo{
 

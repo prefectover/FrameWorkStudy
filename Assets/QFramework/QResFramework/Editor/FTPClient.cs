@@ -2,8 +2,9 @@
 using System.IO;
 using System;
 using System.Text;
+using QFramework;
 
-namespace QFramework
+namespace QFrameworkAB
 {
 	class FTPClient:IFTPInterface
 	{

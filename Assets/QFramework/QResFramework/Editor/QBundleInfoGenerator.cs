@@ -4,8 +4,9 @@ using System.CodeDom.Compiler;
 using Microsoft.CSharp;
 using System.Collections.Generic;
 using UnityEngine;
+using QFramework;
 
-namespace QFramework
+namespace QFrameworkAB
 {
 	public  class QBundleInfoGenerator
 	{

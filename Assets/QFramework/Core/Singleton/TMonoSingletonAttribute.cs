@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PTGame.Framework
+namespace QFramework
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class TMonoSingletonAttribute : System.Attribute

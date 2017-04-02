@@ -26,7 +26,7 @@ namespace QFramework.AB
 
 		void Awake()
 		{
-			transform.SetParent (QApp.Instance.transform);
+			transform.SetParent (Framework.Instance.transform);
 		}
 
 		public enum LogMode { All, JustErrors };

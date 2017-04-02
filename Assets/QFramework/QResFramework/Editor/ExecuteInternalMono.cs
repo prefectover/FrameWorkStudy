@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System;
+using QFramework;
 
-namespace QFramework
+namespace QFrameworkAB
 {
 	class MonoInstallationFinder
 	{

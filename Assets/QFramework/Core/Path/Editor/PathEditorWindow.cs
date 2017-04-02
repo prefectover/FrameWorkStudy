@@ -10,7 +10,7 @@ using System.Xml;
 namespace QFramework {
 	public class PathEditorWindow : EditorWindow {
 
-		[MenuItem("QFramework/PathEditor")]
+		[MenuItem("QFramework/IO/PathConfig")]
 		static void Open() {
 			PathEditorWindow pathEditorWindow = (PathEditorWindow)EditorWindow.GetWindow (typeof(PathEditorWindow), true);
 			pathEditorWindow.titleContent = new GUIContent ("Path Config");

@@ -7,9 +7,9 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using QFramework;
 
-
-namespace QFramework
+namespace QFrameworkAB
 {	
 	// Loaded assetBundle contains the references count which can be used to unload dependent assetBundles automatically.
 	public class LoadedAssetBundle

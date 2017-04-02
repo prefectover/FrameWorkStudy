@@ -20,21 +20,11 @@ namespace QFramework
 	}
 	#endregion
 
-	#region DebugSetting
-	[System.Serializable]
-	class DebugSetting
-	{
-		public string m_DumpPath = null;
-		public bool m_DumpToScreen = false;
-		public bool m_DumpToFile = true;
-	}
-	#endregion
-
-	[System.Serializable]
-	public class PathItem : ScriptableObject {
-		public string name;
-		public string patn;
-	}
+//	[System.Serializable]
+//	public class PathItem : ScriptableObject {
+//		public string name;
+//		public string patn;
+//	}
 
 	[System.Serializable]
 	public class PathDicionary : ScriptableObject
