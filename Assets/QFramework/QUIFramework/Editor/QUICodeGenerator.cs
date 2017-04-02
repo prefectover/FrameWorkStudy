@@ -5,6 +5,7 @@ using UnityEditor;
 using System.IO;
 using System.Text;
 using UnityEngine.UI;
+using QFramework.Libs;
 
 public class QUICodeGenerator
 {
@@ -100,6 +101,10 @@ public class QUICodeGenerator
 				strBuilder.Append("\t").AppendLine("{");
 				strBuilder.Append("\t\t").AppendLine("base.OnHide();");
                 strBuilder.Append("\t").AppendLine("}").AppendLine();
+				strBuilder.Append("\t").AppendLine("protected override void OnClose()");
+				strBuilder.Append("\t").AppendLine("{");
+				strBuilder.Append("\t\t").AppendLine("base.OnClose();");
+				strBuilder.Append("\t").AppendLine("}").AppendLine();
                 strBuilder.Append("\t").AppendLine("void ShowLog(string content)");
                 strBuilder.Append("\t").AppendLine("{");
 				strBuilder.Append("\t\t").AppendFormat("Debug.Log(\"[ {0}:]\" + content);",strDlg).AppendLine();
@@ -156,8 +161,7 @@ public class QUICodeGenerator
         strBuilder.Append("\t\t\t").AppendLine("switch (strUI)");
         strBuilder.Append("\t\t\t").AppendLine("{");
 
-
-		QFramework.QIO.CreateDirIfNotExists (GetUIPrefabPath ());
+		IOUtils.CreateDirIfNotExists (GetUIPrefabPath ());
 
         string[] files = Directory.GetFiles(GetUIPrefabPath(), "UI*.prefab", SearchOption.AllDirectories);
         for (int i = 0; i < files.Length; i++)

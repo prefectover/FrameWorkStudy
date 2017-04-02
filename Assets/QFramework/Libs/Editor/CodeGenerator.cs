@@ -34,7 +34,7 @@ using UnityEditor;
 /// <summary>
 /// 代码生成工具
 /// </summary>
-namespace QFramework.Editor {
+namespace QFramework.Libs {
 	/// <summary>
 	/// 访问权限定义
 	/// </summary>
@@ -162,7 +162,7 @@ namespace QFramework.Editor {
 
 	}
 
-	public class QCodeGenerator {
+	public class CodeGenerator {
 
 
 		public static void WriteClass(ClassDefine classDefine) {

@@ -3,9 +3,9 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace QFramework.Editor
+namespace QFramework.Libs
 {
-    public class EditorFileUtils
+    public class EditorIOUtils
     {
         public static List<string> GetDirSubFilePathList(string dirABSPath, bool isRecursive = true, string suffix = "")
         {

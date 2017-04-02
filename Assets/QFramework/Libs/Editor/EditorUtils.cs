@@ -6,8 +6,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Object = UnityEngine.Object;
-using QFramework;
 using SCFramework;
+using QFramework.Libs;
 
 namespace QFramework.Editor
 {
@@ -175,7 +175,7 @@ namespace QFramework.Editor
         public static List<Object> GetDirSubAssetsList(string dirAssetsPath, bool isRecursive = true, string suffix = "", bool isLoadAll = false)
         {
             string dirABSPath = ABSPath2AssetsPath(dirAssetsPath);
-            List<string> assetsABSPathList = EditorFileUtils.GetDirSubFilePathList(dirABSPath, isRecursive, suffix);
+            List<string> assetsABSPathList = EditorIOUtils.GetDirSubFilePathList(dirABSPath, isRecursive, suffix);
             List<Object> resultObjectList = new List<Object>();
 
             for (int i = 0; i < assetsABSPathList.Count; ++i)
