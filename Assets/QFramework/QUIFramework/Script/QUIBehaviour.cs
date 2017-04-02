@@ -129,36 +129,5 @@ namespace QFramework {
 		{
 			QUIManager.Instance.SendMsg(msg);
 		}
-
-		#region 原来自己的框架
-		public void Show()
-		{
-			OnShow ();
-		}
-
-		/// <summary>
-		/// 显示时候用,或者,Active为True
-		/// </summary>
-		protected virtual void OnShow()
-		{
-			gameObject.SetActive (true);
-			Debug.LogWarning ("On Show:" + name);
-		}
-
-
-		public void Hide()
-		{
-			OnHide ();
-		}
-
-		/// <summary>
-		/// 隐藏时候调用,即将删除 或者,Active为False
-		/// </summary>
-		protected virtual void OnHide()
-		{
-			gameObject.SetActive (false);
-			Debug.LogWarning ("On Hide:" + name);
-		}
-		#endregion
 	}
 }

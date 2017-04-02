@@ -54,13 +54,13 @@ namespace QFramework {
 
 			// main->game
 			mFSM.AddTranslation (STATE_MAIN_PAGE, Example5UIMsg.BTN_START_CLICK, STATE_GAME_PAGE, delegate {
-				QUIManager.Instance.DeleteUI<UIExample5MainPage> ();
+				QUIManager.Instance.CloseUI<UIExample5MainPage> ();
 				QUIManager.Instance.OpenUI<UIExample5GamePage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 			});
 
 			// main->about
 			mFSM.AddTranslation (STATE_MAIN_PAGE, Example5UIMsg.BTN_ABOUT_CLICK, STATE_ABOUT_PAGE, delegate {
-				QUIManager.Instance.DeleteUI<UIExample5MainPage> ();
+				QUIManager.Instance.CloseUI<UIExample5MainPage> ();
 				QUIManager.Instance.OpenUI<UIExample5AboutPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 			});
 
@@ -71,13 +71,13 @@ namespace QFramework {
 
 			// about->main
 			mFSM.AddTranslation (STATE_ABOUT_PAGE, Example5UIMsg.BTN_BACK_CLICK, STATE_MAIN_PAGE, delegate {
-				QUIManager.Instance.DeleteUI<UIExample5AboutPage> ();
+				QUIManager.Instance.CloseUI<UIExample5AboutPage> ();
 				QUIManager.Instance.OpenUI<UIExample5MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 			});
 
 			// game->main
 			mFSM.AddTranslation (STATE_GAME_PAGE, Example5UIMsg.BTN_BACK_CLICK, STATE_MAIN_PAGE, delegate {
-				QUIManager.Instance.DeleteUI<UIExample5GamePage> ();
+				QUIManager.Instance.CloseUI<UIExample5GamePage> ();
 				QUIManager.Instance.OpenUI<UIExample5MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 			});
 
@@ -88,7 +88,7 @@ namespace QFramework {
 
 			// quit->main
 			mFSM.AddTranslation (STATE_QUIT_DIALOG, Example5UIMsg.BTN_CANCEL_CLICK, STATE_MAIN_PAGE, delegate {
-				QUIManager.Instance.DeleteUI<UIExample5Dialog> ();
+				QUIManager.Instance.CloseUI<UIExample5Dialog> ();
 			});
 
 			// 设置好当前状态

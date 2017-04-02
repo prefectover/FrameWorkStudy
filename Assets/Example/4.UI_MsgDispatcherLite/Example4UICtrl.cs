@@ -56,22 +56,22 @@ namespace QFramework {
 
 			switch (eventName) {
 				case Example4UIMsg.MAIN_PAGE_BTN_START_CLICK:
-					QUIManager.Instance.DeleteUI<UIExample4MainPage> ();
+					QUIManager.Instance.CloseUI<UIExample4MainPage> ();
 					QUIManager.Instance.OpenUI<UIExample4GamePage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.MAIN_PAGE_BTN_ABOUT_CLICK:
-					QUIManager.Instance.DeleteUI<UIExample4MainPage> ();
+					QUIManager.Instance.CloseUI<UIExample4MainPage> ();
 					QUIManager.Instance.OpenUI<UIExample4AboutPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.MAIN_PAGE_BTN_QUIT_CLICK:
 					QUIManager.Instance.OpenUI<UIExample4Dialog> (QUILevel.Forward, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.ABOUT_PAGE_BTN_BACK_CLICK:
-					QUIManager.Instance.DeleteUI<UIExample4AboutPage> ();
+					QUIManager.Instance.CloseUI<UIExample4AboutPage> ();
 					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 				case Example4UIMsg.GAME_PAGE_BTN_BACK_CLICK:
-					QUIManager.Instance.DeleteUI<UIExample4GamePage> ();
+					QUIManager.Instance.CloseUI<UIExample4GamePage> ();
 					QUIManager.Instance.OpenUI<UIExample4MainPage> (QUILevel.Common, UIPREFAB.BUNDLE_NAME);
 					break;
 
@@ -79,7 +79,7 @@ namespace QFramework {
 					UnityEditor.EditorApplication.isPlaying = false;
 					break;
 				case Example4UIMsg.DIALOG_BTN_CANCEL_CLICK:
-					QUIManager.Instance.DeleteUI<UIExample4Dialog> ();
+					QUIManager.Instance.CloseUI<UIExample4Dialog> ();
 					break;
 			}
 		}

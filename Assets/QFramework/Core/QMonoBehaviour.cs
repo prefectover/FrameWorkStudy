@@ -91,34 +91,47 @@ namespace QFramework {
 			return gameObject.name;
 		}
 
-
-		public void show()
+		public void Show()
 		{
-			gameObj.SetActive (true);
-			onShow ();
-		}
+			gameObject.SetActive (true);
+			Debug.LogWarning ("On Show:" + name);
 
-
-		public void hide()
-		{
-			gameObj.SetActive (false);
-			onHide ();
-		}
-
-
-		/// <summary>
-		/// 调用show时候触发
-		/// </summary>
-		protected virtual void onShow()
-		{
-
+			OnShow ();
 		}
 
 		/// <summary>
-		/// 调用hide时候触发
+		/// 显示时候用,或者,Active为True
 		/// </summary>
-		protected virtual void onHide()
+		protected virtual void OnShow()
 		{
+		}
+
+		public void Hide()
+		{
+			OnHide ();
+
+			gameObject.SetActive (false);
+			Debug.LogWarning ("On Hide:" + name);
+		}
+
+		/// <summary>
+		/// 隐藏时候调用,即将删除 或者,Active为False
+		/// </summary>
+		protected virtual void OnHide()
+		{
+		}
+
+		/// <summary>
+		/// 关闭
+		/// </summary>
+		public void Close() {
+			OnClose ();
+		}
+
+		/// <summary>
+		/// 关闭
+		/// </summary>
+		protected virtual void OnClose() {
 
 		}
 

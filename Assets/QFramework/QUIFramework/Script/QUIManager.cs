@@ -3,8 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using QFramework.AB;
-using QFramework;
+using System;
 
+/// <summary>
+/// TODO:
+/// 1.Lite 删掉
+/// 2.Page之间继承
+/// 3.发地址
+/// 4.
+/// </summary>
 namespace QFramework {
 
 	public enum QUILevel
@@ -21,7 +28,7 @@ namespace QFramework {
 	/// UGUI UI界面管理器
 	/// </summary>
 	public class QUIManager : QMgrBehaviour{ 
-		
+
 		[SerializeField]
 		Dictionary<string,QUIBehaviour> mAllUI = new Dictionary<string, QUIBehaviour> ();
 
@@ -40,15 +47,15 @@ namespace QFramework {
 			get {
 				if (mGo) {
 				} else {
-					mGo = GameObject.Find ("QUIManager");
+					mGo = GameObject.Find ("PTUIManager");
 					if (mGo) {
 					} else {
-						mGo = GameObject.Instantiate (Resources.Load ("QUIManager")) as GameObject;
+						mGo = GameObject.Instantiate (Resources.Load ("PTUIManager")) as GameObject;
 					}
-					mGo.name = "QUIManager";
+					mGo.name = "PTUIManager";
 				}
 
-				return QMonoSingletonComponent<QUIManager>.Instance;
+				return PTMonoSingletonComponent<QUIManager>.Instance;
 			}
 		}
 
@@ -70,15 +77,17 @@ namespace QFramework {
 		/// <summary>
 		/// Create&ShowUI
 		/// </summary>
-		public QUIBehaviour OpenUI<T>(QUILevel canvasLevel,string bundleName = null,object uiData = null) where T : QUIBehaviour
+		public T OpenUI<T>(QUILevel canvasLevel,string bundleName,object uiData = null) where T : QUIBehaviour
 		{
 			string behaviourName = typeof(T).ToString();
-			if (!mAllUI.ContainsKey(behaviourName))
+
+			QUIBehaviour ui;
+			if (!mAllUI.TryGetValue(behaviourName, out ui))
 			{
-				return CreateUI<T>(canvasLevel,bundleName,uiData);
+				ui = CreateUI<T>(canvasLevel,bundleName, uiData);
 			}
-			mAllUI [behaviourName].Show ();
-			return mAllUI[behaviourName];
+			ui.Show();
+			return ui as T;
 		}
 
 		public Transform Get<T>(string strUIName)
@@ -98,63 +107,61 @@ namespace QFramework {
 		/// <summary>
 		/// 增加UI层
 		/// </summary>
-		public QUIBehaviour CreateUI<T>  (QUILevel level,string bundleName,object initData = null) where T : QUIBehaviour {
-
+		public T CreateUI<T>(QUILevel level,string bundleName,object initData = null) where T : QUIBehaviour
+		{
 			string behaviourName = typeof(T).ToString();
 
-			if (mAllUI.ContainsKey (behaviourName)) {
-
+			QUIBehaviour ui;
+			if (mAllUI.TryGetValue(behaviourName, out ui))
+			{
 				Debug.LogWarning(behaviourName + ": already exist");
-
-				mAllUI [behaviourName].transform.localPosition = Vector3.zero;
-				mAllUI [behaviourName].transform.localEulerAngles = Vector3.zero;
-				mAllUI [behaviourName].transform.localScale = Vector3.one;
-
-				mAllUI [behaviourName].Show ();
-
-			} else {
-				GameObject prefab = Resources.Load<GameObject> (behaviourName);
-
-				if (null == prefab) {
-					prefab = QResourceManager.Instance.LoadAsset<GameObject> (bundleName, behaviourName);
-				}
-
-				GameObject mUIGo = Instantiate (prefab);
-				switch (level) {
-					case QUILevel.Bg:
-						mUIGo.transform.SetParent (mBgTrans);
-						break;
-					case QUILevel.Common:
-						mUIGo.transform.SetParent (mCommonTrans);
-						break;
-					case QUILevel.PopUI:
-						mUIGo.transform.SetParent (mPopUITrans);
-						break;
-					case QUILevel.Const:
-						mUIGo.transform.SetParent (mConstTrans);
-						break;
-					case QUILevel.Toast:
-						mUIGo.transform.SetParent (mToastTrans);
-						break;
-					case QUILevel.Forward:
-						mUIGo.transform.SetParent (mForwardTrans);
-						break;
-				}
-
-				mUIGo.transform.localPosition = Vector3.zero;
-				mUIGo.transform.localEulerAngles = Vector3.zero;
-				mUIGo.transform.localScale = Vector3.one;
-
-				mUIGo.gameObject.name = behaviourName;
-
-				Debug.Log(behaviourName + " Load Success");
-
-				T t = mUIGo.AddComponent<T>();
-				mAllUI.Add (behaviourName, t);
-				t.Init (initData);
+				//直接返回，不要再调一次Init(),Init()应该只能调用一次
+				return ui as T;
 			}
 
-			return mAllUI [behaviourName];
+			GameObject	prefab = QResourceManager.Instance.LoadAsset<GameObject> (bundleName,behaviourName);
+
+			GameObject mUIGo = Instantiate (prefab);
+			switch (level) {
+				case QUILevel.Bg:
+					mUIGo.transform.SetParent (mBgTrans);
+					break;
+				case QUILevel.Common:
+					mUIGo.transform.SetParent (mCommonTrans);
+					break;
+				case QUILevel.PopUI:
+					mUIGo.transform.SetParent (mPopUITrans);
+					break;
+				case QUILevel.Const:
+					mUIGo.transform.SetParent (mConstTrans);
+					break;
+				case QUILevel.Toast:
+					mUIGo.transform.SetParent (mToastTrans);
+					break;
+				case QUILevel.Forward:
+					mUIGo.transform.SetParent (mForwardTrans);
+					break;
+			}
+
+			var uiGoRectTrans = mUIGo.GetComponent<RectTransform> ();
+			uiGoRectTrans.offsetMin = Vector2.zero;
+			uiGoRectTrans.offsetMax = Vector2.zero;
+			uiGoRectTrans.anchoredPosition3D = Vector3.one;
+			uiGoRectTrans.anchorMin = Vector2.zero;
+			uiGoRectTrans.anchorMax = Vector2.one;
+
+			mUIGo.transform.localScale = Vector3.one;
+
+
+			mUIGo.gameObject.name = behaviourName;
+
+			Debug.Log(behaviourName + " Load Success");
+
+			ui = mUIGo.AddComponent<T>();
+			mAllUI.Add(behaviourName, ui);
+			ui.Init(initData);
+
+			return ui as T;
 		}
 
 		/// <summary>
@@ -188,10 +195,11 @@ namespace QFramework {
 		/// <summary>
 		/// 删除所有UI层
 		/// </summary>
-		public void DeleteAllUI()
+		public void CloseAllUI()
 		{
 			foreach (var layer in mAllUI) 
 			{
+				layer.Value.Close ();
 				GameObject.Destroy (layer.Value);
 			}
 
@@ -201,12 +209,13 @@ namespace QFramework {
 		/// <summary>
 		/// 删除掉层
 		/// </summary>
-		public void DeleteUI<T>()
+		public void CloseUI<T>()
 		{
 			string behaviourName = typeof(T).ToString();
 
 			if (mAllUI.ContainsKey (behaviourName)) 
 			{
+				mAllUI [behaviourName].Close ();
 				GameObject.Destroy (mAllUI [behaviourName].gameObject);
 				mAllUI.Remove (behaviourName);
 			}
@@ -233,7 +242,7 @@ namespace QFramework {
 		{
 			return mUICamera;
 		}
-			
+
 		protected override void SetupMgrId ()
 		{
 			mMgrId = (ushort)QMgrID.UI;
