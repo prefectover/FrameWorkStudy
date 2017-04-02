@@ -72,7 +72,7 @@ namespace QFramework {
 		/// </summary>
 		public static PTLanguageManager Instance {
 			get {
-				return PTMonoSingletonComponent<PTLanguageManager>.Instance;
+				return QMonoSingletonComponent<PTLanguageManager>.Instance;
 			}
 		}
 
@@ -120,12 +120,12 @@ namespace QFramework {
 		public void Parse() {
 			if (null == mTextItemDict) {
 				mTextItemDict = new Dictionary<string, Dictionary<string, string>> ();
-				QResMgr.Instance.LoadAB ("configFile");
-				TextAsset textAsset = QResMgr.Instance.LoadAsset<TextAsset> ("configFile", "word");
+//				QResMgr.Instance.LoadAB ("configFile");
+//				TextAsset textAsset = QResMgr.Instance.LoadAsset<TextAsset> ("configFile", "word");
 //				Debug.LogError (textAsset.text);
 
 				XmlDocument xmlDoc = new XmlDocument ();
-				xmlDoc.LoadXml (textAsset.text);
+//				xmlDoc.LoadXml (textAsset.text);
 
 				XmlNode root = xmlDoc.SelectSingleNode ("words");
 
@@ -146,7 +146,7 @@ namespace QFramework {
 					mTextItemDict.Add (key, textItem);
 				}
 					
-				Resources.UnloadAsset (textAsset);
+//				Resources.UnloadAsset (textAsset);
 			}
 		}
 

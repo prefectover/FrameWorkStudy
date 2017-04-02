@@ -12,7 +12,7 @@ namespace QFramework.Example {
 
 		public static ExampleManager Instance {
 			get {
-				return PTMonoSingletonComponent<ExampleManager>.Instance;
+				return QMonoSingletonComponent<ExampleManager>.Instance;
 			}
 		}
 

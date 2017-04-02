@@ -80,3 +80,11 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEditor.VR.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.VR.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Log.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/ptbuild.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/zxing.unity.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/LitJson.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/ptgame_editor.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/ptdebug.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DOTweenEditor.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween50.dll

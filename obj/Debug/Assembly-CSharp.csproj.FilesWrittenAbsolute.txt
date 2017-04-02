@@ -43,3 +43,8 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.HoloLens.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/UnityEngine.VR.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/Log.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/zxing.unity.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/LitJson.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/ptdebug.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween50.dll
