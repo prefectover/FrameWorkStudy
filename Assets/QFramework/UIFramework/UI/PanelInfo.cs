@@ -327,14 +327,14 @@ namespace QFramework
                     }
 
                     Transform tr = m_Panel.transform;
-                    UIMgr.S.uiRoot.ReleaseFreePos(tr.localPosition);
+                    UIMgr.Instance.uiRoot.ReleaseFreePos(tr.localPosition);
                     tr.localPosition = m_DefaultPos;
                     m_Panel.OnBecomeVisible();
                 }
                 else
                 {
                     UITools.SetGameObjectLayer(m_Panel.gameObject, LayerDefine.LAYER_HIDE_UI);
-                    m_Panel.gameObject.transform.localPosition = UIMgr.S.uiRoot.RequireNextFreePos();
+                    m_Panel.gameObject.transform.localPosition = UIMgr.Instance.uiRoot.RequireNextFreePos();
                     m_Panel.OnBecomeHide();
                 }
 
@@ -488,7 +488,7 @@ namespace QFramework
 
                 for (int i = m_OpenInfoList.Count - 1; i >= 0; --i)
                 {
-                    PanelInfo info = UIMgr.S.FindPanelInfoByPanelID(m_OpenInfoList[i].MasterID);
+                    PanelInfo info = UIMgr.Instance.FindPanelInfoByPanelID(m_OpenInfoList[i].MasterID);
                     if (info == null)
                     {
                         ObjectPool<OpenParam>.Instance.Recycle(m_OpenInfoList[i]);
@@ -703,11 +703,11 @@ namespace QFramework
                     return;
                 }
 
-                GameObject go = UIMgr.S.InstantiateUIPrefab(prefab);
+                GameObject go = UIMgr.Instance.InstantiateUIPrefab(prefab);
                 go.SetActive(false);
-                UIMgr.S.InitOpenUIParam(go, parent);
+                UIMgr.Instance.InitOpenUIParam(go, parent);
 
-                AbstractPage page = UIMgr.S.ProcessAttachPage(m_PanelID, uiID, go);
+                AbstractPage page = UIMgr.Instance.ProcessAttachPage(m_PanelID, uiID, go);
 
                 if (singleton)
                 {
@@ -746,9 +746,9 @@ namespace QFramework
 
                 m_PanelState = ePanelState.Ready;
 
-                GameObject go = UIMgr.S.InstantiateUIPrefab(prefab);
+                GameObject go = UIMgr.Instance.InstantiateUIPrefab(prefab);
                 go.SetActive(false);
-                UIMgr.S.InitPanelParem(go);
+                UIMgr.Instance.InitPanelParem(go);
 
                 AbstractPanel panel = go.GetComponent<AbstractPanel>();
 
@@ -775,7 +775,7 @@ namespace QFramework
 
                 abstractPanel = panel;
 
-                UIMgr.S.SetPanelSortingOrderDirty();
+                UIMgr.Instance.SetPanelSortingOrderDirty();
             }
 
             //收集预加载资源

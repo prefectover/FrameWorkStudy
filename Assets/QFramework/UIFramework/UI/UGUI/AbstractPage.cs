@@ -113,7 +113,7 @@ namespace QFramework
 
         public void SendViewEvent(ViewEvent key, params object[] args)
         {
-            UIMgr.S.uiEventSystem.Send(GetParentPanelID(), key, args);
+            UIMgr.Instance.uiEventSystem.Send(GetParentPanelID(), key, args);
         }
 
         public void CloseSelfPanel()
@@ -134,7 +134,7 @@ namespace QFramework
         //Only Can Find Attach singleton page
         public AbstractPage GetPage<T>(T uiID) where T : IConvertible
         {
-            return UIMgr.S.FindPanelPage(GetParentPanelID(), uiID);
+            return UIMgr.Instance.FindPanelPage(GetParentPanelID(), uiID);
         }
 
 #endregion
@@ -162,7 +162,7 @@ namespace QFramework
             int panelID = GetParentPanelID();
             if (panelID > 0)
             {
-                UIMgr.S.uiEventSystem.UnRegister(panelID, OnParentPanelEvent);
+                UIMgr.Instance.uiEventSystem.UnRegister(panelID, OnParentPanelEvent);
             }
 
             BeforDestroy();
@@ -182,7 +182,7 @@ namespace QFramework
             int panelID = GetParentPanelID();
             if (panelID > 0)
             {
-                UIMgr.S.uiEventSystem.Register(panelID, OnParentPanelEvent);
+                UIMgr.Instance.uiEventSystem.Register(panelID, OnParentPanelEvent);
             }
         }
 
@@ -247,17 +247,17 @@ namespace QFramework
         // 挂载某个UI子面板到节点上，确保parent 确实是该面板的节点
         protected void AttachPage<T>(T uiID, Transform parent, Action<AbstractPage> listener = null, bool singleton = true) where T : IConvertible
         {
-            UIMgr.S.AttachPage(GetParentPanelID(), uiID, parent, listener, singleton);
+            UIMgr.Instance.AttachPage(GetParentPanelID(), uiID, parent, listener, singleton);
         }
 
         protected void OpenDependPanel<T>(T uiID, params object[] args) where T : IConvertible
         {
-            UIMgr.S.OpenDependPanel(GetParentPanelID(), uiID, null, args);
+            UIMgr.Instance.OpenDependPanel(GetParentPanelID(), uiID, null, args);
         }
 
         protected void CloseDependPanel<T>(T uiID) where T : IConvertible
         {
-            UIMgr.S.CloseDependPanel(GetParentPanelID(), uiID);
+            UIMgr.Instance.CloseDependPanel(GetParentPanelID(), uiID);
         }
 
         private Sprite FindSpriteFromParent(string spriteName)

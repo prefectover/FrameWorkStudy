@@ -33,8 +33,8 @@ namespace QFramework
                 //contentScale = s1 / s2;
             }
 
-            Camera uiCamera = UIMgr.S.uiRoot.uiCamera;
-            Canvas canvas = UIMgr.S.uiRoot.rootCanvas;
+            Camera uiCamera = UIMgr.Instance.uiRoot.uiCamera;
+            Canvas canvas = UIMgr.Instance.uiRoot.rootCanvas;
 
             Vector2 pos;
             Vector2 center = RectTransformUtility.WorldToScreenPoint(uiCamera, transform.position);

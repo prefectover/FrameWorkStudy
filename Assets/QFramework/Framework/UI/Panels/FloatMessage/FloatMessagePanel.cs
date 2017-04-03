@@ -49,7 +49,7 @@ namespace QFramework
         protected override void OnUIInit()
         {
             m_MsgList = new Stack<FloatMsg>();
-            m_GameObjectPool = GameObjectPoolMgr.S.CreatePool("FloatMessagePool", m_Prefab, -1, 5, UIPoolStrategy.Instance);
+            m_GameObjectPool = GameObjectPoolMgr.Instance.CreatePool("FloatMessagePool", m_Prefab, -1, 5, UIPoolStrategy.Instance);
             m_Prefab.SetActive(false);
         }
 

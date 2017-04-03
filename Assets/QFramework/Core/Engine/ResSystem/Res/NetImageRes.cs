@@ -158,7 +158,7 @@ namespace QFramework
                 return;
             }
 
-            ResMgr.S.PostIEnumeratorTask(this);
+            ResMgr.Instance.PostIEnumeratorTask(this);
             //ResMgr.S.PostLoadTask(LoadImage());
         }
 

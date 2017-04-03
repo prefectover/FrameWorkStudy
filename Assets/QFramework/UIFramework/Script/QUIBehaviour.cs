@@ -6,7 +6,7 @@ using QFramework;
 using UnityEngine.UI;
 
 namespace QFramework {
-	public abstract class QUIBehaviour : QMonoBehaviour {
+	public abstract class QUIBehaviour : QMonoBehaviour,IUI {
 
 		protected override void SetupMgr ()
 		{
@@ -37,6 +37,29 @@ namespace QFramework {
 			InnerInit(uiData);
 			RegisterUIEvent();
 		}
+
+		/// <summary>
+		/// 关闭
+		/// </summary>
+		void IUI.Close(bool destroy = true) {
+			OnClose ();
+			if (destroy) {
+				GameObject.Destroy (gameObj);
+			}
+		}
+
+
+		public void CloseSelf() {
+			QUIManager.Instance.CloseUI (this.name);
+		}
+
+		/// <summary>
+		/// 关闭
+		/// </summary>
+		protected virtual void OnClose() {
+
+		}
+
 
 		public Transform Get(string behaivourName)
 		{

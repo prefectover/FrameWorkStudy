@@ -59,7 +59,7 @@ namespace QFramework
 
                 if (m_ParentPage == null)
                 {
-                    UIMgr.S.SetPanelSortingOrderDirty();
+                    UIMgr.Instance.SetPanelSortingOrderDirty();
                 }
             }
         }
@@ -78,8 +78,8 @@ namespace QFramework
 
                 if (m_ParentPage == null)
                 {
-                    UIMgr.S.SetPanelVisible(this, m_CustomVisibleFlag);
-                    UIMgr.S.SetPanelSortingOrderDirty();
+                    UIMgr.Instance.SetPanelVisible(this, m_CustomVisibleFlag);
+                    UIMgr.Instance.SetPanelSortingOrderDirty();
                 }
             }
         }
@@ -143,7 +143,7 @@ namespace QFramework
                 case ViewEvent.Action_ClosePanel:
                     if (m_ParentPage == null)
                     {
-                        UIMgr.S.ClosePanel(this);
+                        UIMgr.Instance.ClosePanel(this);
                     }
                     break;
                 case ViewEvent.Action_HidePanel:
@@ -212,7 +212,7 @@ namespace QFramework
         {
             if (m_ParentPage == null)
             {
-                UIMgr.S.OnPanelForceDestroy(this);
+                UIMgr.Instance.OnPanelForceDestroy(this);
             }
         }
 
@@ -231,8 +231,8 @@ namespace QFramework
             //真正的面板才能生效
             if (m_ParentPage == null)
             {
-                UIMgr.S.SetPanelVisible(this, m_CustomVisibleFlag);
-                UIMgr.S.SetPanelSortingOrderDirty();
+                UIMgr.Instance.SetPanelVisible(this, m_CustomVisibleFlag);
+                UIMgr.Instance.SetPanelSortingOrderDirty();
             }
         }
     }

@@ -97,7 +97,7 @@ namespace QFramework
 
             try
             {
-                ScenePosition2UIPosition(Camera.main, UIMgr.S.uiRoot.uiCamera, newPos, m_TargetUI, m_UIOffset);
+                ScenePosition2UIPosition(Camera.main, UIMgr.Instance.uiRoot.uiCamera, newPos, m_TargetUI, m_UIOffset);
             }
             catch (System.Exception ex)
             {

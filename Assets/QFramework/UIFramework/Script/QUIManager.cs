@@ -199,24 +199,27 @@ namespace QFramework {
 		{
 			foreach (var layer in mAllUI) 
 			{
-				layer.Value.Close ();
-				GameObject.Destroy (layer.Value);
+				((IUI)layer.Value).Close ();
 			}
 
 			mAllUI.Clear ();
 		}
 
 		/// <summary>
-		/// 删除掉层
+		/// 删除掉UI
 		/// </summary>
-		public void CloseUI<T>()
+		public void CloseUI<T>(bool destroy = true)
 		{
 			string behaviourName = typeof(T).ToString();
 
+			CloseUI (behaviourName, destroy);
+
+		}
+
+		public void CloseUI(string behaviourName,bool destroy = true) {
 			if (mAllUI.ContainsKey (behaviourName)) 
 			{
-				mAllUI [behaviourName].Close ();
-				GameObject.Destroy (mAllUI [behaviourName].gameObject);
+				((IUI)mAllUI [behaviourName]).Close (destroy);
 				mAllUI.Remove (behaviourName);
 			}
 		}

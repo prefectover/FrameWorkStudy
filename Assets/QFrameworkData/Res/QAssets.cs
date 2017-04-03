@@ -12,6 +12,7 @@ namespace QAssetBundle {
     
     public class UIPREFAB {
         public const string BUNDLE_NAME = "UIPREFAB";
+        public const string UIEDITPANEL = "UIEDITPANEL";
         public const string UIEXAMPLE4ABOUTPAGE = "UIEXAMPLE4ABOUTPAGE";
         public const string UIEXAMPLE4DIALOG = "UIEXAMPLE4DIALOG";
         public const string UIEXAMPLE4GAMEPAGE = "UIEXAMPLE4GAMEPAGE";
@@ -21,5 +22,6 @@ namespace QAssetBundle {
         public const string UIEXAMPLE5GAMEPAGE = "UIEXAMPLE5GAMEPAGE";
         public const string UIEXAMPLE5MAINPAGE = "UIEXAMPLE5MAINPAGE";
         public const string UIHOMEPAGE = "UIHOMEPAGE";
+        public const string UITODOLISTPAGE = "UITODOLISTPAGE";
     }
 }

@@ -11,7 +11,7 @@ namespace QFramework
         private static object   s_lock = new object();
 
 
-        public static T S
+        public static T Instance
         {
             get
             {

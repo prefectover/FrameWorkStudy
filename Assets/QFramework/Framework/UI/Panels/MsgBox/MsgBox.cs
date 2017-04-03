@@ -86,7 +86,7 @@ namespace QFramework
 
             public void Show()
             {
-                UIMgr.S.OpenTopPanel(EngineUI.MsgBoxPanel, (panel) =>
+                UIMgr.Instance.OpenTopPanel(EngineUI.MsgBoxPanel, (panel) =>
                 {
                     if (panel == null)
                     {

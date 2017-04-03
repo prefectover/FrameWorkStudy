@@ -534,7 +534,7 @@ namespace QFramework
         {
             if (m_PoolGroup == null)
             {
-                m_PoolGroup = GameObjectPoolMgr.S.CreatePoolGroup(UIPoolStrategy.Instance);
+                m_PoolGroup = GameObjectPoolMgr.Instance.CreatePoolGroup(UIPoolStrategy.Instance);
             }
 
             string poolName = null;

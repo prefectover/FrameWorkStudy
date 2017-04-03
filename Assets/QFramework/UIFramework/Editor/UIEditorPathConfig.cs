@@ -16,6 +16,7 @@ namespace QFramework {
     public class UIEditorPathConfig {
         private const string m_ScriptGeneratorPath = "_Script/UI";
         private const string m_UIPrefabPath = "QArt/UIPrefab";
+        private const string m_UIFactoryGeneratePath = "QFrameworkData/UI";
         /// <summary>
         /// 生成UI脚本的路径
         /// </summary>
@@ -30,6 +31,14 @@ namespace QFramework {
         public static string UIPrefabPath {
             get {
                 return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.dataPath + "/" + m_UIPrefabPath);
+            }
+        }
+        /// <summary>
+        /// 生成UIFactory的路径
+        /// </summary>
+        public static string UIFactoryGeneratePath {
+            get {
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.dataPath + "/" + m_UIFactoryGeneratePath);
             }
         }
     }

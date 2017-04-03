@@ -23,7 +23,7 @@ namespace QFramework
 
             if (m_Panel != null)
             {
-                UIMgr.S.uiEventSystem.Register(m_Panel.GetParentPanelID(), OnParentPanelEvent);
+                UIMgr.Instance.uiEventSystem.Register(m_Panel.GetParentPanelID(), OnParentPanelEvent);
             }
         }
 
@@ -36,7 +36,7 @@ namespace QFramework
 
             if (m_Panel != null)
             {
-                UIMgr.S.uiEventSystem.UnRegister(m_Panel.GetParentPanelID(), OnParentPanelEvent);
+                UIMgr.Instance.uiEventSystem.UnRegister(m_Panel.GetParentPanelID(), OnParentPanelEvent);
             }
         }
 
@@ -70,7 +70,7 @@ namespace QFramework
                 {
                     if (Time.frameCount > m_Panel.lastOpenFrame)
                     {
-                        UIMgr.S.ClosePanel(m_Panel);
+                        UIMgr.Instance.ClosePanel(m_Panel);
                     }
                 }
             }

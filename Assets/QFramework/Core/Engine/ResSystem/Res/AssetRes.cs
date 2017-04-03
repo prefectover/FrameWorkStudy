@@ -66,7 +66,7 @@ namespace QFramework
                 return false;
             }
 
-            AssetBundleRes abR = ResMgr.S.GetRes<AssetBundleRes>(assetBundleName);
+            AssetBundleRes abR = ResMgr.Instance.GetRes<AssetBundleRes>(assetBundleName);
 
             if (abR == null || abR.assetBundle == null)
             {
@@ -117,7 +117,7 @@ namespace QFramework
 
             resState = eResState.kLoading;
 
-            ResMgr.S.PostIEnumeratorTask(this);
+            ResMgr.Instance.PostIEnumeratorTask(this);
         }
 
         public override IEnumerator StartIEnumeratorTask(Action finishCallback)
@@ -129,7 +129,7 @@ namespace QFramework
                 yield break;
             }
 
-            AssetBundleRes abR = ResMgr.S.GetRes<AssetBundleRes>(assetBundleName);
+            AssetBundleRes abR = ResMgr.Instance.GetRes<AssetBundleRes>(assetBundleName);
 
             if (abR == null || abR.assetBundle == null)
             {

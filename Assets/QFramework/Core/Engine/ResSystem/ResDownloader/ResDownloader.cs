@@ -130,7 +130,7 @@ namespace QFramework
 
             m_DownloadingTask = next;
 
-            HttpDownloaderMgr.S.AddDownloadTask(next.url, next.localResPath, null, OnDownloadError, OnDownloadFinish, null);
+            HttpDownloaderMgr.Instance.AddDownloadTask(next.url, next.localResPath, null, OnDownloadError, OnDownloadFinish, null);
 
             next.DeleteOldResFile();
         }

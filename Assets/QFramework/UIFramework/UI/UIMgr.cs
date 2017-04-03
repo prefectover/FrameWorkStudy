@@ -73,7 +73,7 @@ namespace QFramework
             loader.Add2Load(ProjectPathConfigTemp.UI_ROOT_PATH);
             loader.LoadSync();
 
-            IRes res = ResMgr.S.GetRes(ProjectPathConfigTemp.UI_ROOT_PATH, false);
+            IRes res = ResMgr.Instance.GetRes(ProjectPathConfigTemp.UI_ROOT_PATH, false);
             if (res == null || res.asset == null)
             {
                 return null;

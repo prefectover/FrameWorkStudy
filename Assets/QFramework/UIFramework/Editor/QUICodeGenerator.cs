@@ -131,7 +131,7 @@ public class QUICodeGenerator
 
     private void CreateUIFactory()
     {
-		string strFilePath = string.Format("{0}/{1}.cs", Application.dataPath + "/QFramework/QUIFramework/Script", "QUIFactory");
+		string strFilePath = string.Format("{0}/{1}.cs",UIEditorPathConfig.UIFactoryGeneratePath, "QUIFactory");
         StreamWriter sw = new StreamWriter(strFilePath, false, Encoding.UTF8);
         StringBuilder strBuilder = new StringBuilder();
 
@@ -237,6 +237,8 @@ public class QUICodeGenerator
     {
         if (null != trans.GetComponent<Text>())
             return "Text";
+		else if (null != trans.GetComponent<InputField>())
+			return "InputField";
         else if (null != trans.GetComponent<Button>())
             return "Button";
         else if (null != trans.GetComponent<Image>())
@@ -245,8 +247,7 @@ public class QUICodeGenerator
             return "RawImage";
         else if (null != trans.GetComponent<Toggle>())
             return "Toggle";
-        else if (null != trans.GetComponent<InputField>())
-            return "Input";
+
         else if (null != trans.GetComponent<Slider>())
             return "Slider";
         else if (null != trans.GetComponent<Scrollbar>())

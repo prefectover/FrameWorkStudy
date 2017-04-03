@@ -32,7 +32,7 @@ namespace QFramework
             m_Root.localScale = Vector3.one;
             m_Root.pivot = m_CenterVec;
 
-            Vector3 viewPos = UIMgr.S.uiRoot.uiCamera.ScreenToViewportPoint(Input.mousePosition);
+            Vector3 viewPos = UIMgr.Instance.uiRoot.uiCamera.ScreenToViewportPoint(Input.mousePosition);
 
             int prefectX = 0;
             int prefectY = 0;
@@ -46,7 +46,7 @@ namespace QFramework
                 prefectY = 1;
             }
 
-            Vector3 worldPos = UIMgr.S.uiRoot.uiCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 worldPos = UIMgr.Instance.uiRoot.uiCamera.ScreenToWorldPoint(Input.mousePosition);
             m_Root.position = worldPos;
 
             Vector3 localPos = m_Root.localPosition;

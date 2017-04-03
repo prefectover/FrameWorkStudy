@@ -166,7 +166,7 @@ namespace QFramework
 
             for (int i = depends.Length - 1; i >= 0; --i)
             {
-                var res = ResMgr.S.GetRes(depends[i], false);
+                var res = ResMgr.Instance.GetRes(depends[i], false);
                 if (res != null)
                 {
                     res.AddRef();
@@ -184,7 +184,7 @@ namespace QFramework
 
             for (int i = depends.Length - 1; i >= 0; --i)
             {
-                var res = ResMgr.S.GetRes(depends[i], false);
+                var res = ResMgr.Instance.GetRes(depends[i], false);
                 if (res != null)
                 {
                     res.SubRef();
@@ -217,7 +217,7 @@ namespace QFramework
 
             for (int i = depends.Length - 1; i >= 0; --i)
             {
-                var res = ResMgr.S.GetRes(depends[i], false);
+                var res = ResMgr.Instance.GetRes(depends[i], false);
                 if (res == null || res.resState != eResState.kReady)
                 {
                     return false;

@@ -43,7 +43,7 @@ namespace QFramework
 
             m_ResLoader.LoadSync();
 
-            IRes res = ResMgr.S.GetRes(ProjectPathConfigTemp.APP_CONFIG_PATH, false);
+            IRes res = ResMgr.Instance.GetRes(ProjectPathConfigTemp.APP_CONFIG_PATH, false);
             if (res != null)
             {
                 s_Instance = res.asset as AppConfig;

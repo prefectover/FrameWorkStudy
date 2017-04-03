@@ -102,7 +102,7 @@ namespace QFramework
 
             resState = eResState.kLoading;
 
-            ResMgr.S.PostIEnumeratorTask(this);
+            ResMgr.Instance.PostIEnumeratorTask(this);
         }
 
         public override IEnumerator StartIEnumeratorTask(Action finishCallback)

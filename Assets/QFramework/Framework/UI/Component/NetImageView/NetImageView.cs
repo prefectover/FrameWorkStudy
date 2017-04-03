@@ -141,7 +141,7 @@ namespace QFramework
                 return;
             }
 
-            m_Res = ResMgr.S.GetRes(string.Format("NetImage:{0}", m_Url), true);
+            m_Res = ResMgr.Instance.GetRes(string.Format("NetImage:{0}", m_Url), true);
             m_Res.AddRef();
 
             m_Res.RegisteResListener(OnResLoadFinish);

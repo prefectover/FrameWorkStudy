@@ -139,7 +139,7 @@ namespace QFramework
                 return;
             }
 
-            res = ResMgr.S.GetRes(name, true);
+            res = ResMgr.Instance.GetRes(name, true);
 
             if (res == null)
             {
@@ -193,7 +193,7 @@ namespace QFramework
             Add2Load(name);
             LoadSync();
 
-            IRes res = ResMgr.S.GetRes(name, false);
+            IRes res = ResMgr.Instance.GetRes(name, false);
             if (res == null)
             {
                 Log.e("Failed to Load Res:" + name);
@@ -206,7 +206,7 @@ namespace QFramework
         public void LoadAsync(Action listener = null)
         {
             m_Listener = listener;
-            ResMgr.S.timeDebugger.Begin("LoadAsync");
+            ResMgr.Instance.timeDebugger.Begin("LoadAsync");
             DoLoadAsync();
         }
 
@@ -217,7 +217,7 @@ namespace QFramework
                 return;
             }
 
-            IRes res = ResMgr.S.GetRes(name, false);
+            IRes res = ResMgr.Instance.GetRes(name, false);
             if (res == null)
             {
                 return;
@@ -236,7 +236,7 @@ namespace QFramework
             {
                 res.UnRegisteResListener(OnResLoadFinish);
                 res.SubRef();
-                ResMgr.S.SetResMapDirty();
+                ResMgr.Instance.SetResMapDirty();
             }
         }
 
@@ -271,7 +271,7 @@ namespace QFramework
                 }
 
                 m_ResArray.Clear();
-                ResMgr.S.SetResMapDirty();
+                ResMgr.Instance.SetResMapDirty();
             }
 
             RemoveAllCallbacks(true);
@@ -297,7 +297,7 @@ namespace QFramework
                         m_ResArray.RemoveAt(i);
                     }
                 }
-                ResMgr.S.SetResMapDirty();
+                ResMgr.Instance.SetResMapDirty();
             }
         }
 
@@ -399,8 +399,8 @@ namespace QFramework
             {
                 RemoveAllCallbacks(false);
 
-                ResMgr.S.timeDebugger.End();
-                ResMgr.S.timeDebugger.Dump(-1);
+                ResMgr.Instance.timeDebugger.End();
+                ResMgr.Instance.timeDebugger.Dump(-1);
                 if (m_Listener != null)
                 {
                     m_Listener();

@@ -121,20 +121,6 @@ namespace QFramework {
 		{
 		}
 
-		/// <summary>
-		/// 关闭
-		/// </summary>
-		public void Close() {
-			OnClose ();
-		}
-
-		/// <summary>
-		/// 关闭
-		/// </summary>
-		protected virtual void OnClose() {
-
-		}
-
 		public void RegisterSelf(QMonoBehaviour mono,ushort[] msgs = null)
 		{
 			if (null != msgs) {
