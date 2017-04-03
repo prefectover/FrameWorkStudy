@@ -47,14 +47,15 @@ namespace QFramework.Editor
 					Debug.Log ("gen: " + fullPathFileName);
 
 					PathConfig config = AssetDatabase.LoadAssetAtPath<PathConfig> (fullPathFileName);
-
+					NameSpace nameSpace = new NameSpace ();
+					nameSpace.Name = string.IsNullOrEmpty (config.NameSpace) ? "QFramework" : config.NameSpace;
+					nameSpace.FileName = config.name + ".cs";
+					nameSpace.GenerateDir = string.IsNullOrEmpty (config.ScriptGeneratePath) ? EditorPathManager.DefaultPathScriptGenerateForder : IOUtils.CreateDirIfNotExists ("Assets/" + config.ScriptGeneratePath);
 					var classDefine = new ClassDefine ();
-					classDefine.NameSpace = string.IsNullOrEmpty (config.NameSpace) ? "QFramework" : config.NameSpace;
 					classDefine.Comment = config.Description;
 					classDefine.Name = config.name;
-					classDefine.FileName = config.name + ".cs";
-					classDefine.GenerateDir = string.IsNullOrEmpty (config.ScriptGeneratePath) ? EditorPathManager.DefaultPathScriptGenerateForder : IOUtils.CreateDirIfNotExists ("Assets/" + config.ScriptGeneratePath);
-					Debug.Log (classDefine.GenerateDir);
+					nameSpace.Classes.Add (classDefine);
+					Debug.Log (nameSpace.GenerateDir);
 					foreach (var pathItem in config.List) {
 						if (!string.IsNullOrEmpty(pathItem.Name)) {
 							var variable = new Variable (AccessLimit.Private, CompileType.Const, VariableType.String,"m_" + pathItem.Name, pathItem.Path);
@@ -64,7 +65,7 @@ namespace QFramework.Editor
 							classDefine.Properties.Add (property);
 						}
 					}
-					CodeGenerator.WriteClass (classDefine);
+					CodeGenerator.Generate (nameSpace);
 
 					EditorUtility.SetDirty (config);
 					Resources.UnloadAsset (config);

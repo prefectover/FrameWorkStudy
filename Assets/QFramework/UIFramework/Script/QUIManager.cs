@@ -47,12 +47,12 @@ namespace QFramework {
 			get {
 				if (mGo) {
 				} else {
-					mGo = GameObject.Find ("PTUIManager");
+					mGo = GameObject.Find ("QUIManager");
 					if (mGo) {
 					} else {
-						mGo = GameObject.Instantiate (Resources.Load ("PTUIManager")) as GameObject;
+						mGo = GameObject.Instantiate (Resources.Load ("QUIManager")) as GameObject;
 					}
-					mGo.name = "PTUIManager";
+					mGo.name = "QUIManager";
 				}
 
 				return QMonoSingletonComponent<QUIManager>.Instance;

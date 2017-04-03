@@ -83,7 +83,9 @@ namespace QFramework {
 
 			// quit->quitgame
 			mFSM.AddTranslation (STATE_QUIT_DIALOG, Example5UIMsg.BTN_SURE_CLICK, STATE_QUIT, delegate {
+				#if UNITY_EDITOR
 				UnityEditor.EditorApplication.isPlaying = false;
+				#endif
 			});
 
 			// quit->main

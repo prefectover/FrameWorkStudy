@@ -14,14 +14,17 @@ namespace QFramework {
     /// AssetBundle相关的路径
     /// </summary>
     public class ABEditorPathConfig {
-        private const string m_ScriptGeneratorPath = "_Script/UI";
-        private const string m_ABGeneratePathiOS = "StreamingAssets/AssetBundles/iOS/putaogame/";
+        private const string m_AssetBundleOutputPath = "AssetBundles";
+        private const string m_ABGeneratePathiOS = "AssetBundles/iOS/qframework";
+        private const string m_ABGeneratePathAndroid = "AssetBundles/Android/qframework";
+        private const string m_ABGeneratePathOSX = "AssetBundles/OSX/qframework";
+        private const string m_ABCodeGeneratePath = "QFrameworkData/Res";
         /// <summary>
         /// 工程资源存放路径
         /// </summary>
-        public static string ScriptGeneratorPath {
+        public static string AssetBundleOutputPath {
             get {
-                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.dataPath + "/" + m_ScriptGeneratorPath);
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.streamingAssetsPath + "/" + m_AssetBundleOutputPath);
             }
         }
         /// <summary>
@@ -29,7 +32,31 @@ namespace QFramework {
         /// </summary>
         public static string ABGeneratePathiOS {
             get {
-                return QFramework.Libs.IOUtils.CreateDirIfNotExists ("Assets/" + m_ABGeneratePathiOS);
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.streamingAssetsPath + "/" + m_ABGeneratePathiOS);
+            }
+        }
+        /// <summary>
+        /// Android平台 AB资源生成路径
+        /// </summary>
+        public static string ABGeneratePathAndroid {
+            get {
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.streamingAssetsPath + "/" + m_ABGeneratePathAndroid);
+            }
+        }
+        /// <summary>
+        /// OSX平台 AB资源生成路径
+        /// </summary>
+        public static string ABGeneratePathOSX {
+            get {
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.streamingAssetsPath + "/" + m_ABGeneratePathOSX);
+            }
+        }
+        /// <summary>
+        /// AB代码生成的路径
+        /// </summary>
+        public static string ABCodeGeneratePath {
+            get {
+                return QFramework.Libs.IOUtils.CreateDirIfNotExists (UnityEngine.Application.dataPath + "/" + m_ABCodeGeneratePath);
             }
         }
     }

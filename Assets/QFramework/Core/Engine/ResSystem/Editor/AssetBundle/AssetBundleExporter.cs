@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using SCFramework;
+using QFramework.Libs;
 
 namespace QFramework
 {

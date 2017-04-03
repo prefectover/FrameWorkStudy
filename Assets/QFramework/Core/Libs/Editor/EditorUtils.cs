@@ -7,9 +7,8 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Object = UnityEngine.Object;
 using SCFramework;
-using QFramework.Libs;
 
-namespace QFramework.Editor
+namespace QFramework.Libs
 {
 
     public class EditorUtils

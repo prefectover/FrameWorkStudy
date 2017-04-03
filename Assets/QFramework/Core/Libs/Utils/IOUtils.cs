@@ -22,6 +22,16 @@ namespace QFramework.Libs {
 			return dirFullPath;
 		}
 
+		/// <summary>
+		/// 删除文件夹，如果存在
+		/// </summary>
+		public static void DeleteDirIfExists(string dirFullPath) {
+			if (Directory.Exists (dirFullPath)) {
+				Debug.Log ("delete " + dirFullPath);
+				Directory.Delete (dirFullPath, true);
+			}
+		}
+
 
 		#region SCFramework
 		public static List<string> GetDirSubFilePathList(string dirABSPath, bool isRecursive = true, string suffix = "")

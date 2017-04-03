@@ -198,14 +198,41 @@ namespace QFramework.Libs {
 	}
 
 	/// <summary>
+	/// 命名空间
+	/// </summary>
+	public class NameSpace {
+		/// <summary>
+		/// 注释
+		/// </summary>
+		public string Comment;
+
+		/// <summary>
+		/// 名字
+		/// </summary>
+		public string Name;
+
+		/// <summary>
+		/// 包含的类
+		/// </summary>
+		public List<ClassDefine> Classes = new List<ClassDefine> ();
+
+		/// <summary>
+		/// 生成的文件名
+		/// </summary>
+		public string FileName;
+
+
+		/// <summary>
+		/// 生成的路径
+		/// </summary>
+		public string GenerateDir = "";
+	}
+
+	/// <summary>
 	/// 类定义
 	/// </summary>
 	public class ClassDefine {
 		public string Comment;
-		/// <summary>
-		/// 命名空间
-		/// </summary>
-		public string NameSpace;
 
 		/// <summary>
 		/// 类名字
@@ -220,48 +247,38 @@ namespace QFramework.Libs {
 		/// 属性定义 
 		/// </summary>
 		public List<Property> Properties = new List<Property> ();
-
-		/// <summary>
-		/// 生成的文件名
-		/// </summary>
-		public string FileName;
-
-		/// <summary>
-		/// 生成的路径
-		/// </summary>
-		public string GenerateDir;
-
 	}
 
 	public class CodeGenerator {
 		
-		public static void WriteClass(ClassDefine classDefine) {
+		public static void Generate(NameSpace nameSpace) {
 
-			IOUtils.CreateDirIfNotExists (classDefine.GenerateDir);
+			IOUtils.CreateDirIfNotExists (nameSpace.GenerateDir);
 
 			var compileUnit = new CodeCompileUnit ();
-			var codeNameSpace = new CodeNamespace (classDefine.NameSpace);
+			var codeNameSpace = new CodeNamespace (nameSpace.Name);
 			compileUnit.Namespaces.Add (codeNameSpace);
 
+			foreach (var classDefine in nameSpace.Classes) {
+				var codeType = new CodeTypeDeclaration (classDefine.Name);
+				codeNameSpace.Types.Add (codeType);
 
-			var codeType = new CodeTypeDeclaration (classDefine.Name);
-			codeNameSpace.Types.Add (codeType);
+				AddDocumentComment (codeType.Comments, classDefine.Comment);
 
-			AddDocumentComment (codeType.Comments, classDefine.Comment);
+				foreach (var variable in classDefine.Variables) {
+					AddVariable (codeType, variable);
+				}
 
-			foreach (var variable in classDefine.Variables) {
-				AddVariable (codeType, variable);
+				foreach (var property in classDefine.Properties) {
+					AddProperty (codeType, property);
+				}
+
 			}
-
-			foreach (var propert in classDefine.Properties) {
-				AddProperty (codeType, propert);
-			}
-
 			var provider = new CSharpCodeProvider ();
 			var options = new CodeGeneratorOptions ();
 			options.BlankLinesBetweenMembers = false;
 
-			StreamWriter writer = new StreamWriter(File.Open (Path.GetFullPath (classDefine.GenerateDir + Path.DirectorySeparatorChar + classDefine.FileName), FileMode.Create));
+			StreamWriter writer = new StreamWriter(File.Open (Path.GetFullPath (nameSpace.GenerateDir + Path.DirectorySeparatorChar + nameSpace.FileName), FileMode.Create));
 
 			provider.GenerateCodeFromCompileUnit (compileUnit, writer, options);
 			writer.Close ();

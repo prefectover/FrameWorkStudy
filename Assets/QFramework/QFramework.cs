@@ -32,7 +32,6 @@ namespace QFramework {
 			//-----------------初始化管理器-----------------------
 			var a = QTimerMgr.Instance;
 			var c = QResourceManager.Instance;
-			var f = GameManager.Instance;
 		}
 
 		/// <summary>
@@ -66,7 +65,7 @@ namespace QFramework {
 			switch (Framework.Instance.mode) {
 			case QAppMode.Developing:
 				{
-//					yield return GetComponent<ITestEntry> ().Launch ();
+
 				}
 				break;
 			case QAppMode.QA:
@@ -76,10 +75,11 @@ namespace QFramework {
 
 			case QAppMode.Release:
 					
-				yield return GameManager.Instance.Launch ();
 
 				break;
 			}
+
+			yield return null;
 		}
 
 		#region 全局生命周期回调

@@ -76,7 +76,9 @@ namespace QFramework {
 					break;
 
 				case Example4UIMsg.DIALOG_BTN_SURE_CLICK:
+					#if UNITY_EDITOR
 					UnityEditor.EditorApplication.isPlaying = false;
+					#endif
 					break;
 				case Example4UIMsg.DIALOG_BTN_CANCEL_CLICK:
 					QUIManager.Instance.CloseUI<UIExample4Dialog> ();
