@@ -5,6 +5,7 @@ using UnityEditor;
 using System.IO;
 using System.Text;
 using UnityEngine.UI;
+using QFramework;
 using QFramework.Libs;
 
 public class QUICodeGenerator
@@ -66,7 +67,7 @@ public class QUICodeGenerator
         if (null != m_SelectGameObject)
         {
             string strDlg = m_SelectGameObject.name;
-            string strFilePath = string.Format("{0}/{1}.cs", GetScriptsPath(), strDlg);
+			string strFilePath = string.Format("{0}/{1}.cs", UIEditorPathConfig.ScriptGeneratorPath, strDlg);
             if (File.Exists(strFilePath) == false)
             {
                 StreamWriter sw = new StreamWriter(strFilePath, false, Encoding.UTF8);
@@ -161,9 +162,8 @@ public class QUICodeGenerator
         strBuilder.Append("\t\t\t").AppendLine("switch (strUI)");
         strBuilder.Append("\t\t\t").AppendLine("{");
 
-		IOUtils.CreateDirIfNotExists (GetUIPrefabPath ());
 
-        string[] files = Directory.GetFiles(GetUIPrefabPath(), "UI*.prefab", SearchOption.AllDirectories);
+		string[] files = Directory.GetFiles(UIEditorPathConfig.UIPrefabPath, "UI*.prefab", SearchOption.AllDirectories);
         for (int i = 0; i < files.Length; i++)
         {
             strBuilder.Append("\t\t\t\t").AppendLine("case \"" + Path.GetFileNameWithoutExtension(files[i]) + "\":");
@@ -185,7 +185,7 @@ public class QUICodeGenerator
 
 	private void CreateUIBehaviorCode(string behaviourName)
     {
-		string strFilePath = string.Format("{0}/{1}.cs", GetScriptsPath(), behaviourName + "Components");
+		string strFilePath = string.Format("{0}/{1}.cs", UIEditorPathConfig.ScriptGeneratorPath , behaviourName + "Components");
         StreamWriter sw = new StreamWriter(strFilePath, false, Encoding.UTF8);
         StringBuilder strBuilder = new StringBuilder();
 
@@ -255,29 +255,11 @@ public class QUICodeGenerator
             return "Transform";
     }
 
-    private string GetScriptsPath()
-    {
-		var retDir = Application.dataPath + "/_Script/UI";
-		if (!Directory.Exists (retDir)) {
-			Directory.CreateDirectory (retDir);
-		}
-		return retDir;
-    }
-
     private string GetScriptsTempPath()
     {
         return Application.dataPath + "/../../";
     }
-
-    private string GetUIPrefabPath()
-    {
-//		var retDir = Application.dataPath + "/Resources";
-		var retDir = Application.dataPath + "/QArt/UIPrefab";
-		if (!Directory.Exists (retDir)) {
-			Directory.CreateDirectory (retDir);
-		}
-		return retDir;
-    }
+		
 
     private GameObject m_SelectGameObject = null;
     private Dictionary<string, Transform> m_dicNameToTrans = null;

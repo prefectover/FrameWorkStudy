@@ -13,12 +13,13 @@ namespace QFramework.Libs {
 		/// <summary>
 		/// 创建新的文件夹,如果存在则不创建
 		/// </summary>
-		public static void CreateDirIfNotExists(string dirFullPath)
+		public static string CreateDirIfNotExists(string dirFullPath)
 		{
 			if (!Directory.Exists (dirFullPath)) {
 				Debug.Log ("dir " + dirFullPath + " is not exist,create new one");
 				Directory.CreateDirectory (dirFullPath);
 			}
+			return dirFullPath;
 		}
 
 

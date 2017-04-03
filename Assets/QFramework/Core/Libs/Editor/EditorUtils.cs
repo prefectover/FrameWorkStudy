@@ -36,6 +36,8 @@ namespace QFramework.Editor
         public static string ABSPath2AssetsPath(string absPath)
         {
             string assetRootPath = System.IO.Path.GetFullPath(Application.dataPath);
+			Debug.Log (assetRootPath);
+			Debug.Log (System.IO.Path.GetFullPath (absPath));
             return "Assets" + System.IO.Path.GetFullPath(absPath).Substring(assetRootPath.Length).Replace("\\", "/");
         }
 
@@ -175,11 +177,13 @@ namespace QFramework.Editor
         public static List<Object> GetDirSubAssetsList(string dirAssetsPath, bool isRecursive = true, string suffix = "", bool isLoadAll = false)
         {
             string dirABSPath = ABSPath2AssetsPath(dirAssetsPath);
+			Debug.Log (dirABSPath);
             List<string> assetsABSPathList = IOUtils.GetDirSubFilePathList(dirABSPath, isRecursive, suffix);
             List<Object> resultObjectList = new List<Object>();
 
             for (int i = 0; i < assetsABSPathList.Count; ++i)
             {
+				Debug.Log (assetsABSPathList [i]);
                 if (isLoadAll)
                 {
                     Object[] objs = AssetDatabase.LoadAllAssetsAtPath(ABSPath2AssetsPath(assetsABSPathList[i]));

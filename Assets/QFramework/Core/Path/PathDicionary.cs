@@ -20,11 +20,11 @@ namespace QFramework
 	}
 	#endregion
 
-//	[System.Serializable]
-//	public class PathItem : ScriptableObject {
-//		public string name;
-//		public string patn;
-//	}
+	[System.Serializable]
+	public class PathItem : ScriptableObject {
+		public string name;
+		public string patn;
+	}
 
 	[System.Serializable]
 	public class PathDicionary : ScriptableObject
