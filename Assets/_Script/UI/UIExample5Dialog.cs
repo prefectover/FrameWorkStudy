@@ -18,12 +18,12 @@ public class UIExample5Dialog : QUIBehaviour,IMsgSender
 	protected override void RegisterUIEvent()
 	{
 		mUIComponents.BtnSure_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[]{Example5UIMsg.BTN_SURE_CLICK });
 		});
 
 		mUIComponents.BtnCancel_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[]{Example5UIMsg.BTN_CANCEL_CLICK });
 		});
 	}

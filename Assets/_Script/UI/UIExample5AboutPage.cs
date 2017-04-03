@@ -18,7 +18,7 @@ public class UIExample5AboutPage : QUIBehaviour,IMsgSender
 	protected override void RegisterUIEvent()
 	{
 		mUIComponents.BtnBack_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[] { Example5UIMsg.BTN_BACK_CLICK});	
 		});
 	}

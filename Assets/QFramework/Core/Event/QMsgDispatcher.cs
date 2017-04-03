@@ -5,12 +5,6 @@ using System;
 
 namespace QFramework {
 
-	public enum QMsgChannel {
-		Global,	// 全局
-		UI,
-		Logic,
-	}
-
 	/// <summary>
 	/// 消息分发器
 	/// C# this扩展 需要静态类
@@ -42,7 +36,7 @@ namespace QFramework {
 		/// <summary>
 		/// 每个消息名字维护一组消息捕捉器。
 		/// </summary>
-		static Dictionary<QMsgChannel,Dictionary<string,List<QMsgHandler>>> mMsgHandlerDict = new Dictionary<QMsgChannel,Dictionary<string,List<QMsgHandler>>> ();
+		static Dictionary<QMgrID,Dictionary<string,List<QMsgHandler>>> mMsgHandlerDict = new Dictionary<QMgrID,Dictionary<string,List<QMsgHandler>>> ();
 	
 		/// <summary>
 		/// 注册消息,
@@ -64,17 +58,17 @@ namespace QFramework {
 			}
 				
 			// 添加消息通道
-			if (!mMsgHandlerDict.ContainsKey (QMsgChannel.Global)) {
-				mMsgHandlerDict [QMsgChannel.Global] = new Dictionary<string, List<QMsgHandler>> ();
+			if (!mMsgHandlerDict.ContainsKey (QMgrID.Global)) {
+				mMsgHandlerDict [QMgrID.Global] = new Dictionary<string, List<QMsgHandler>> ();
 			}
 
 			// 略过
-			if (!mMsgHandlerDict[QMsgChannel.Global].ContainsKey (msgName)) {
-				mMsgHandlerDict[QMsgChannel.Global] [msgName] = new List<QMsgHandler> ();
+			if (!mMsgHandlerDict[QMgrID.Global].ContainsKey (msgName)) {
+				mMsgHandlerDict[QMgrID.Global] [msgName] = new List<QMsgHandler> ();
 			}
 
 			// 看下这里
-			var handlers = mMsgHandlerDict [QMsgChannel.Global][msgName];
+			var handlers = mMsgHandlerDict [QMgrID.Global][msgName];
 
 			// 略过
 			// 防止重复注册
@@ -94,7 +88,7 @@ namespace QFramework {
 		/// 注意第一个参数,使用了C# this的扩展,
 		/// 所以只有实现IMsgReceiver的对象才能调用此方法
 		/// </summary>
-		public static void RegisterMsgByChannel(this IMsgReceiver self, QMsgChannel channel,string msgName,QVoidDelegate.WithParams callback)
+		public static void RegisterMsgByChannel(this IMsgReceiver self, QMgrID channel,string msgName,QVoidDelegate.WithParams callback)
 		{
 			// 略过
 			if (string.IsNullOrEmpty(msgName)) {
@@ -144,12 +138,12 @@ namespace QFramework {
 				return;
 			}
 				
-			if (!mMsgHandlerDict.ContainsKey (QMsgChannel.Global)) {
-				Debug.LogError ("Channel:" + QMsgChannel.Global.ToString() + " doesn't exist");
+			if (!mMsgHandlerDict.ContainsKey (QMgrID.Global)) {
+				Debug.LogError ("Channel:" + QMgrID.Global.ToString() + " doesn't exist");
 				return;			
 			}
 
-			var handlers = mMsgHandlerDict[QMsgChannel.Global] [msgName];
+			var handlers = mMsgHandlerDict[QMgrID.Global] [msgName];
 
 			int handlerCount = handlers.Count;
 
@@ -166,7 +160,7 @@ namespace QFramework {
 		/// <summary>
 		/// 其实注销消息只需要Object和Go就足够了 不需要callback
 		/// </summary>
-		public static void UnRegisterMsgByChannel(this IMsgReceiver self,QMsgChannel channel,string msgName)
+		public static void UnRegisterMsgByChannel(this IMsgReceiver self,QMgrID channel,string msgName)
 		{
 			if (CheckStrNullOrEmpty (msgName)) {
 				return;
@@ -221,19 +215,19 @@ namespace QFramework {
 				return;
 			}
 
-			if (!mMsgHandlerDict.ContainsKey (QMsgChannel.Global)) {
-				Debug.LogError ("Channel:" + QMsgChannel.Global.ToString() + " doesn't exist");
+			if (!mMsgHandlerDict.ContainsKey (QMgrID.Global)) {
+				Debug.LogError ("Channel:" + QMgrID.Global.ToString() + " doesn't exist");
 				return;
 			}
 				
 			// 略过,不用看
-			if (!mMsgHandlerDict[QMsgChannel.Global].ContainsKey(msgName)){
+			if (!mMsgHandlerDict[QMgrID.Global].ContainsKey(msgName)){
 				Debug.LogError(msgName + " UnRegistered");
 				return;
 			}
 
 			// 开始看!!!!
-			var handlers = mMsgHandlerDict[QMsgChannel.Global][msgName];
+			var handlers = mMsgHandlerDict[QMgrID.Global][msgName];
 
 			var handlerCount = handlers.Count;
 
@@ -251,7 +245,7 @@ namespace QFramework {
 			}
 		}
 			
-		public static void SendMsgByChannel(this IMsgSender sender,QMsgChannel channel,string msgName,params object[] paramList)
+		public static void SendMsgByChannel(this IMsgSender sender,QMgrID channel,string msgName,params object[] paramList)
 		{
 			if (CheckStrNullOrEmpty (msgName)) {
 				return;
@@ -289,7 +283,7 @@ namespace QFramework {
 		}
 			
 		[Obsolete("RegisterLogicMsg已经弃用了,请使用RegisterGlobalMsg")]
-		public static void RegisterLogicMsg(this IMsgReceiver self, string msgName,QVoidDelegate.WithParams callback,QMsgChannel channel = QMsgChannel.Global)
+		public static void RegisterLogicMsg(this IMsgReceiver self, string msgName,QVoidDelegate.WithParams callback,QMgrID channel = QMgrID.Global)
 		{
 			if (CheckStrNullOrEmpty (msgName)||CheckDelegateNull(callback)) {
 				return;
@@ -329,20 +323,20 @@ namespace QFramework {
 				return;
 			}
 
-			if (!mMsgHandlerDict.ContainsKey (QMsgChannel.Global)) {
-				Debug.LogError ("Channel:" + QMsgChannel.Global.ToString() + " doesn't exist");
+			if (!mMsgHandlerDict.ContainsKey (QMgrID.Global)) {
+				Debug.LogError ("Channel:" + QMgrID.Global.ToString() + " doesn't exist");
 				return;
 			}
 
 
 			// 略过,不用看
-			if (!mMsgHandlerDict[QMsgChannel.Global].ContainsKey(msgName)){
+			if (!mMsgHandlerDict[QMgrID.Global].ContainsKey(msgName)){
 				Debug.LogWarning("SendMsg is UnRegister");
 				return;
 			}
 
 			// 开始看!!!!
-			var handlers = mMsgHandlerDict[QMsgChannel.Global][msgName];
+			var handlers = mMsgHandlerDict[QMgrID.Global][msgName];
 
 			var handlerCount = handlers.Count;
 
@@ -362,7 +356,7 @@ namespace QFramework {
 		}
 
 		[Obsolete("UnRegisterMsg已经弃用了,请使用UnRegisterMsg")]
-		public static void UnRegisterMsg(this IMsgReceiver self,string msgName,QVoidDelegate.WithParams callback,QMsgChannel channel = QMsgChannel.Global)
+		public static void UnRegisterMsg(this IMsgReceiver self,string msgName,QVoidDelegate.WithParams callback,QMgrID channel = QMgrID.Global)
 		{
 			if (CheckStrNullOrEmpty (msgName) || CheckDelegateNull(callback)) {
 				return;
@@ -396,12 +390,12 @@ namespace QFramework {
 				return;
 			}
 
-			if (!mMsgHandlerDict.ContainsKey (QMsgChannel.Global)) {
-				Debug.LogError ("Channel:" + QMsgChannel.Global.ToString() + " doesn't exist");
+			if (!mMsgHandlerDict.ContainsKey (QMgrID.Global)) {
+				Debug.LogError ("Channel:" + QMgrID.Global.ToString() + " doesn't exist");
 				return;			
 			}
 
-			var handlers = mMsgHandlerDict[QMsgChannel.Global] [msgName];
+			var handlers = mMsgHandlerDict[QMgrID.Global] [msgName];
 
 			int handlerCount = handlers.Count;
 

@@ -1,0 +1,19 @@
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:38:34	The compiler this script was imported with is not available anymore.
+
+UnityEditorInternal.InternalEditorUtility:GetMonoIslands()
+UnityEditor.SyncVS:SyncIfFirstFileOpenSinceDomainLoad()
+UnityEditorInternal.LogEntries:RowGotDoubleClicked(Int32)
+UnityEditor.DockArea:OnGUI()
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:39:11	The compiler this script was imported with is not available anymore.
+
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:39:11	The compiler this script was imported with is not available anymore.
+
+
+---------------------------------------------------------------------------------------------------------------------

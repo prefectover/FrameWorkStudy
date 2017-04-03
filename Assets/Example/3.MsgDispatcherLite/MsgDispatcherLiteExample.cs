@@ -28,7 +28,7 @@ namespace QFramework.Example {
 				}
 			});
 				
-			this.RegisterMsgByChannel (QMsgChannel.UI, RECEIVE_MSG_FROM_OTHER_OBJECT, delegate(object[] paramList) {
+			this.RegisterMsgByChannel (QMgrID.UI, RECEIVE_MSG_FROM_OTHER_OBJECT, delegate(object[] paramList) {
 				Debug.Log("这里接收不到消息,因为通道不一样");	
 			});
 		}
@@ -46,7 +46,7 @@ namespace QFramework.Example {
 
 		void OnDestroy() {
 			this.UnRegisterGlobalMsg (RECEIVE_MSG_FROM_OTHER_OBJECT);
-			this.UnRegisterMsgByChannel (QMsgChannel.UI, RECEIVE_MSG_FROM_OTHER_OBJECT);
+			this.UnRegisterMsgByChannel (QMgrID.UI, RECEIVE_MSG_FROM_OTHER_OBJECT);
 		}
 	}
 }

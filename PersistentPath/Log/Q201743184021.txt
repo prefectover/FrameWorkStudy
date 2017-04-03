@@ -1,0 +1,74 @@
+04/03/2017 18:40:32	2
+04/03/2017 18:40:32	12
+04/03/2017 18:40:33	2
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:40:45	The compiler this script was imported with is not available anymore.
+
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:40:45	The compiler this script was imported with is not available anymore.
+
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:40:47	The compiler this script was imported with is not available anymore.
+
+UnityEditorInternal.InternalEditorUtility:GetMonoIslands()
+UnityEditor.Scripting.Serialization.Weaver:WeaveUnetFromEditor(String, String, String, String, Boolean)
+
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:40:47	Assets/Example/4.UI_MsgDispatcherLite/Example4UICtrl.cs(6,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/Example/5.UI_FSMLite_MsgDispatcherLite/Example5UICtrl.cs(6,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/PTUGame/PTABManager/PTResourceManager.cs(9,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/PTUGame/PTLocalize/Script/PTLanguageManager.cs(7,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/ConfigReader/ConfigManager.cs(7,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/Game/GameMgr.cs(6,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/AssetEvent.cs(4,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/QResourceManager.cs(8,1): warning CS0105: The using directive for `QFramework' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/QTimerMgr.cs(4,1): warning CS0105: The using directive for `System.Collections' appeared previously in this namespace
+04/03/2017 18:40:47	Assets/QFramework/Core/Base/QMgrBehaviour.cs(147,15): warning CS0108: `QFramework.QMgrBehaviour.SendMsg(QMsg)' hides inherited member `QFramework.QMonoBehaviour.SendMsg(QMsg)'. Use the new keyword if hiding was intended
+04/03/2017 18:40:47	Assets/QFramework/Core/Path/PathDicionary.cs(25,17): warning CS0108: `QFramework.PathItem.name' hides inherited member `UnityEngine.Object.name'. Use the new keyword if hiding was intended
+04/03/2017 18:40:47	Assets/QFramework/UIFramework/Script/QUIBehaviour.cs(113,15): warning CS0108: `QFramework.QUIBehaviour.RegisterSelf(QFramework.QMonoBehaviour, ushort[])' hides inherited member `QFramework.QMonoBehaviour.RegisterSelf(QFramework.QMonoBehaviour, ushort[])'. Use the new keyword if hiding was intended
+04/03/2017 18:40:47	Assets/QFramework/UIFramework/Script/QUIBehaviour.cs(128,15): warning CS0108: `QFramework.QUIBehaviour.SendMsg(QMsg)' hides inherited member `QFramework.QMonoBehaviour.SendMsg(QMsg)'. Use the new keyword if hiding was intended
+04/03/2017 18:40:47	Assets/Example/8.NewEventSystemWithGeneric/NewEventSystemWithGeneric.cs(26,12): warning CS0219: The variable `a' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/Example/8.NewEventSystemWithGeneric/NewEventSystemWithGeneric.cs(41,11): warning CS0219: The variable `a' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/Example/8.NewEventSystemWithGeneric/NewEventSystemWithGeneric.cs(45,11): warning CS0219: The variable `a' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/PTUGame/PTABManager/AssetBundleLoadOperation.cs(89,30): warning CS0618: `UnityEngine.Application.LoadLevelAdditiveAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/PTUGame/PTABManager/AssetBundleLoadOperation.cs(91,30): warning CS0618: `UnityEngine.Application.LoadLevelAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/PTUGame/PTGame/Scripts/PTUtils.cs(125,21): warning CS0618: `UnityEditor.BuildTarget.WebPlayer' is obsolete: `WebPlayer has been removed in 5.4'
+04/03/2017 18:40:47	Assets/PTUGame/PTGame/Scripts/PTUtils.cs(150,25): warning CS0618: `UnityEngine.RuntimePlatform.OSXWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/PTUGame/PTGame/Scripts/PTUtils.cs(151,25): warning CS0618: `UnityEngine.RuntimePlatform.WindowsWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/ABLoadOperation.cs(89,30): warning CS0618: `UnityEngine.Application.LoadLevelAdditiveAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/ABLoadOperation.cs(91,30): warning CS0618: `UnityEngine.Application.LoadLevelAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/ABUtility.cs(33,22): warning CS0618: `UnityEditor.BuildTarget.WebPlayer' is obsolete: `WebPlayer has been removed in 5.4'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/ABUtility.cs(58,26): warning CS0618: `UnityEngine.RuntimePlatform.OSXWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/ABUtility.cs(59,26): warning CS0618: `UnityEngine.RuntimePlatform.WindowsWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/AssetBundleLoadOperation.cs(89,30): warning CS0618: `UnityEngine.Application.LoadLevelAdditiveAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/AssetBundleLoadOperation.cs(91,30): warning CS0618: `UnityEngine.Application.LoadLevelAsync(string)' is obsolete: `Use SceneManager.LoadSceneAsync'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(33,8): warning CS1717: Assignment made to same variable; did you mean to assign something else?
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(122,19): warning CS0219: The variable `tmpMsg' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(130,19): warning CS0219: The variable `tmpMsg' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(138,19): warning CS0219: The variable `tmpMsg' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(145,19): warning CS0219: The variable `tmpMsg' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/NativeResLoader.cs(152,19): warning CS0219: The variable `tmpMsg' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/UIFramework/Script/UIScrollPage.cs(63,44): warning CS0472: The result of comparing value type `UnityEngine.Vector2' with null is always `true'
+04/03/2017 18:40:47	Assets/QFramework/UIFramework/Script/UIScrollPage.cs(63,74): warning CS0472: The result of comparing value type `UnityEngine.Vector2' with null is always `true'
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/QPlatform.cs(35,21): warning CS0618: `UnityEditor.BuildTarget.WebPlayer' is obsolete: `WebPlayer has been removed in 5.4'
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/QPlatform.cs(62,25): warning CS0618: `UnityEngine.RuntimePlatform.OSXWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/QPlatform.cs(63,25): warning CS0618: `UnityEngine.RuntimePlatform.WindowsWebPlayer' is obsolete: `WebPlayer export is no longer supported in Unity 5.4+.'
+04/03/2017 18:40:47	Assets/Example/0.ProgrammingStyle/ProgrammingStyle.cs(18,27): warning CS0414: The private field `QFramework.Example.ProgrammingStyle.mBtnEnterMainPage' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/Helper/SerializeHelper.cs(75,26): warning CS0649: Field `Putao.PaiEnglish.SerializeHelper.PlayerInfo.health' is never assigned to, and will always have its default value `0'
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/Helper/SerializeHelper.cs(76,32): warning CS0649: Field `Putao.PaiEnglish.SerializeHelper.PlayerInfo.childs' is never assigned to, and will always have its default value `null'
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/Helper/SerializeHelper.cs(82,27): warning CS0649: Field `Putao.PaiEnglish.SerializeHelper.ChildInfo.name' is never assigned to, and will always have its default value `null'
+04/03/2017 18:40:47	Assets/PTUGame/Scripts/Helper/SerializeHelper.cs(83,24): warning CS0649: Field `Putao.PaiEnglish.SerializeHelper.ChildInfo.lives' is never assigned to, and will always have its default value `0'
+04/03/2017 18:40:47	Assets/QFramework/Core/Res/Script/IABManifestLoader.cs(57,35): warning CS0414: The private field `IABManifestLoader.instance' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/Debug/QConsole.cs(45,23): warning CS0414: The private field `QFramework.QConsole.fpsCounter' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/Debug/QConsole.cs(49,27): warning CS0414: The private field `QFramework.QConsole.memoryDetector' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/Debug/QConsole.cs(55,8): warning CS0414: The private field `QFramework.QConsole.mTouching' is assigned but its value is never used
+04/03/2017 18:40:47	Assets/QFramework/UnManaged/QUtil.cs(18,37): warning CS0414: The private field `QFramework.QUtil.luaPaths' is assigned but its value is never used
+---------------------------------------------------------------------------------------------------------------------
+04/03/2017 18:40:47	The compiler this script was imported with is not available anymore.
+
+
+---------------------------------------------------------------------------------------------------------------------

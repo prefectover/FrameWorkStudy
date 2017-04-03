@@ -36,7 +36,7 @@ namespace QFramework {
 		// Use this for initialization
 		void Start () {
 			// 注册消息
-			this.RegisterMsgByChannel(QMsgChannel.UI,Example4UIMsg.SEND_MSG_TO_EXAMPLE_4_UI_CTRL,ProcessEvent);
+			this.RegisterMsgByChannel(QMgrID.UI,Example4UIMsg.SEND_MSG_TO_EXAMPLE_4_UI_CTRL,ProcessEvent);
 
 			QResourceManager.Instance.Init ();
 			QResourceManager.Instance.LoadAssetBundle (UIPREFAB.BUNDLE_NAME);
@@ -88,7 +88,7 @@ namespace QFramework {
 		/// 要注销消息
 		/// </summary>
 		void OnDestroy() {
-			this.UnRegisterMsgByChannel (QMsgChannel.UI, Example4UIMsg.SEND_MSG_TO_EXAMPLE_4_UI_CTRL);
+			this.UnRegisterMsgByChannel (QMgrID.UI, Example4UIMsg.SEND_MSG_TO_EXAMPLE_4_UI_CTRL);
 		}
 
 	}

@@ -18,17 +18,17 @@ public class UIExample5MainPage : QUIBehaviour,IMsgSender
 	protected override void RegisterUIEvent()
 	{
 		mUIComponents.BtnStart_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[]{ Example5UIMsg.BTN_START_CLICK });
 		});
 
 		mUIComponents.BtnAbout_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[]{ Example5UIMsg.BTN_ABOUT_CLICK });
 		});
 
 		mUIComponents.BtnQuitGame_Button.onClick.AddListener (delegate {
-			this.SendMsgByChannel(QMsgChannel.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
+			this.SendMsgByChannel(QMgrID.UI,Example5UIMsg.SEND_MSG_TO_EXAMPLE_5_UI_CTRL,
 				new object[]{ Example5UIMsg.BTN_QUIT_CLICK });
 		});
 
