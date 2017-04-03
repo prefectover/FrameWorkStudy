@@ -7,6 +7,7 @@ public class QMsgSpan {
 
 public enum QMgrID
 {
+	Framework = 0,
 	Game = 0,
 	UI = QMsgSpan.Count, 			// 3000
 	Sound = QMsgSpan.Count * 2,		// 6000

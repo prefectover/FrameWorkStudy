@@ -25,7 +25,7 @@ namespace QFramework {
             }
         }
         /// <summary>
-        /// 生成UiPrefab的路径
+        /// 生成UIPrefab的路径
         /// </summary>
         public static string UIPrefabPath {
             get {

@@ -6,7 +6,7 @@ namespace QFramework
 	{
 		protected static T		m_Instance;
 		
-		public static T S
+		public static T Instance
 		{
 			get
 			{

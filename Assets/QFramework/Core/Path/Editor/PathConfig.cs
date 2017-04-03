@@ -99,7 +99,8 @@ namespace QFramework {
 		[SerializeField]  List<PathItem> m_PathList;
 		[Header("对应的脚本生成的路径")]
 		[SerializeField]  string m_ScriptGeneratePath;
-
+		[Header("命名空间(默认QFramework)")]
+		[SerializeField]  string m_NameSpace;
 		public List<PathItem> List {
 			get {
 				return m_PathList;
@@ -117,6 +118,12 @@ namespace QFramework {
 		public string Description {
 			get {
 				return m_Description;
+			}
+		}
+
+		public string NameSpace {
+			get {
+				return m_NameSpace;
 			}
 		}
 

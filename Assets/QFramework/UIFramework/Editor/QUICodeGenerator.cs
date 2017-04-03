@@ -255,12 +255,6 @@ public class QUICodeGenerator
             return "Transform";
     }
 
-    private string GetScriptsTempPath()
-    {
-        return Application.dataPath + "/../../";
-    }
-		
-
     private GameObject m_SelectGameObject = null;
     private Dictionary<string, Transform> m_dicNameToTrans = null;
     static private QUICodeGenerator m_Instance = new QUICodeGenerator();

@@ -21,4 +21,10 @@ namespace QFramework {
 		public delegate void WithBool(bool value);
 	}
 
+
+	public delegate void DTableOnParse(byte[] data);
+	public delegate void Run();
+	public delegate void Run<T>(T v);
+	public delegate void Run<T, K>(T v1, K v2);
+
 }

@@ -7,7 +7,7 @@ using QFramework;
 
 namespace QFramework
 {
-    [TMonoSingletonAttribute("[Tools]/PoolMgr")]
+	[QMonoSingletonAttribute("[Pool]/GameObjectPoolMgr")]
     public class GameObjectPoolMgr : TMonoSingleton<GameObjectPoolMgr>
     {
         private GameObjectPoolGroup m_Group;

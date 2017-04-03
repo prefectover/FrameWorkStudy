@@ -10,7 +10,7 @@ namespace QFramework {
 	/// </summary>
 	public class QFSMLite {
 		// 定义函数指针类型
-		public delegate void FSMCallfunc();
+		public delegate void FSMCallfunc(params object[] param);
 
 		/// <summary>
 		/// 状态类
@@ -93,11 +93,11 @@ namespace QFramework {
 		/// 处理事件
 		/// </summary>
 		/// <param name="name">Name.</param>
-		public void HandleEvent(string name)
+		public void HandleEvent(string name,params object[] param)
 		{	
 			if (mCurState != null && mStateDict[mCurState].TranslationDict.ContainsKey(name)) {
 				QFSMTranslation tempTranslation = mStateDict [mCurState].TranslationDict [name];
-				tempTranslation.callfunc ();
+				tempTranslation.callfunc (param);
 				mCurState =  tempTranslation.toState;
 			}
 		}

@@ -11,7 +11,7 @@ namespace QFramework.Editor
 {
     public class IOPathEditor
     {
-        [MenuItem("QFramework/IO/Gen Path Asset File")]
+        [MenuItem("QFramework/IOPath/Gen Path Asset File")]
         public static void GenPathAssetFile()
         {
 			AssetDatabase.SaveAssets ();
@@ -33,14 +33,13 @@ namespace QFramework.Editor
             AssetDatabase.SaveAssets();
 		}
 
-		[MenuItem("QFramework/IO/Gen Path Script")]
+		[MenuItem("QFramework/IOPath/Gen Path Script")]
 		public static void GeneratePathScript() {
 			AssetDatabase.SaveAssets ();
 
 			IOUtils.CreateDirIfNotExists (EditorPathManager.DefaultPathScriptGenerateForder);
 
-			string[] fullPathFileNames = Directory.GetFiles (EditorPathManager.DefaultPathConfigGenerateForder);
-			string[] files = Directory.GetFiles(EditorPathManager.DefaultPathConfigGenerateForder, "*PathConfig.asset", SearchOption.AllDirectories);
+			string[] fullPathFileNames = Directory.GetFiles(EditorPathManager.DefaultPathConfigGenerateForder, "*PathConfig.asset", SearchOption.AllDirectories);
 
 			foreach(string fullPathFileName in fullPathFileNames) {
 				Debug.Log (fullPathFileName);
@@ -50,7 +49,7 @@ namespace QFramework.Editor
 					PathConfig config = AssetDatabase.LoadAssetAtPath<PathConfig> (fullPathFileName);
 
 					var classDefine = new ClassDefine ();
-					classDefine.NameSpace = "QFramework";
+					classDefine.NameSpace = string.IsNullOrEmpty (config.NameSpace) ? "QFramework" : config.NameSpace;
 					classDefine.Comment = config.Description;
 					classDefine.Name = config.name;
 					classDefine.FileName = config.name + ".cs";

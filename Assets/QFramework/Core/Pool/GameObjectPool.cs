@@ -35,7 +35,7 @@ namespace QFramework
 
             if (m_Strategy == null)
             {
-                m_Strategy = DefaultPoolStrategy.S;
+                m_Strategy = DefaultPoolStrategy.Instance;
             }
 
             m_PoolName = poolName;

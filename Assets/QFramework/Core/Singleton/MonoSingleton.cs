@@ -32,7 +32,7 @@ namespace QFramework
                     object[] attributes = info.GetCustomAttributes(true);
                     for (int i = 0; i < attributes.Length; ++i)
                     {
-                        TMonoSingletonAttribute defineAttri = attributes[i] as TMonoSingletonAttribute;
+                        QMonoSingletonAttribute defineAttri = attributes[i] as QMonoSingletonAttribute;
                         if (defineAttri == null)
                         {
                             continue;
