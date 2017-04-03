@@ -26,14 +26,14 @@ namespace QFramework
         [MenuItem("Assets/SCEngine/Table/Build C#")]
         public static void BuildCSharpFile()
         {
-            string path = ProjectPathConfigTemp.GetProjectToolsFolderPath();
+			string path = ToolPathConfig.ProjectToolsFolderPath;
             if (IsLinuxSystem())
             {
-                path += ProjectPathConfigTemp.BUILD_CSHARP_LINUX_SHELL;
+				path += ToolPathConfig.BUILD_CSHARP_LINUX_SHELL;
             }
             else
             {
-                path += ProjectPathConfigTemp.BUILD_CSHARP_WIN_SHELL;
+				path += ToolPathConfig.BUILD_CSHARP_WIN_SHELL;
             }
 
             Thread newThread = new Thread(new ThreadStart(() =>
@@ -46,14 +46,14 @@ namespace QFramework
         [MenuItem("Assets/SCEngine/Table/Build Data(txt)")]
         public static void BuildDataTxtMode()
         {
-            string path = ProjectPathConfigTemp.GetProjectToolsFolderPath();
+			string path = ToolPathConfig.ProjectToolsFolderPath;
             if (IsLinuxSystem())
             {
-                path += ProjectPathConfigTemp.BUILD_TXT_DATA_LINUX_SHELL;
+				path += ToolPathConfig.BUILD_TXT_DATA_LINUX_SHELL;
             }
             else
             {
-                path += ProjectPathConfigTemp.BUILD_TXT_DATA_WIN_SHELL;
+				path += ToolPathConfig.BUILD_TXT_DATA_WIN_SHELL;
             }
 
             Thread newThread = new Thread(new ThreadStart(() =>
@@ -66,14 +66,14 @@ namespace QFramework
         [MenuItem("Assets/SCEngine/Table/Build Data(lrg)")]
         public static void BuildDataLrgMode()
         {
-            string path = ProjectPathConfigTemp.GetProjectToolsFolderPath();
+			string path = ToolPathConfig.ProjectToolsFolderPath;
             if (IsLinuxSystem())
             {
-                path += ProjectPathConfigTemp.BUILD_LRG_DATA_LINUX_SHELL;
+				path += ToolPathConfig.BUILD_LRG_DATA_LINUX_SHELL;
             }
             else
             {
-                path += ProjectPathConfigTemp.BUILD_LRG_DATA_WIN_SHELL;
+				path += ToolPathConfig.BUILD_LRG_DATA_WIN_SHELL;
             }
 
             Thread newThread = new Thread(new ThreadStart(() =>
