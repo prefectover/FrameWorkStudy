@@ -15,13 +15,78 @@ public class UIToDoListPage : QUIBehaviour
 		mUIComponents = mIComponents as UIToDoListPageComponents;
 		//please add init code here
 
+		RegisterSelf (this, new ushort[] {
+			(ushort)UIEditPanelEvent.CreateNewItem,
+			(ushort)UIEditPanelEvent.ModifiedItem
+		});
+		todoListItemDict = new Dictionary<string, UIToDoListItem> ();
 
-
+		UpdateView ();
 	}
+
 	public override void ProcessMsg (QMsg msg)
 	{
-		throw new System.NotImplementedException ();
+		switch (msg.msgId) {
+			case (ushort)UIEditPanelEvent.CreateNewItem:
+				CreateNewItemMsg createNewItemMsg = msg as CreateNewItemMsg;
+				createNewItemMsg.msgId = (ushort)ToDoListEvent.CreateNewItem;
+				createNewItemMsg.NewItemData.Description ();
+				this.SendMsg (createNewItemMsg);
+				UpdateView ();
+				break;
+			case (ushort)UIEditPanelEvent.ModifiedItem:
+				ModifiedItemMsg modifiedItemMsg = msg as ModifiedItemMsg;
+				modifiedItemMsg.msgId = (ushort)ToDoListEvent.ModifiedItem;
+				modifiedItemMsg.ItemData.Description ();
+				this.SendMsg (modifiedItemMsg);
+				UpdateView ();
+				break;
+		}
 	}
+
+	void UpdateView() {
+
+		var todoListItemData = ToDoListManager.Instance.CurCachedData;
+
+		Debug.Log (todoListItemDict.Count);
+		foreach (var itemPair in todoListItemDict) {
+			Destroy (itemPair.Value.gameObject);
+		}
+
+		todoListItemDict.Clear ();
+		Debug.Log (todoListItemDict.Count);
+
+		foreach (var dataPair in todoListItemData) {
+			var prefab = mUIComponents.UIToDoItemPrefab_Transform;
+
+			Transform obj = GameObject.Instantiate (prefab);
+			var itemScript = obj.gameObject.GetComponent<UIToDoListItem> ();
+			obj.gameObject.SetActive (true);
+
+			itemScript.ToDoListItemData = dataPair.Value;
+
+			todoListItemDict.Add (dataPair.Key, itemScript);
+
+			obj.transform.SetParent (mUIComponents.Items_Transform);
+			obj.transform.localScale = Vector3.one;
+			obj.transform.localPosition = Vector3.zero;
+			obj.transform.localScale = Vector3.one;
+		}
+
+		var contentRectTrans =  mUIComponents.Items_Transform.GetComponent<RectTransform> ();
+		var groupLayout = mUIComponents.Items_Transform.GetComponent<GridLayoutGroup> ();
+		var sizeDelta = contentRectTrans.sizeDelta;
+
+		groupLayout.CalculateLayoutInputVertical ();
+		Debug.Log (groupLayout.preferredHeight);
+
+		sizeDelta.y = todoListItemDict.Count * (groupLayout.spacing.y + groupLayout.cellSize.y ) + groupLayout.padding.top + groupLayout.padding.bottom;
+		contentRectTrans.sizeDelta = sizeDelta;
+
+		Debug.Log (todoListItemDict.Count);
+
+	}
+
 	protected override void RegisterUIEvent()
 	{
 		mUIComponents.BtnAddToDoItem_Button.onClick.AddListener (delegate {

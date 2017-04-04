@@ -31,15 +31,17 @@ namespace ToDoList {
 			List<ToDoListItemData> retList = new List<ToDoListItemData> ();
 
 			string titlesStamp = PlayerPrefs.GetString (TODO_LIST_TITLES_KEY, "");
-
+			Debug.Log (titlesStamp);
 			string[] titles = titlesStamp.Split (new string[]{SPLIT_CODE},System.StringSplitOptions.None);
-
-			for (int i = 0; i < titles.Length; i++) {
-				ToDoListItemData itemData = new ToDoListItemData ();
-				itemData.Title = titles [i];
-				itemData.Content =  PlayerPrefs.GetString (titles [i]);
-				itemData.Complete = PlayerPrefs.GetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + titles [i]) == 1 ? true :false;
-				retList.Add (itemData);
+			if (!string.IsNullOrEmpty (titles [0])) {
+				for (int i = 0; i < titles.Length; i++) {
+					ToDoListItemData itemData = new ToDoListItemData ();
+					itemData.Title = titles [i];
+					itemData.Content = PlayerPrefs.GetString (titles [i]);
+					itemData.Complete = PlayerPrefs.GetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + titles [i]) == 1 ? true : false;
+					retList.Add (itemData);
+					itemData.Description ();
+				}
 			}
 
 			return retList;

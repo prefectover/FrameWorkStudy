@@ -12,9 +12,9 @@ public class UIToDoListItem : QMonoBehaviour {
 		mCurMgr = QUIManager.Instance;
 	}
 
-	public override void ProcessMsg (QMsg msg)
+	public override void ProcessMsg (QMsg msg) 
 	{
-		throw new System.NotImplementedException ();
+		
 	}
 
 	[SerializeField] Text m_Title;
@@ -25,6 +25,7 @@ public class UIToDoListItem : QMonoBehaviour {
 	public ToDoListItemData ToDoListItemData {
 		set {
 			m_ToDoListItemData = value;
+			UpdateView ();
 		}
 	}
 
@@ -35,10 +36,13 @@ public class UIToDoListItem : QMonoBehaviour {
 		m_BtnComplete.onClick.AddListener (delegate {
 			m_ToDoListItemData.Complete = true;
 		});
+		UpdateView ();
 	}
 
 	void UpdateView() {
-		m_Title.text = m_ToDoListItemData.Title;
-		m_BtnComplete.gameObject.SetActive (!m_ToDoListItemData.Complete);
+		if (null != m_ToDoListItemData) {
+			m_Title.text = m_ToDoListItemData.Title;
+			m_BtnComplete.gameObject.SetActive (!m_ToDoListItemData.Complete);
+		}
 	}
 }

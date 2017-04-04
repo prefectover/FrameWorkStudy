@@ -17,23 +17,6 @@ public class UIEditPanelData {
 	public ToDoListItemData ToDoListItemData;
 }
 
-public class CreateNewItemMsg :QMsg {
-	public ToDoListItemData NewItemData;
-	public CreateNewItemMsg(ToDoListItemData newItemData):base((ushort)UIEditPanelEvent.CreateNewItem) {
-		this.NewItemData = newItemData;
-	}
-}
-
-public class ModifiedItemMsg : QMsg {
-	public string SrcTitle;
-	public ToDoListItemData ItemData;
-	public ModifiedItemMsg(string srcTitle,ToDoListItemData itemData):base((ushort)UIEditPanelEvent.ModifiedItem) {
-		this.SrcTitle = srcTitle;
-		this.ItemData = itemData;
-	}
-}
-	
-
 public class UIEditPanel : QUIBehaviour
 {
 	UIEditPanelData m_EditPanelData;
@@ -76,13 +59,14 @@ public class UIEditPanel : QUIBehaviour
 				var newItemData = new ToDoListItemData();
 				newItemData.Title = title;
 				newItemData.Content = content;
-
-				this.SendMsg(new CreateNewItemMsg(newItemData));
+				newItemData.Description();
+				this.SendMsg(new CreateNewItemMsg((ushort)UIEditPanelEvent.CreateNewItem,newItemData));
 			} else {
 				var itemData = new ToDoListItemData();
 				itemData.Title = title;
 				itemData.Content = content;
-				this.SendMsg(new ModifiedItemMsg(m_EditPanelData.ToDoListItemData.Title,itemData));
+				itemData.Description();
+				this.SendMsg(new ModifiedItemMsg((ushort)UIEditPanelEvent.ModifiedItem,m_EditPanelData.ToDoListItemData.Title,itemData));
 			}
 			CloseSelf();
 		});

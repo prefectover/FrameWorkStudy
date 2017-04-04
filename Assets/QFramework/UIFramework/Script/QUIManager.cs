@@ -250,15 +250,5 @@ namespace QFramework {
 		{
 			mMgrId = (ushort)QMgrID.UI;
 		}
-
-		protected override void SetupMgr ()
-		{
-
-		}
-
-		public void OnDestroy()
-		{
-			QMonoSingletonComponent<QUIManager>.Dispose ();
-		}
 	}
 }

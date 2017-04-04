@@ -18,8 +18,12 @@ namespace ToDoList {
 			}
 			set {
 				m_Complete = value;
-				ToDoListManager.Instance.UpdateData (this);
 			}
+		}
+
+
+		public void Description() {
+			Debug.Log (Title + ":" + Complete + ":" + Content);
 		}
 	}
 

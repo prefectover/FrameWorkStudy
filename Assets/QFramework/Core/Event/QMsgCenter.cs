@@ -41,22 +41,26 @@ public class QMsgCenter : MonoBehaviour
 
 		switch (tmpId)
 		{
-		case QMgrID.AB:
-			break;
-		case QMgrID.Sound:
-			break;
-		case  QMgrID.CharactorManager:
-			break;
-		case  QMgrID.Game:
-			break;
-		case  QMgrID.NetManager:
-			break;
-		case  QMgrID.NPCManager:
-			break;
-		case  QMgrID.UI:
-			break;
-		default:
-			break;
+			case QMgrID.AB:
+				break;
+			case QMgrID.Sound:
+				break;
+			case  QMgrID.CharactorManager:
+				break;
+			case  QMgrID.Game:
+				break;
+			case  QMgrID.NetManager:
+				break;
+			case  QMgrID.NPCManager:
+				break;
+			case  QMgrID.UI:
+				QUIManager.Instance.SendMsg (msg);
+				break;
+			case QMgrID.Data:
+				ToDoList.ToDoListManager.Instance.SendMsg (msg);
+				break;
+			default:
+				break;
 		}
 	}
 }
