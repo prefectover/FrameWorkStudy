@@ -1,0 +1,21 @@
+04/05/2017 00:21:11	基本功能完成了吗@!@#$%用UGUI做应用可以嘛？@!@#$%没保存吗？@!@#$%没有了？@!@#$%Logo@!@#$%字体太小了 要换大一点的 布局要改一下@!@#$%asd@!@#$%添加查询功能@!@#$%整理屋子 @!@#$%Logo
+04/05/2017 00:21:11	基本功能完成了吗:False:avc
+04/05/2017 00:21:11	用UGUI做应用可以嘛？:False:应该可以吧？
+04/05/2017 00:21:11	没保存吗？:False:
+04/05/2017 00:21:11	没有了？:False:为什么？
+04/05/2017 00:21:11	Logo:True:
+04/05/2017 00:21:11	字体太小了 要换大一点的 布局要改一下:False:
+04/05/2017 00:21:11	asd:False:123
+04/05/2017 00:21:11	添加查询功能:True:要有同步和查询功能
+04/05/2017 00:21:11	整理屋子 :True:
+04/05/2017 00:21:11	Logo:True:
+---------------------------------------------------------------------------------------------------------------------
+04/05/2017 00:21:11	ArgumentException: An element with the same key already exists in the dictionary.
+
+System.Collections.Generic.Dictionary`2[System.String,ToDoList.ToDoListItemData].Add (System.String key, ToDoList.ToDoListItemData value) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/Dictionary.cs:432)
+ToDoList.ToDoListManager.LoadData () (at Assets/Example/100.ToDoList/Script/App/ToDoList/ToDoListManager.cs:123)
+ToDoList.ToDoListManager.<Awake>m__0 (System.Collections.Generic.List`1 obj) (at Assets/Example/100.ToDoList/Script/App/ToDoList/ToDoListManager.cs:113)
+NetManager+<QueryAll>c__Iterator0.MoveNext () (at Assets/Example/100.ToDoList/Script/Service/NetManager.cs:97)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+---------------------------------------------------------------------------------------------------------------------

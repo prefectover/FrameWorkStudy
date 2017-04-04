@@ -42,6 +42,7 @@ public class UIToDoListItem : QMonoBehaviour {
 
 
 		m_BtnDelete.onClick.AddListener (delegate {
+			m_ToDoListItemData.Deleted = true;
 			this.SendMsg(new DeleteItemMsg((ushort)UIToDoListPageEvent.DeleteItem,m_ToDoListItemData.Title));
 		});
 

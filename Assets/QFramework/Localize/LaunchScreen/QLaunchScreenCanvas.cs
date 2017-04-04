@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 namespace QFramework {
-	public class PTLaunchScreenCanvas : MonoBehaviour {
+	public class QLaunchScreenCanvas : MonoBehaviour {
 
 		Image mLaunchScreenEnImage;
 		Image mLaunchScreenCnImage;

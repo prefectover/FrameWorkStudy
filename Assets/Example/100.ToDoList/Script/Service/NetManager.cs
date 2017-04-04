@@ -75,7 +75,7 @@ public class NetManager : QMgrBehaviour {
 	}
 
 	IEnumerator QueryAll(System.Action<List<ToDoListItemData>> queryCallback) {
-		AVQuery<AVObject> query = new AVQuery<AVObject> ("ToDoListItemData");
+		AVQuery<AVObject> query = new AVQuery<AVObject> ("ToDoListItemData").WhereEqualTo("Deleted",false);
 
 		var list = new List<ToDoListItemData>();
 
@@ -86,6 +86,7 @@ public class NetManager : QMgrBehaviour {
 				itemData.Title = obj["Title"] as string;
 				itemData.Complete = bool.Parse(obj["Complete"].ToString());
 				itemData.Content = obj["Content"] as string;
+				itemData.Deleted = bool.Parse(obj["Deleted"].ToString());
 				list.Add(itemData);
 			}
 			querySucceed = true;

@@ -24,7 +24,7 @@ namespace ToDoList {
 		public bool Deleted = false;
 
 		public void Description() {
-			Debug.Log (Title + ":" + Complete + ":" + Content);
+			Debug.Log (Title + ":" + Complete + ":" + Content + ":" + Deleted);
 		}
 	}
 

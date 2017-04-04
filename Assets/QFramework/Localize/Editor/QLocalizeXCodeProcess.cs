@@ -121,13 +121,13 @@ namespace QFramework {
 
 			XmlDocument xmlDoc = new XmlDocument ();
 			Debug.Log (language);
-			if (File.Exists (Application.dataPath + "/QFramework/QLocalize/Permission/iOSData/" + language + ".xml")) {
+			if (File.Exists (Application.dataPath + "/QFramework/Localize/Permission/iOSData/" + language + ".xml")) {
 				Debug.Log (language + ": exists");
-				xmlDoc.Load (Application.dataPath + "/QFramework/QLocalize/Permission/iOSData/" + language + ".xml");
+				xmlDoc.Load (Application.dataPath + "/QFramework/Localize/Permission/iOSData/" + language + ".xml");
 			}
 			else {
 				Debug.Log (language + ": not exists");
-				xmlDoc.Load (Application.dataPath + "/PTUGame/PTLocalize/Permission/iOSData/en.xml");
+				xmlDoc.Load (Application.dataPath + "/QFramework/Localize/Permission/iOSData/en.xml");
 			}
 
 			XmlNodeList nodeList = xmlDoc.SelectSingleNode ("Config").ChildNodes;

@@ -8,7 +8,7 @@ public class LocalizeAssetPostprocessor : AssetPostprocessor {
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths) 
 	{
 		var buildSettingsScenes = EditorBuildSettings.scenes;
-		var launchScreenScenePath = "Assets/QFramework/QLocalize/LaunchScreen/PTLaunchScreen.unity";
+		var launchScreenScenePath = "Assets/QFramework/Localize/LaunchScreen/QLaunchScreen.unity";
 
 		bool hasLaunchScreenScene = false;
 		foreach (EditorBuildSettingsScene buildSettingsScene in buildSettingsScenes) {
