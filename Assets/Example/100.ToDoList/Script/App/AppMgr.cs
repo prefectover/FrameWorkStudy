@@ -19,7 +19,7 @@ namespace ToDoList {
 		{
 			Application.targetFrameRate = 30;
 			Application.runInBackground = true;
-
+			var consoleInit = QConsole.Instance;
 			QResourceManager.Instance.Init ();
 			QResourceManager.Instance.LoadAB (UIPREFAB.BUNDLE_NAME);
 		}
