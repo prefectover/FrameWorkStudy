@@ -1,0 +1,13 @@
+04/04/2017 22:56:31	UIEditPanel Load Success
+04/04/2017 22:56:31	On Show:UIEditPanel
+04/04/2017 22:56:34	asd:False:123
+04/04/2017 22:56:34	asd:False:123
+04/04/2017 22:56:34	Instance Name: QMsgCenter
+04/04/2017 22:56:34	Add New Singleton QMsgCenter in Game!
+04/04/2017 22:56:34	asd:False:123
+04/04/2017 22:56:34	Already exist: AVInitializeBehaviour
+04/04/2017 22:56:34	0
+04/04/2017 22:56:34	0
+04/04/2017 22:56:34	0
+04/04/2017 22:56:34	1
+04/04/2017 22:56:34	UIEditPanel remove Success

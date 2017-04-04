@@ -4,10 +4,8 @@ using UnityEngine;
 using QFramework;
 
 namespace ToDoList {
+	
 	public class SaveManager  {
-
-
-
 		/// <summary>
 		/// ToDoList 的Key
 		/// </summary>
@@ -17,6 +15,11 @@ namespace ToDoList {
 		/// 是否完成的前缀
 		/// </summary>
 		const string TODO_LIST_COMPLETE_SUFFIX_KEY = "COMPLETE_";
+
+		/// <summary>
+		/// 是否被删除掉
+		/// </summary>
+		const string TODO_LIST_COMPLETE_DELETED_KEY = "DELETED_";
 
 		/// <summary>
 		/// 字符串区分用的码
@@ -40,34 +43,42 @@ namespace ToDoList {
 					itemData.Title = titles [i];
 					itemData.Content = PlayerPrefs.GetString (titles [i]);
 					itemData.Complete = PlayerPrefs.GetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + titles [i]) == 1 ? true : false;
-					retList.Add (itemData);
+					itemData.Deleted = PlayerPrefs.GetInt (TODO_LIST_COMPLETE_DELETED_KEY + titles [i]) == 1 ? true : false;
+					if (!itemData.Deleted) {
+						retList.Add (itemData);
+					}
 					itemData.Description ();
 				}
 			}
 
-		return retList;
-	}
-
-	/// <summary>
-	/// 保存
-	/// </summary>
-	public static void Save(List<ToDoListItemData> itemList) {
-
-		string titleStamp = "";
-
-		for (int i = 0;i < itemList.Count - 1;i++) {
-			ToDoListItemData item = itemList[i];
-			titleStamp += item.Title + SPLIT_CODE;
-
-			PlayerPrefs.SetString (item.Title, item.Content);
-			PlayerPrefs.SetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + item.Title, item.Complete ? 1 : 0);
+			return retList;
 		}
 
-		if (itemList.Count > 2) {
-			titleStamp += itemList [itemList.Count - 1].Title;
-		}
+		/// <summary>
+		/// 保存
+		/// </summary>
+		public static void Save(List<ToDoListItemData> itemList) {
 
-		PlayerPrefs.SetString (TODO_LIST_TITLES_KEY, titleStamp);
+			string titleStamp = "";
+
+			for (int i = 0;i < itemList.Count - 1;i++) {
+				ToDoListItemData item = itemList[i];
+				titleStamp += item.Title + SPLIT_CODE;
+
+				PlayerPrefs.SetString (item.Title, item.Content);
+				PlayerPrefs.SetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + item.Title, item.Complete ? 1 : 0);
+				PlayerPrefs.SetInt (TODO_LIST_COMPLETE_DELETED_KEY + item.Title, item.Deleted ? 1 : 0);
+			}
+
+			if (itemList.Count > 1) {
+				titleStamp += itemList [itemList.Count - 1].Title;
+
+				PlayerPrefs.SetString (itemList [itemList.Count - 1].Title, itemList [itemList.Count - 1].Content);
+				PlayerPrefs.SetInt (TODO_LIST_COMPLETE_SUFFIX_KEY + itemList [itemList.Count - 1].Title, itemList [itemList.Count - 1].Complete ? 1 : 0);
+				PlayerPrefs.SetInt (TODO_LIST_COMPLETE_DELETED_KEY + itemList [itemList.Count - 1].Title, itemList [itemList.Count - 1].Deleted ? 1 : 0);
+			}
+
+			PlayerPrefs.SetString (TODO_LIST_TITLES_KEY, titleStamp);
+		}
 	}
-}
 }

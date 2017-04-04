@@ -22,6 +22,9 @@ namespace ToDoList {
 			var consoleInit = QConsole.Instance;
 			QResourceManager.Instance.Init ();
 			QResourceManager.Instance.LoadAB (UIPREFAB.BUNDLE_NAME);
+
+			QUIManager.Instance.SetResolution (640, 1136);
+			QUIManager.Instance.SetMatchOnWidthOrHeight (1);
 		}
 
 		protected override void StartGame()

@@ -44,7 +44,8 @@ public class NetManager : QMgrBehaviour {
 	public void DeleteItemUpload(string title,System.Action callback = null) {
 		new AVQuery<AVObject> ("ToDoListItemData").WhereEqualTo ("Title", title).FindAsync ().ContinueWith (t => {
 			foreach(var obj in t.Result) {
-				obj.DeleteAsync().ContinueWith(delegate {
+				obj["Deleted"] = true;
+				obj.SaveAsync().ContinueWith(delegate {
 					if (null != callback) {
 						callback();
 					}
@@ -65,12 +66,34 @@ public class NetManager : QMgrBehaviour {
 		Task saveTask = toDoListItemData.SaveAsync ();
 	}
 
-	public void Query() {
+
+	/// <summary>
+	/// 获取所有的数据
+	/// </summary>
+	public void Query(System.Action<List<ToDoListItemData>> queryCallback) {
+		StartCoroutine (QueryAll (queryCallback));
+	}
+
+	IEnumerator QueryAll(System.Action<List<ToDoListItemData>> queryCallback) {
 		AVQuery<AVObject> query = new AVQuery<AVObject> ("ToDoListItemData");
+
+		var list = new List<ToDoListItemData>();
+
+		bool querySucceed = false;
 		query.FindAsync().ContinueWith(t=>{
 			foreach(var obj in t.Result) {
-				Debug.Log(obj["Title"]);
+				var itemData = new ToDoListItemData();
+				itemData.Title = obj["Title"] as string;
+				itemData.Complete = bool.Parse(obj["Complete"].ToString());
+				itemData.Content = obj["Content"] as string;
+				list.Add(itemData);
 			}
+			querySucceed = true;
 		});
+
+		while (!querySucceed) {
+			yield return new WaitForEndOfFrame ();
+		}
+		queryCallback(list);
 	}
 }

@@ -50,6 +50,7 @@ public class QMsgCenter : MonoBehaviour
 			case  QMgrID.Game:
 				break;
 			case  QMgrID.Network:
+				NetManager.Instance.SendMsg (msg);
 				break;
 			case  QMgrID.NPCManager:
 				break;

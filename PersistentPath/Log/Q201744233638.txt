@@ -1,0 +1,25 @@
+04/04/2017 23:36:39	基本功能完成了吗@!@#$%用UGUI做应用可以嘛？@!@#$%没保存吗？@!@#$%没有了？@!@#$%整理屋子 @!@#$%Logo@!@#$%字体太小了 要换大一点的 布局要改一下@!@#$%asd@!@#$%添加查询功能
+04/04/2017 23:36:39	基本功能完成了吗:False:avc
+04/04/2017 23:36:39	用UGUI做应用可以嘛？:False:应该可以吧？
+04/04/2017 23:36:39	没保存吗？:False:
+04/04/2017 23:36:39	没有了？:False:为什么？
+04/04/2017 23:36:39	整理屋子 :False:
+04/04/2017 23:36:39	Logo:False:
+04/04/2017 23:36:39	字体太小了 要换大一点的 布局要改一下:False:
+04/04/2017 23:36:39	asd:False:123
+04/04/2017 23:36:39	添加查询功能:False:
+04/04/2017 23:36:39	Instance Name: QMsgCenter
+04/04/2017 23:36:39	Add New Singleton QMsgCenter in Game!
+04/04/2017 23:36:39	9
+04/04/2017 23:36:39	0
+04/04/2017 23:36:39	1035
+04/04/2017 23:36:39	9
+04/04/2017 23:36:40	Uncaught exception in async net callback: Object reference not set to an instance of an object
+04/04/2017 23:36:40	  at UnityEngine.GUISkin.GetStyle (System.String styleName) [0x00048] in /Users/builduser/buildslave/unity/build/Runtime/IMGUI/Managed/GUISkin.cs:319 
+  at UnityEngine.GUIStyle.op_Implicit (System.String str) [0x0002d] in /Users/builduser/buildslave/unity/build/Runtime/IMGUI/Managed/GUIStyle.cs:586 
+  at UnityEditor.ProjectBrowser.InitSearchMenu () [0x0001e] in /Users/builduser/buildslave/unity/build/Editor/Mono/ProjectBrowser.cs:484 
+  at UnityEditor.ProjectBrowser.AssetStoreSearchEndedCallback () [0x00002] in /Users/builduser/buildslave/unity/build/Editor/Mono/ProjectBrowser.cs:512 
+  at UnityEditor.ObjectListArea+<QueryAssetStore>c__AnonStorey0.<>m__0 (UnityEditor.AssetStoreSearchResults results) [0x00385] in /Users/builduser/buildslave/unity/build/Editor/Mono/ObjectListArea.cs:403 
+  at UnityEditor.AssetStoreResultBase`1[Derived].Parse (UnityEditor.AssetStoreResponse response) [0x00117] in /Users/builduser/buildslave/unity/build/Editor/Mono/AssetStore/AssetStoreClient.cs:89 
+  at UnityEditor.AssetStoreClient+<SearchAssets>c__AnonStorey2.<>m__0 (UnityEditor.AssetStoreResponse ar) [0x00008] in /Users/builduser/buildslave/unity/build/Editor/Mono/AssetStore/AssetStoreClient.cs:751 
+  at UnityEditor.AssetStoreClient+<WrapJsonCallback>c__AnonStorey1.<>m__0 (UnityEditor.AsyncHTTPClient job) [0x0001c] in /Users/builduser/buildslave/unity/build/Editor/Mono/AssetStore/AssetStoreClient.cs:624 

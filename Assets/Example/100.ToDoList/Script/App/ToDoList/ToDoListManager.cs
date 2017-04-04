@@ -68,18 +68,20 @@ namespace ToDoList {
 					modifiedMsg.ItemData.Description ();
 					m_CachedData.Add (modifiedMsg.ItemData.Title, modifiedMsg.ItemData);
 					NetManager.Instance.ModifiedItemUpload (modifiedMsg.ItemData.Title, modifiedMsg.ItemData);
+					this.SendMsg (new QMsg ((ushort)UIEvent.UpdateView));
 					break;
 				case (ushort)ToDoListEvent.CreateNewItem:
 					CreateNewItemMsg newItemMsg = msg as CreateNewItemMsg;
 					newItemMsg.NewItemData.Description ();
 					m_CachedData.Add (newItemMsg.NewItemData.Title,newItemMsg.NewItemData);
 					NetManager.Instance.NewItemUpload (newItemMsg.NewItemData);
+					this.SendMsg (new QMsg ((ushort)UIEvent.UpdateView));
 					break;
 				case (ushort)ToDoListEvent.DeleteItem:
 					DeleteItemMsg deleteItemMsg = msg as DeleteItemMsg;
 					m_CachedData.Remove (deleteItemMsg.Title);
 					NetManager.Instance.DeleteItemUpload (deleteItemMsg.Title);
-
+					this.SendMsg (new QMsg ((ushort)UIEvent.UpdateView));
 					break;
 			}
 		}
@@ -97,18 +99,29 @@ namespace ToDoList {
 
 		void Awake() {
 			Debug.Log ("ToDoList Manager Awake");
-			var list = SaveManager.Load ();
 
-			m_CachedData = new Dictionary<string, ToDoListItemData> ();
-			foreach (var itemData in list) {
-				m_CachedData.Add (itemData.Title, itemData);
-			}
+			LoadData ();
 
 			RegisterSelf (this, new ushort[] {
 				(ushort)ToDoListEvent.CreateNewItem,
 				(ushort)ToDoListEvent.ModifiedItem,
 				(ushort)ToDoListEvent.DeleteItem
 			});
+
+			NetManager.Instance.Query (delegate(List<ToDoListItemData> obj) {
+				SaveManager.Save(obj);
+				LoadData();
+				this.SendMsg(new QMsg((ushort)UIEvent.UpdateView));
+			});
+		}
+
+		void LoadData() {
+			var list = SaveManager.Load ();
+
+			m_CachedData = new Dictionary<string, ToDoListItemData> ();
+			foreach (var itemData in list) {
+				m_CachedData.Add (itemData.Title, itemData);
+			}
 		}
 
 

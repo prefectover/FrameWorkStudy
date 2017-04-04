@@ -14,6 +14,12 @@ public enum UIToDoListPageEvent {
 	Ended
 }
 
+public enum UIEvent {
+	Began = UIToDoListPageEvent.Ended,
+	UpdateView,
+	Ended
+}
+
 
 public class UIToDoListPage : QUIBehaviour
 {
@@ -27,7 +33,8 @@ public class UIToDoListPage : QUIBehaviour
 		RegisterSelf (this, new ushort[] {
 			(ushort)UIToDoListPageEvent.CreateNewItem,
 			(ushort)UIToDoListPageEvent.ModifiedItem,
-			(ushort)UIToDoListPageEvent.DeleteItem
+			(ushort)UIToDoListPageEvent.DeleteItem,
+			(ushort)UIEvent.UpdateView
 		});
 		todoListItemDict = new Dictionary<string, UIToDoListItem> ();
 
@@ -42,19 +49,19 @@ public class UIToDoListPage : QUIBehaviour
 				createNewItemMsg.msgId = (ushort)ToDoListEvent.CreateNewItem;
 				createNewItemMsg.NewItemData.Description ();
 				this.SendMsg (createNewItemMsg);
-				UpdateView ();
 				break;
 			case (ushort)UIToDoListPageEvent.ModifiedItem:
 				ModifiedItemMsg modifiedItemMsg = msg as ModifiedItemMsg;
 				modifiedItemMsg.msgId = (ushort)ToDoListEvent.ModifiedItem;
 				modifiedItemMsg.ItemData.Description ();
 				this.SendMsg (modifiedItemMsg);
-				UpdateView ();
 				break;
 			case (ushort)UIToDoListPageEvent.DeleteItem:
 				DeleteItemMsg deleteItemMsg = msg as DeleteItemMsg;
 				deleteItemMsg.msgId = (ushort)ToDoListEvent.DeleteItem;
 				this.SendMsg (deleteItemMsg);
+				break;
+			case (ushort)UIEvent.UpdateView:
 				UpdateView ();
 				break;
 		}
