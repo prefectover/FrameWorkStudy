@@ -14,7 +14,7 @@ public enum QMgrID
 	NPCManager = QMsgSpan.Count * 3,
 	CharactorManager = QMsgSpan.Count * 4,
 	AB = QMsgSpan.Count * 5,
-	NetManager = QMsgSpan.Count * 6,
+	Network = QMsgSpan.Count * 6,
 	Data = QMsgSpan.Count * 7,
 	Global = QMsgSpan.Count * 8
 }

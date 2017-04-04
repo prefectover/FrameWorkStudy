@@ -66,16 +66,20 @@ namespace ToDoList {
 					ModifiedItemMsg modifiedMsg = msg as ModifiedItemMsg;
 					m_CachedData.Remove (modifiedMsg.SrcTitle);
 					modifiedMsg.ItemData.Description ();
-					m_CachedData.Add (modifiedMsg.ItemData.Title,modifiedMsg.ItemData);
+					m_CachedData.Add (modifiedMsg.ItemData.Title, modifiedMsg.ItemData);
+					NetManager.Instance.ModifiedItemUpload (modifiedMsg.ItemData.Title, modifiedMsg.ItemData);
 					break;
 				case (ushort)ToDoListEvent.CreateNewItem:
 					CreateNewItemMsg newItemMsg = msg as CreateNewItemMsg;
 					newItemMsg.NewItemData.Description ();
 					m_CachedData.Add (newItemMsg.NewItemData.Title,newItemMsg.NewItemData);
+					NetManager.Instance.NewItemUpload (newItemMsg.NewItemData);
 					break;
 				case (ushort)ToDoListEvent.DeleteItem:
 					DeleteItemMsg deleteItemMsg = msg as DeleteItemMsg;
 					m_CachedData.Remove (deleteItemMsg.Title);
+					NetManager.Instance.DeleteItemUpload (deleteItemMsg.Title);
+
 					break;
 			}
 		}

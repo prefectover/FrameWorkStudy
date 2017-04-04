@@ -49,7 +49,7 @@ public class QMsgCenter : MonoBehaviour
 				break;
 			case  QMgrID.Game:
 				break;
-			case  QMgrID.NetManager:
+			case  QMgrID.Network:
 				break;
 			case  QMgrID.NPCManager:
 				break;

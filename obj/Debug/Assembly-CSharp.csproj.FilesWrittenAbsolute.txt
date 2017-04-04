@@ -48,3 +48,8 @@
 /Users/liangxie/git/QFramework/Temp/bin/Debug/ptdebug.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween.dll
 /Users/liangxie/git/QFramework/Temp/bin/Debug/DOTween50.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Unity.Tasks.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/LeanCloud.Core.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/LeanCloud.Storage.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/AssemblyLister.dll
+/Users/liangxie/git/QFramework/Temp/bin/Debug/Unity.Compat.dll
