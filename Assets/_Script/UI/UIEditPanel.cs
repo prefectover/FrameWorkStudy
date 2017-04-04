@@ -5,12 +5,7 @@ using UnityEngine.UI;
 using QFramework;
 using ToDoList;
 
-public enum UIEditPanelEvent {
-	Began = QMgrID.UI,
-	CreateNewItem,
-	ModifiedItem,
-	Ended
-}
+
 
 public class UIEditPanelData {
 	public bool isNew; // true 新建 false 修改
@@ -60,13 +55,13 @@ public class UIEditPanel : QUIBehaviour
 				newItemData.Title = title;
 				newItemData.Content = content;
 				newItemData.Description();
-				this.SendMsg(new CreateNewItemMsg((ushort)UIEditPanelEvent.CreateNewItem,newItemData));
+				this.SendMsg(new CreateNewItemMsg((ushort)UIToDoListPageEvent.CreateNewItem,newItemData));
 			} else {
 				var itemData = new ToDoListItemData();
 				itemData.Title = title;
 				itemData.Content = content;
 				itemData.Description();
-				this.SendMsg(new ModifiedItemMsg((ushort)UIEditPanelEvent.ModifiedItem,m_EditPanelData.ToDoListItemData.Title,itemData));
+				this.SendMsg(new ModifiedItemMsg((ushort)UIToDoListPageEvent.ModifiedItem,m_EditPanelData.ToDoListItemData.Title,itemData));
 			}
 			CloseSelf();
 		});

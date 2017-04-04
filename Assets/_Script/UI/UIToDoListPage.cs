@@ -6,6 +6,15 @@ using QFramework;
 using QAssetBundle;
 using ToDoList;
 
+public enum UIToDoListPageEvent {
+	Began = QMgrID.UI,
+	CreateNewItem,
+	ModifiedItem,
+	DeleteItem,
+	Ended
+}
+
+
 public class UIToDoListPage : QUIBehaviour
 {
 	Dictionary<string,UIToDoListItem> todoListItemDict;
@@ -16,8 +25,9 @@ public class UIToDoListPage : QUIBehaviour
 		//please add init code here
 
 		RegisterSelf (this, new ushort[] {
-			(ushort)UIEditPanelEvent.CreateNewItem,
-			(ushort)UIEditPanelEvent.ModifiedItem
+			(ushort)UIToDoListPageEvent.CreateNewItem,
+			(ushort)UIToDoListPageEvent.ModifiedItem,
+			(ushort)UIToDoListPageEvent.DeleteItem
 		});
 		todoListItemDict = new Dictionary<string, UIToDoListItem> ();
 
@@ -27,18 +37,24 @@ public class UIToDoListPage : QUIBehaviour
 	public override void ProcessMsg (QMsg msg)
 	{
 		switch (msg.msgId) {
-			case (ushort)UIEditPanelEvent.CreateNewItem:
+			case (ushort)UIToDoListPageEvent.CreateNewItem:
 				CreateNewItemMsg createNewItemMsg = msg as CreateNewItemMsg;
 				createNewItemMsg.msgId = (ushort)ToDoListEvent.CreateNewItem;
 				createNewItemMsg.NewItemData.Description ();
 				this.SendMsg (createNewItemMsg);
 				UpdateView ();
 				break;
-			case (ushort)UIEditPanelEvent.ModifiedItem:
+			case (ushort)UIToDoListPageEvent.ModifiedItem:
 				ModifiedItemMsg modifiedItemMsg = msg as ModifiedItemMsg;
 				modifiedItemMsg.msgId = (ushort)ToDoListEvent.ModifiedItem;
 				modifiedItemMsg.ItemData.Description ();
 				this.SendMsg (modifiedItemMsg);
+				UpdateView ();
+				break;
+			case (ushort)UIToDoListPageEvent.DeleteItem:
+				DeleteItemMsg deleteItemMsg = msg as DeleteItemMsg;
+				deleteItemMsg.msgId = (ushort)ToDoListEvent.DeleteItem;
+				this.SendMsg (deleteItemMsg);
 				UpdateView ();
 				break;
 		}

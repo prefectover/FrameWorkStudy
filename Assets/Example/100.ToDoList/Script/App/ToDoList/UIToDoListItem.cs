@@ -19,6 +19,7 @@ public class UIToDoListItem : QMonoBehaviour {
 
 	[SerializeField] Text m_Title;
 	[SerializeField] Button m_BtnComplete;
+	[SerializeField] Button m_BtnDelete;
 
 	ToDoListItemData m_ToDoListItemData;
 
@@ -32,9 +33,24 @@ public class UIToDoListItem : QMonoBehaviour {
 	void Awake() {
 		m_Title = transform.Find ("Title").GetComponent<Text> ();
 		m_BtnComplete = transform.Find ("BtnComplete").GetComponent<Button> ();
+		m_BtnDelete = trans.Find ("BtnDelete").GetComponent <Button> ();
 
 		m_BtnComplete.onClick.AddListener (delegate {
 			m_ToDoListItemData.Complete = true;
+			this.SendMsg(new ModifiedItemMsg((ushort)UIToDoListPageEvent.ModifiedItem,m_ToDoListItemData.Title,m_ToDoListItemData));
+		});
+
+
+		m_BtnDelete.onClick.AddListener (delegate {
+			this.SendMsg(new DeleteItemMsg((ushort)UIToDoListPageEvent.DeleteItem,m_ToDoListItemData.Title));
+		});
+
+
+		transform.Find ("Bg").gameObject.GetComponent<Button>().onClick.AddListener(delegate {
+			UIEditPanelData editPanelData = new UIEditPanelData();
+			editPanelData.isNew = false;
+			editPanelData.ToDoListItemData = m_ToDoListItemData;
+			QUIManager.Instance.OpenUI<UIEditPanel>(QUILevel.PopUI,QAssetBundle.UIPREFAB.BUNDLE_NAME,editPanelData);	
 		});
 		UpdateView ();
 	}

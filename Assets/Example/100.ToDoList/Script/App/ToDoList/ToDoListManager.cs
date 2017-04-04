@@ -17,6 +17,7 @@ namespace ToDoList {
 		Began = (ushort)QMgrID.Data,
 		ModifiedItem,
 		CreateNewItem,
+		DeleteItem,
 		End
 	}
 
@@ -33,6 +34,13 @@ namespace ToDoList {
 		public ModifiedItemMsg(ushort msgId,string srcTitle,ToDoListItemData itemData):base(msgId) {
 			this.SrcTitle = srcTitle;
 			this.ItemData = itemData;
+		}
+	}
+
+	public class DeleteItemMsg : QMsg {
+		public string Title;
+		public DeleteItemMsg(ushort msgId,string title):base(msgId) {
+			this.Title = title;
 		}
 	}
 
@@ -65,6 +73,10 @@ namespace ToDoList {
 					newItemMsg.NewItemData.Description ();
 					m_CachedData.Add (newItemMsg.NewItemData.Title,newItemMsg.NewItemData);
 					break;
+				case (ushort)ToDoListEvent.DeleteItem:
+					DeleteItemMsg deleteItemMsg = msg as DeleteItemMsg;
+					m_CachedData.Remove (deleteItemMsg.Title);
+					break;
 			}
 		}
 
@@ -90,7 +102,8 @@ namespace ToDoList {
 
 			RegisterSelf (this, new ushort[] {
 				(ushort)ToDoListEvent.CreateNewItem,
-				(ushort)ToDoListEvent.ModifiedItem
+				(ushort)ToDoListEvent.ModifiedItem,
+				(ushort)ToDoListEvent.DeleteItem
 			});
 		}
 
